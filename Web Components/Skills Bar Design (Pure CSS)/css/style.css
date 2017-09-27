@@ -1,0 +1,64 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #262626; }
+
+*, *::before, *::after {
+  box-sizing: border-box; }
+
+/*================================================================
+   progress
+================================================================*/
+.progress {
+  padding: 4px;
+  border: 1px solid #0fffb7;
+  border-radius: 2px; }
+
+.progress__bar {
+  height: 10px;
+  background-color: #0fffb7; }
+
+/*================================================================
+   widget
+================================================================*/
+.widget {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  min-width: 344px;
+  padding: 20px;
+  color: #fff;
+  background-color: #333;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5); }
+
+.widget__title,
+.skills__item-title,
+.skills__item-rating {
+  font-weight: bold;
+  text-transform: uppercase; }
+
+.widget__title {
+  margin-top: 0;
+  line-height: 1; }
+
+.skills {
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+
+.skills__item {
+  margin-top: 30px; }
+
+.skills__item-title {
+  padding-right: 50px; }
+
+.skills__item-rating {
+  float: right; }
+
+.skills__progress {
+  margin-top: 10px; }
+
+/*# sourceMappingURL=style.css.map */
