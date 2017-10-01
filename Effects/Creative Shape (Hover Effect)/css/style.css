@@ -1,0 +1,63 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #262626; }
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+/*================================================================
+   shape
+================================================================*/
+.shape {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 45px;
+  background-color: #2196f3;
+  transition: .5s; }
+  .shape::before, .shape::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 45px;
+    background-color: inherit;
+    transition: inherit; }
+  .shape::before {
+    transform: rotate(30deg); }
+  .shape::after {
+    transform: rotate(-30deg); }
+  .shape:hover {
+    border-radius: 22.5px; }
+    .shape:hover .shape__text {
+      color: #2196f3; }
+    .shape:hover::before, .shape:hover::after {
+      border-radius: 22.5px;
+      background-color: #fff; }
+    .shape:hover::before {
+      transform: rotate(-30deg); }
+    .shape:hover::after {
+      transform: rotate(30deg); }
+
+.shape__text {
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  max-height: 100%;
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
+  font-size: 8em;
+  color: #fff;
+  transition: inherit; }
+
+/*# sourceMappingURL=style.css.map */
