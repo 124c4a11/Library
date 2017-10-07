@@ -1,0 +1,26 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #262626; }
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+/*================================================================
+   gradient-text
+================================================================*/
+.gradient-text {
+  width: 100%;
+  margin: 0;
+  font-size: 8em;
+  color: transparent;
+  text-align: center;
+  text-transform: uppercase;
+  background-image: linear-gradient(to right, #f32170, #ffeb07, #2196f3, #ff00ed);
+  -webkit-background-clip: text; }
+
+/*# sourceMappingURL=style.css.map */
