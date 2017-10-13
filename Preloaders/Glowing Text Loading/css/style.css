@@ -1,0 +1,53 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #262626; }
+
+/*================================================================
+   loader
+================================================================*/
+@keyframes glowing {
+  0% {
+    color: #484848;
+    text-shadow: none; }
+  90% {
+    color: #484848;
+    text-shadow: none; }
+  100% {
+    color: #fff900;
+    text-shadow: 0 0 7px #fff900, 0 0 50px #ff6c00; } }
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 1.5em;
+  font-family: sans-serif;
+  color: #484848;
+  text-transform: uppercase;
+  transform: translate(-50%, -50%); }
+
+.loader__item {
+  animation: glowing 1.4s linear infinite; }
+
+.loader__item_1 {
+  animation-delay: .2s; }
+
+.loader__item_2 {
+  animation-delay: .4s; }
+
+.loader__item_3 {
+  animation-delay: .6s; }
+
+.loader__item_4 {
+  animation-delay: .8s; }
+
+.loader__item_5 {
+  animation-delay: 1s; }
+
+.loader__item_6 {
+  animation-delay: 1.2s; }
+
+.loader__item_7 {
+  animation-delay: 1.4s; }
+
+/*# sourceMappingURL=style.css.map */
