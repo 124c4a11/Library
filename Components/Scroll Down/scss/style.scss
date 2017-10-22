@@ -1,0 +1,58 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #0079a5;
+}
+
+/*================================================================
+   scroll-down
+================================================================*/
+
+$scroll-down-width: 6px;
+$scroll-down-color: #fff;
+
+@keyframes moveDown {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(120px);
+    opacity: 0;
+  }
+}
+
+.scroll-down {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 160px;
+  border-left: $scroll-down-width dashed rgba($scroll-down-color, .1);
+}
+
+.scroll-down__arow {
+  position: absolute;
+  top: 0;
+  left: -$scroll-down-width;
+  width: $scroll-down-width;
+  height: 40px;
+  background-color: $scroll-down-color;
+  animation: moveDown 2s infinite;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -10px;
+    transform: rotate(45deg);
+    width: 20px;
+    height: 20px;
+    border-right: $scroll-down-width solid $scroll-down-color;
+    border-bottom: $scroll-down-width solid $scroll-down-color;
+  }
+}
