@@ -1,0 +1,66 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #fcff8a;
+}
+
+/*================================================================
+   fractured-text
+================================================================*/
+
+.fractured-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  font-size: 0;
+  font-family: 'arial black', sans-serif;
+  color: #262626;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.fractured-text__item {
+  position: relative;
+  font-size: 10rem;
+  color: transparent;
+
+  &::before,
+  &::after {
+    content: attr(data-letter);
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #262626;
+  }
+}
+
+.fractured-text__item:nth-child(odd) {
+  &::before {
+    top: -7px;
+    left: -2px;
+    clip-path: polygon(55% 0, 0 0, 0 100%, 35% 100%);
+  }
+
+  &::after {
+    top: 2px;
+    left: 2px;
+    clip-path: polygon(55% 0, 100% 0, 100% 100%, 35% 100%);
+  }
+}
+
+.fractured-text__item:nth-child(even) {
+  &::before {
+    top: 10px;
+    left: -2px;
+    clip-path: polygon(25% 0, 0 0, 0 100%, 75% 100%);
+  }
+
+  &::after {
+    top: 2px;
+    left: 2px;
+    clip-path: polygon(25% 0, 100% 0, 100% 100%, 75% 100%);
+  }
+}
