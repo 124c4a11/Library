@@ -23,6 +23,6 @@ body {
   text-transform: uppercase;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
   background-image: radial-gradient(#69acff, #023677);
-  box-shadow: 0 0 0 10px #023677; }
+  box-shadow: 0 0 0 10px #023677, 0 0 0 15px #032856, 0 30px 35px rgba(0, 0, 0, 0.5); }
 
 /*# sourceMappingURL=style.css.map */
