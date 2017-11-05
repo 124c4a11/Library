@@ -1,0 +1,84 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+/*================================================================
+  split-text
+================================================================*/
+
+$duration: .25s;
+
+.split {
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0 10px;
+  font-weight: bold;
+  font-size: 4em;
+  color: transparent;
+  text-align: center;
+  text-transform: uppercase;
+  transition: $duration;
+
+  &::before,
+  &::after {
+    content: attr(data-text);
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: #262626;
+    transition: $duration $duration / 2;
+  }
+
+  &::before {
+    clip-path: polygon(0 0, 100% 0%, 100% 50%, 0 50%);
+  }
+
+  &::after {
+    clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+  }
+
+
+  &:hover {
+    &::before,
+    &::after {
+      color: #f00;
+    }
+
+    &::before {
+      top: -2px;
+      left: 10px;
+    }
+
+    &::after {
+      top: 2px;
+      left: -10px;
+    }
+
+    .split__text {
+      &::before {
+        left: 100%;
+      }
+    }
+  }
+}
+
+.split__text {
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -100%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 1px;
+    background-color: #262626;
+    transition: $duration;
+  }
+}

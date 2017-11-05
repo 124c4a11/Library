@@ -1,0 +1,57 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif; }
+
+/*================================================================
+  split-text
+================================================================*/
+.split {
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0 10px;
+  font-weight: bold;
+  font-size: 4em;
+  color: transparent;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.25s; }
+  .split::before, .split::after {
+    content: attr(data-text);
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: #262626;
+    transition: 0.25s 0.125s; }
+  .split::before {
+    clip-path: polygon(0 0, 100% 0%, 100% 50%, 0 50%); }
+  .split::after {
+    clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%); }
+  .split:hover::before, .split:hover::after {
+    color: #f00; }
+  .split:hover::before {
+    top: -2px;
+    left: 10px; }
+  .split:hover::after {
+    top: 2px;
+    left: -10px; }
+  .split:hover .split__text::before {
+    left: 100%; }
+
+.split__text::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -100%;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 1px;
+  background-color: #262626;
+  transition: 0.25s; }
+
+/*# sourceMappingURL=style.css.map */
