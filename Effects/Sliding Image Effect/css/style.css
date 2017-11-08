@@ -1,0 +1,24 @@
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0; }
+
+body {
+  background-color: #262626; }
+
+.img-before,
+.img-after {
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat; }
+
+.img-before {
+  background-image: url(../img/1.jpg); }
+
+.img-after {
+  border-top: 1px solid #262626;
+  background-image: url(../img/2.jpg); }
+
+/*# sourceMappingURL=style.css.map */
