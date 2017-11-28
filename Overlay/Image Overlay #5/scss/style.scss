@@ -1,0 +1,95 @@
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display);
+@import url(https://fonts.googleapis.com/css?family=Fauna+One);
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #262626;
+}
+
+/*================================================================
+  figure
+================================================================*/
+
+$duration: .35s;
+$t-func: ease;
+
+.figure {
+  position: relative;
+  width: 295px;
+  height: 220px;
+  font-family: 'Fauna One', Arial, sans-serif;
+  line-height: 1.4em;
+  color: #fff;
+  text-align: right;
+  background-color: #1a1a1a;
+
+  &:hover {
+    .figure__img {
+      width: 55%;
+      right: -10%;
+    }
+
+    .figure__caption {
+      transform: translate(0, -50%);
+      opacity: 1;
+    }
+  }
+}
+
+.figure__img {
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  right: 0;
+  width: 100%;
+  transition: $duration $t-func;
+}
+
+.figure__caption {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(20px, -50%);
+  width: 50%;
+  padding: 20px 0 20px 20px;
+  opacity: 0;
+  transition: $duration $t-func;
+
+  p {
+    margin: 0;
+    font-size: .8em;
+  }
+}
+
+.figure__title {
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 1.5em;
+  font-family: 'Playfair Display', Arial, sans-serif;
+  text-transform: uppercase;
+}
+
+.figure__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
