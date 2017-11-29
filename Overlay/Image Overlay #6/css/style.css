@@ -1,0 +1,111 @@
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,800);
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
+html {
+  width: 100%;
+  height: 100%; }
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #262626; }
+
+/*================================================================
+  figure
+================================================================*/
+.figure {
+  overflow: hidden;
+  position: relative;
+  width: 315px;
+  height: 220px;
+  font-family: 'Playfair Display', Arial, sans-serif;
+  text-align: right;
+  background-color: #000;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); }
+  .figure::after {
+    content: '';
+    position: absolute;
+    right: 40%;
+    bottom: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-width: 120px 120px 0 120px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.5) transparent transparent transparent;
+    transition: 0.35s ease; }
+  .figure:hover::after {
+    transform: translateY(0); }
+  .figure:hover .figure__img {
+    opacity: .5; }
+  .figure:hover .figure__caption {
+    transform: translateX(0); }
+  .figure:hover .figure__icon {
+    opacity: 1; }
+
+.figure__img {
+  display: block;
+  width: 100%;
+  backface-visibility: hidden;
+  transition: 0.35s ease; }
+
+.figure__caption {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(150%);
+  width: 40%;
+  height: 100%;
+  padding: 30px 0 30px 10px;
+  background-color: #fff;
+  transition: 0.35s ease; }
+  .figure__caption::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 99%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-width: 121px 121px 121px 0;
+    border-style: solid;
+    border-color: transparent #fff transparent transparent; }
+  .figure__caption p {
+    transform: translateX(-30px);
+    margin: 0;
+    font-size: .8em;
+    line-height: 1.5em; }
+
+.figure__title {
+  transform: translateX(-30px);
+  margin-bottom: 5px;
+  font-weight: 900;
+  font-size: 1.4em;
+  line-height: 1.1em; }
+
+.figure__icon {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 20px 30px;
+  font-size: 44px;
+  color: #fff;
+  opacity: 0;
+  transition: 0.35s ease; }
+
+.figure__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+/*# sourceMappingURL=style.css.map */
