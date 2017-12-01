@@ -1,0 +1,92 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+@import url(https://fonts.googleapis.com/css?family=Quattrocento);
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  font-size: 16px;
+  background-color: #262626;
+}
+
+/*================================================================
+  .figure
+================================================================*/
+
+$duration: .35s;
+$t-func: ease;
+
+.figure {
+  overflow: hidden;
+  position: relative;
+  width: 315px;
+  height: 229px;
+  font-family: 'Quattrocento', Arial, sans-serif;
+  color: #141414;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+
+  &:hover {
+    .figure__caption {
+      top: 80px;
+    }
+  }
+}
+
+.figure__img {
+  display: block;
+  width: 100%;
+}
+
+.figure__caption {
+  position: absolute;
+  top: 77%;
+  left: 0;
+  width: 100%;
+  padding: 15px 25px 65px;
+  background-color: #fff;
+  transition: $duration $t-func;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-image: linear-gradient(transparent 0, #fff 100%);
+  }
+
+  p {
+    opacity: .9;
+    margin: 0 0 10px;
+    font-size: .9em;
+    line-height: 1.4em;
+    letter-spacing: 1px;
+  }
+}
+
+.figure__title {
+  margin-bottom: 10px;
+  font: 300 1.4em/1.2em 'Oswald', Arial, sans-serif;
+  text-transform: uppercase;
+}
+
+.figure__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
