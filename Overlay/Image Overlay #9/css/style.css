@@ -1,0 +1,90 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
+html {
+  width: 100%;
+  height: 100%; }
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #262626; }
+
+/*================================================================
+  figure
+================================================================*/
+.figure {
+  position: relative;
+  width: 326px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15); }
+  .figure:hover .figure__border::before, .figure:hover .figure__border::after {
+    height: 100%; }
+  .figure:hover .figure__border div::before,
+  .figure:hover .figure__border div::after {
+    width: 100%; }
+
+.figure__img-wrapper {
+  overflow: hidden; }
+
+.figure__img {
+  display: block;
+  width: 100%; }
+
+.figure__border {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: .45; }
+  .figure__border::before, .figure__border::after,
+  .figure__border div::before,
+  .figure__border div::after {
+    content: '';
+    position: absolute;
+    background-color: #f5b043;
+    transition: all .4s ease-in-out; }
+  .figure__border::before, .figure__border::after {
+    width: 1px;
+    height: 0%; }
+  .figure__border div::before,
+  .figure__border div::after {
+    width: 0%;
+    height: 1px; }
+
+.figure__border_1 {
+  top: -6px;
+  left: -6px; }
+  .figure__border_1::before,
+  .figure__border_1 div::before {
+    top: 0;
+    left: 0; }
+  .figure__border_1::after,
+  .figure__border_1 div::after {
+    right: 0;
+    bottom: 0; }
+
+.figure__border_2 {
+  top: 6px;
+  left: 6px; }
+  .figure__border_2::before,
+  .figure__border_2 div::before {
+    right: 0;
+    top: 0; }
+  .figure__border_2::after,
+  .figure__border_2 div::after {
+    bottom: 0;
+    left: 0; }
+
+.figure__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+/*# sourceMappingURL=style.css.map */
