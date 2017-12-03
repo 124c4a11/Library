@@ -1,0 +1,156 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,700);
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  background-color: #262626;
+}
+
+/*================================================================
+  figure
+================================================================*/
+
+$duration: .4s;
+$t-func: ease-in;
+
+.figure {
+  overflow: hidden;
+  position: relative;
+  width: 310px;
+  height: 225px;
+  font-family: 'Raleway', Arial, sans-serif;
+  color: #fff;
+  background-color: #000;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    width: 0;
+    height: 1px;
+    background-color: #fff;
+    opacity: .6;
+    transition: $duration $t-func;
+  }
+
+  &::before {
+    top: 0;
+    left: 0;
+  }
+
+  &::after {
+    bottom: 0;
+    right: 0;
+  }
+
+  &:hover {
+    &::before,
+    &::after {
+      width: 100%;
+      opacity: .1;
+    }
+
+    .figure__img {
+      opacity: .4;
+    }
+
+    .figure__caption {
+      &::before,
+      &::after {
+        height: 100%;
+        opacity: .1;
+      }
+
+      p {
+        opacity: 1;
+      }
+    }
+
+    .figure__title {
+      opacity: 1;
+    }
+  }
+}
+
+.figure__img {
+  display: block;
+  width: 100%;
+  transition: $duration $t-func;
+}
+
+.figure__caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px 30px;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    width: 1px;
+    height: 0;
+    background-color: #fff;
+    opacity: .6;
+    transition: $duration $t-func;
+  }
+
+  &::before {
+    bottom: 0;
+    left: 0;
+  }
+
+  &::after {
+    right: 0;
+    top: 0;
+  }
+
+  p {
+    font-weight: 500;
+    font-size: .95em;
+    line-height: 1.5em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    opacity: 0;
+    transition: $duration $t-func;
+  }
+}
+
+.figure__title {
+  margin-bottom: 5px;
+  font-weight: 700;
+  font-size: 1.3em;
+  line-height: 1.5em;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: $duration $t-func;
+}
+
+.figure__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
