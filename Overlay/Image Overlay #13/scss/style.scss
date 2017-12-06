@@ -1,0 +1,166 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,800);
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  font-size: 16px;
+  font-family: 'Raleway', Arial, sans-serif;
+  background-color: #262626;
+}
+
+/*================================================================
+  figure
+================================================================*/
+
+$duration: .3s;
+$t-func: ease-in-out;
+
+.figure {
+  overflow: hidden;
+  position: relative;
+  width: 310px;
+  height: 220px;
+  color: #fff;
+  text-align: center;
+  background-color: #000;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+
+  &:hover {
+    .figure__img {
+      transform: scale(1.1);
+      opacity: .25;
+    }
+
+    .figure__caption {
+      p {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+    }
+
+    .figure__title {
+      transform: translateY(0);
+    }
+
+    .figure__square {
+      &::before {
+        width: 38%;
+        height: 38%;
+      }
+
+      &::after {
+        width: 55%;
+        height: 55%;
+      }
+    }
+  }
+}
+
+.figure__img {
+  display: block;
+  width: 100%;
+  opacity: .8;
+  backface-visibility: hidden; // fps
+  transition: $duration $t-func;
+}
+
+.figure__caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  p {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    transform: translateY(-20%) scale(.7);
+    margin: 0;
+    font-size: 14px;
+    opacity: 0;
+    transition: $duration $t-func;
+  }
+}
+
+.figure__title {
+  position: absolute;
+  right: 0;
+  bottom: 50%;
+  left: 0;
+  transform: translateY(50%);
+  font-weight: 400;
+  font-size: 1.5em;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  transition: $duration $t-func;
+
+  b {
+    font-weight: 800;
+  }
+}
+
+.figure__square {
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 78px;
+  height: 78px;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 65%;
+    height: 65%;
+    transition: $duration $t-func;
+  }
+
+  &::before {
+    top: 0;
+    left: 0;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+  }
+
+  &::after {
+    right: 0;
+    bottom: 0;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+  }
+}
+
+.figure__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
