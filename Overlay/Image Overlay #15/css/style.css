@@ -1,0 +1,106 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,200,300,800);
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+* {
+  box-sizing: border-box; }
+  *::before, *::after {
+    box-sizing: inherit; }
+
+html,
+body {
+  padding: 0;
+  margin: 0; }
+
+html {
+  width: 100%;
+  height: 100%; }
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  font-size: 16px;
+  font-family: 'Raleway', Arial, sans-serif;
+  background-color: #262626; }
+
+/*================================================================
+  figure
+================================================================*/
+.figure {
+  overflow: hidden;
+  position: relative;
+  width: 310px;
+  height: 220px;
+  color: #fff;
+  text-align: center;
+  background-color: #000;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); }
+  .figure:hover .figure__img, .figure:focus .figure__img {
+    opacity: .7; }
+  .figure:hover .figure__title, .figure:focus .figure__title {
+    transform: translateY(-25%); }
+  .figure:hover .figure__controls, .figure:focus .figure__controls {
+    transform: translateY(25px); }
+  .figure:hover .figure__controls-link, .figure:focus .figure__controls-link {
+    top: 0;
+    opacity: 1; }
+
+.figure__img {
+  display: block;
+  width: 100%;
+  backface-visibility: hidden;
+  transition: 0.35s; }
+
+.figure__caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+.figure__title {
+  position: absolute;
+  right: 30px;
+  bottom: 35%;
+  left: 30px;
+  transform: translateY(0);
+  padding: 20px 15px;
+  margin: 0;
+  border-radius: 5px;
+  font-weight: 300;
+  font-size: 1em;
+  word-spacing: -0.1em;
+  text-transform: uppercase;
+  background-color: #000;
+  backface-visibility: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  transition: 0.35s; }
+
+.figure__controls {
+  position: absolute;
+  right: 45px;
+  left: 45px;
+  bottom: 80px;
+  padding: 5px;
+  transform: translateY(0);
+  border-radius: 0 0 5px 5px;
+  background-color: #fff;
+  transition: 0.35s; }
+
+.figure__controls-link {
+  position: relative;
+  top: -25px;
+  padding: 6px;
+  font-size: 23px;
+  color: rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+  opacity: 0;
+  transition: 0.35s; }
+  .figure__controls-link:first-child {
+    transition-delay: .2s; }
+  .figure__controls-link:nth-child(2) {
+    transition-delay: .25s; }
+  .figure__controls-link:nth-child(3) {
+    transition-delay: .3s; }
+
+/*# sourceMappingURL=style.css.map */
