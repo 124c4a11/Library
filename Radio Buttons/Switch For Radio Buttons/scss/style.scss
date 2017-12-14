@@ -1,0 +1,88 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  font-size: 16px;
+  font-family: sans-serif;
+  background-color: #262626;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*================================================================
+  switch
+================================================================*/
+
+.switch {
+  position: relative;
+  width: 14rem;
+  padding: 0 1rem;
+  border-radius: 30px;
+  background-color: #000;
+  box-shadow: inset 0 -2px rgba(255, 255, 255, .25);
+}
+
+.switch__label {
+  display: inline-block;
+  width: 2rem;
+  padding: 1rem;
+  font-weight: bolder;
+  color: #999;
+  text-align: center;
+  cursor: pointer;
+  transition-duration: .2s;
+
+  &:hover {
+    color: #fff;
+  }
+}
+
+.switch__indicator {
+  position: absolute;
+  top: -0.5rem;
+  left: 0;
+  transform: translateX(1rem);
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: palegreen;
+  transition: transform .6s cubic-bezier(.02,.94,.09,.97),
+  background-color 300ms cubic-bezier(.17,.67,.14,1.03);
+  box-shadow: 0 0 5px rgba(0, 0, 0, .7);
+}
+
+.switch__radio {
+  position: absolute;
+  top: 0;
+  left: -99999px;
+  opacity: 0;
+
+  &#one:checked ~ .switch__indicator {
+    transform: translateX(1.2rem);
+    background-color: palegreen;
+  }
+
+  &#two:checked ~ .switch__indicator {
+    transform: translateX(5.5rem);
+    background-color: mediumturquoise;
+  }
+
+  &#three:checked ~ .switch__indicator {
+    transform: translateX(10.6rem);
+    background-color: palevioletred;
+  }
+}
