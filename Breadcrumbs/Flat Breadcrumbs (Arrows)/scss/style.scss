@@ -1,0 +1,187 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #34495e;
+}
+
+/*================================================================
+  breadcrumbs
+================================================================*/
+
+$blue: #3498db;
+$blue-darken: #2980b9;
+$green: #1abc9c;
+$green-darken: #16a085;
+
+$duration: .25s;
+
+.breadcrumbs {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-size: 12px;
+}
+
+.breadcrumbs__item {
+  margin-right: 23px;
+
+  &:first-child {
+    .breadcrumbs__link {
+      padding-left: 15px;
+      border-radius: 4px 0 0 4px;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  &:nth-child(even) {
+    .breadcrumbs__link {
+      background-color: $blue-darken;
+
+      &::before {
+        border-color: $blue-darken;
+        border-left-color: transparent;
+      }
+
+      &::after {
+        border-color: transparent;
+        border-left-color: $blue-darken;
+      }
+
+      &:hover,
+      &:focus {
+        background-color: $green-darken;
+
+        &::before {
+          border-color: $green-darken;
+          border-left-color: transparent;
+        }
+
+        &::after {
+          border-left-color: $green-darken;
+        }
+      }
+    }
+  }
+
+  &:last-child {
+    margin-right: 0;
+
+    .breadcrumbs__link {
+      padding-right: 15px;
+      border-radius: 0 4px 4px 0;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+.breadcrumbs__item_current {
+  .breadcrumbs__link {
+    background-color: $green;
+
+    &::before {
+      border-color: $green;
+      border-left-color: transparent;
+    }
+
+    &::after {
+      border-left-color: $green;
+    }
+  }
+
+  &:nth-child(even) {
+    .breadcrumbs__link {
+      background-color: $green-darken;
+
+      &::before {
+        border-color: $green-darken;
+        border-left-color: transparent;
+      }
+
+      &::after {
+        border-left-color: $green-darken;
+      }
+    }
+  }
+}
+
+.breadcrumbs__link {
+  position: relative;
+  display: block;
+  height: 40px;
+  padding: 0 10px 0 5px;
+  line-height: 40px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  background-color: $blue;
+  outline: none;
+  transition-duration: $duration;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px 10px;
+    transition-duration: $duration;
+  }
+
+  &::before {
+    left: -20px;
+    border-color: $blue;
+    border-left-color: transparent;
+  }
+
+  &::after {
+    left: 100%;
+    border-color: transparent;
+    border-left-color: $blue;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $green;
+
+    &::before {
+      border-color: $green;
+      border-left-color: transparent;
+    }
+
+    &::after {
+      border-left-color: $green;
+    }
+  }
+}
