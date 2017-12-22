@@ -1,0 +1,111 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  font-family: sans-serif;
+  background-color: #262626;
+}
+
+/*================================================================
+  breadcrumbs
+================================================================*/
+
+$color-default: #fff;
+$color-active: #e91e63;
+$color-active-darken: rgb(199, 0, 65);
+
+$duration: .5s;
+
+.breadcrumbs {
+  counter-reset: flag;
+  overflow: hidden;
+  display: flex;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+}
+
+.breadcrumbs__link {
+  position: relative;
+  padding: 0 10px 0 60px;
+  font-size: 14px;
+  line-height: 36px;
+  color: $color-active;
+  text-align: center;
+  text-decoration: none;
+  background-color: $color-default;
+  outline: none;
+  transition-duration: $duration;
+
+  &::before {
+    content: counter(flag);
+    counter-increment: flag;
+    position: absolute;
+    top: 7px;
+    left: 30px;
+    height: 20px;
+    width: 20px;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    font-weight: bold;
+    line-height: 20px;
+    color: #e91e63;
+    background-color: $color-default;
+  }
+
+  &:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -18px;
+    z-index: 1;
+    transform: scale(.707) rotate(45deg);
+    width: 36px;
+    height: 36px;
+    border-radius: 0 5px 0 50px;
+    background-color: $color-default;
+    box-shadow: 2px -2px 0 2px $color-active-darken;
+    transition-duration: $duration;
+  }
+
+  &:first-child {
+    padding-left: 46px;
+
+    &::before {
+      left: 14px;
+    }
+  }
+
+  &:last-child {
+    padding-right: 20px;
+  }
+
+  &:hover {
+    color: $color-default;
+    background-color: $color-active-darken;
+
+    &:not(:last-child)::after {
+      background-color: $color-active-darken;
+    }
+  }
+}
+
+.breadcrumbs__link_active {
+  color: $color-default;
+  background-color: $color-active;
+
+  &:not(:last-child)::after {
+    background-color: $color-active;
+  }
+}
