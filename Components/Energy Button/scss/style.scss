@@ -1,0 +1,68 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  font-family: sans-serif;
+  background-color: #262626;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*================================================================
+  btn
+================================================================*/
+
+$duration: .5s;
+
+@keyframes pulseBtn {
+  0% {
+    box-shadow: 0 0 15px rgba(80, 241, 0, 1),
+                0 0 25px rgba(80, 241, 0, 1);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(80, 241, 0, .5),
+                0 0 0 25px rgba(80, 241, 0, .5);
+  }
+  100% {
+    box-shadow: 0 0 0 20px rgba(80, 241, 0, 0),
+                0 0 0 80px rgba(80, 241, 0, 0);
+  }
+}
+
+.btn {
+  transform: scale(1);
+  min-width: 100px;
+  padding: .6em 1.2em;
+  border: 0 none;
+  border-radius: 30px;
+  font-size: 24px;
+  color: #309220;
+  letter-spacing: 6px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: rgba(80, 241, 0, 1);
+  box-shadow: 0 0 15px rgba(80, 241, 0, 1);
+  transition-duration: $duration;
+
+  &:hover,
+  &:focus {
+    transform: scale(.9);
+    outline: 0 none;
+    animation: pulseBtn $duration linear forwards;
+  }
+}
