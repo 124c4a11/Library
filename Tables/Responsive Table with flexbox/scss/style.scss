@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,700');
+
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+html {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  padding: 15px;
+  margin: 0;
+  font-size: 16px;
+}
+
+/*================================================================
+  table
+================================================================*/
+
+.table {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  min-width: 350px;
+  font-family: 'Fira Sans', sans-serif;
+  color: slategray;
+}
+
+.table__cell {
+  overflow: hidden;
+  flex-grow: 1;
+  width: calc(33.33% - 1px);
+  padding: .8em 1.2em;
+  margin-top: 1px;
+  margin-left: 1px;
+  font-weight: 300;
+  text-align: center;
+  outline: 1px solid #ddd;
+
+  &:first-child {
+    outline: 0 none;
+
+    @media only screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  & > h3 {
+    font-size: 26px;
+  }
+}
+
+.table__cell_green {
+  color: limegreen;
+}
+
+.table__cell_blue {
+  color: #85bafc;
+  background-color: #30305b;
+  outline: 1px solid #30305b;
+}
+
+.table__cell_feature {
+  font-size: 18px;
+  text-align: left;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.check_blue {
+  path {
+    fill: #30305b !important;
+  }
+}
