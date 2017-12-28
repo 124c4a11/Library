@@ -1,0 +1,131 @@
+@import url(https://fonts.googleapis.com/css?family=PT+Sans);
+
+* {
+  box-sizing: border-box;
+
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  font: 16px 'PT Sans', Arial, Verdana, sans-serif;
+  background-color: #eee;
+}
+
+/*================================================================
+  menu
+================================================================*/
+
+$width-item: 25%;
+$height-item: 120px;
+
+.menu {
+  width: 80%;
+}
+
+.menu__list {
+  position: relative;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: #2c3e50;
+}
+
+.menu__item {
+  width: $width-item;
+
+  &:nth-child(1):hover ~ .menu__slider,
+  &:nth-child(1):focus ~ .menu__slider,
+  &:nth-child(1):active ~ .menu__slider,
+  &_active:nth-child(1) ~ .menu__slider {
+    left: 0;
+    background-color: #e74c3c;
+  }
+
+  &:nth-child(2):hover ~ .menu__slider,
+  &:nth-child(2):focus ~ .menu__slider,
+  &:nth-child(2):active ~ .menu__slider,
+  &_active:nth-child(2) ~ .menu__slider {
+    left: $width-item;
+    background-color: #9b59b6;
+  }
+
+  &:nth-child(3):hover ~ .menu__slider,
+  &:nth-child(3):focus ~ .menu__slider,
+  &:nth-child(3):active ~ .menu__slider,
+  &_active:nth-child(3) ~ .menu__slider {
+    left: $width-item * 2;
+    background-color: #e67e22;
+  }
+
+  &:nth-child(4):hover ~ .menu__slider,
+  &:nth-child(4):focus ~ .menu__slider,
+  &:nth-child(4):active ~ .menu__slider,
+  &_active:nth-child(4) ~ .menu__slider {
+    left: $width-item * 3;
+    background-color: #16a085;
+  }
+}
+
+.menu__item_active {
+  &:nth-child(1) {
+    background-color: #e74c3c;
+  }
+
+  &:nth-child(2) {
+    background-color: #9b59b6;
+  }
+
+  &:nth-child(3) {
+    background-color: #e67e22;
+  }
+
+  &:nth-child(4) {
+    background-color: #16a085;
+  }
+
+  .menu__item-link {
+    pointer-events: none;
+  }
+}
+
+.menu__item-link {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $height-item;
+  padding: 15px;
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+}
+
+.menu__slider {
+  position: absolute;
+  width: $width-item;
+  height: $height-item;
+  background-color: transparent;
+  transition-duration: .4s;
+}
