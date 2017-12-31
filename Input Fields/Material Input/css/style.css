@@ -1,0 +1,67 @@
+* {
+  box-sizing: border-box; }
+  *::before, *::after {
+    box-sizing: inherit; }
+
+html,
+body {
+  padding: 0;
+  margin: 0; }
+
+html {
+  width: 100%;
+  height: 100%; }
+
+body {
+  min-height: 100%;
+  font-size: 16px;
+  font-family: sans-serif;
+  background-color: #262626; }
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+/*================================================================
+  field
+================================================================*/
+.group {
+  position: relative; }
+
+.field {
+  width: 320px;
+  padding: 10px 10px 10px 5px;
+  border-width: 0 0 1px 0;
+  border-bottom-style: solid;
+  border-bottom-color: currentColor;
+  font-size: 18px;
+  color: #c6c6c6;
+  background-color: transparent;
+  outline: 0 none; }
+  .field:focus ~ .label, .field:valid ~ .label {
+    top: -14px;
+    font-size: 13px;
+    color: #2196f3; }
+  .field:focus ~ .border, .field:valid ~ .border {
+    width: 100%; }
+
+.label {
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  z-index: -1;
+  color: #c6c6c6;
+  transition-duration: 0.3s; }
+
+.border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #2196f3;
+  transition-duration: 0.3s; }
+
+/*# sourceMappingURL=style.css.map */
