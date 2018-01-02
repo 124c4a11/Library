@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Martel|Open+Sans');
+
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+$bg-color: #fff;
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  font-size: 28px;
+  font-family: 'Martel', serif;
+  background-color: $bg-color;
+}
+
+/*================================================================
+  link
+================================================================*/
+
+$link-color: #0074d9;
+
+.link {
+  color: #000;
+  text-decoration: none;
+  background-image: linear-gradient($link-color, $link-color);
+  background-size: 1px 1px;
+  background-repeat: repeat-x;
+  background-position: 0 80%;
+  text-shadow:
+    .03em 0 $bg-color, -.03em 0 $bg-color, 0 .03em $bg-color, 0 -.03em $bg-color,
+    .06em 0 $bg-color, -.06em 0 $bg-color, 0 .06em $bg-color, 0 -.06em $bg-color,
+    .12em 0 $bg-color, -.12em 0 $bg-color, 0 .12em $bg-color, 0 -.12em $bg-color;
+  white-space: nowrap;
+  transition: .15s;
+
+  &:hover,
+  &:focus {
+    color: $link-color;
+    background-image: none;
+  }
+
+  &::selection {
+    color: $bg-color;
+    text-shadow: none;
+    background-image: none;
+    background-color: $link-color;
+  }
+}

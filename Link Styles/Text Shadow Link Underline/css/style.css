@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css?family=Martel|Open+Sans");
+* {
+  box-sizing: border-box; }
+  *::before, *::after {
+    box-sizing: inherit; }
+
+html,
+body {
+  padding: 0;
+  margin: 0; }
+
+html {
+  width: 100%;
+  height: 100%; }
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  font-size: 28px;
+  font-family: 'Martel', serif;
+  background-color: #fff; }
+
+/*================================================================
+  link
+================================================================*/
+.link {
+  color: #000;
+  text-decoration: none;
+  background-image: linear-gradient(#0074d9, #0074d9);
+  background-size: 1px 1px;
+  background-repeat: repeat-x;
+  background-position: 0 80%;
+  text-shadow: 0.03em 0 #fff, -0.03em 0 #fff, 0 0.03em #fff, 0 -0.03em #fff, 0.06em 0 #fff, -0.06em 0 #fff, 0 0.06em #fff, 0 -0.06em #fff, 0.12em 0 #fff, -0.12em 0 #fff, 0 0.12em #fff, 0 -0.12em #fff;
+  white-space: nowrap;
+  transition: .15s; }
+  .link:hover, .link:focus {
+    color: #0074d9;
+    background-image: none; }
+  .link::selection {
+    color: #fff;
+    text-shadow: none;
+    background-image: none;
+    background-color: #0074d9; }
+
+/*# sourceMappingURL=style.css.map */
