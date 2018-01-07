@@ -64,6 +64,7 @@ $duration: 1s;
   &::after {
     right: 0;
     background-color: rgba(122, 0, 255, 0);
+    mix-blend-mode: lighten;
   }
 
   &:hover,
@@ -86,7 +87,6 @@ $duration: 1s;
 
     &::after {
       background-color: rgba(122, 0, 255, 1);
-      mix-blend-mode: lighten;
     }
   }
 }

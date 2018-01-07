@@ -51,7 +51,8 @@ body {
     background-color: rgba(22, 20, 152, 0); }
   .btn::after {
     right: 0;
-    background-color: rgba(122, 0, 255, 0); }
+    background-color: rgba(122, 0, 255, 0);
+    mix-blend-mode: lighten; }
   .btn:hover, .btn:focus {
     color: #fff;
     text-shadow: 0 0 0.41em rgba(255, 255, 255, 0.5), 0 0 1em rgba(255, 255, 255, 0.5), 0 0 0.68em rgba(255, 255, 255, 0.5);
@@ -61,8 +62,7 @@ body {
     .btn:hover::before, .btn:focus::before {
       background-color: #fc1498; }
     .btn:hover::after, .btn:focus::after {
-      background-color: #7a00ff;
-      mix-blend-mode: lighten; }
+      background-color: #7a00ff; }
 
 .btn__text {
   position: relative;
