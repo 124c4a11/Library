@@ -1,0 +1,34 @@
+html,
+body {
+  padding: 0;
+  margin: 0; }
+
+body {
+  min-height: 100vh; }
+
+/*================================================================
+  hero
+================================================================*/
+@keyframes colorCyrcle {
+  0% {
+    background-color: #a24de3; }
+  25% {
+    background-color: #00aeff; }
+  50% {
+    background-color: #f45a4a; }
+  75% {
+    background-color: #4fd1cd; }
+  100% {
+    background-color: #a24de3; } }
+.hero,
+.overlay {
+  height: 100vh; }
+
+.hero {
+  background: fixed url(../img/1.jpg) center/cover no-repeat; }
+
+.overlay {
+  opacity: .5;
+  animation: colorCyrcle 20s infinite; }
+
+/*# sourceMappingURL=style.css.map */
