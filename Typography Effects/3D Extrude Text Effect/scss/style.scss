@@ -1,0 +1,82 @@
+@import url(https://fonts.googleapis.com/css?family=Arvo:700);
+@import url(https://fonts.googleapis.com/css?family=Seaweed+Script);
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font: 16px sans-serif;
+  background-color: #222;
+}
+
+/*================================================================
+  extrude
+================================================================*/
+
+.extrude {
+  width: 410px;
+  color: #fff;
+  text-align: center;
+}
+
+.extrude__italic-text {
+  overflow: hidden;
+  font: 2.5em "Seaweed Script";
+}
+
+.extrude__italic-text-inner {
+  position: relative;
+  padding: 0 .3em;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 99999px;
+    height: .07em;
+    background-color: currentColor;
+  }
+
+  &::before {
+    right: 100%;
+  }
+
+  &::after {
+    left: 100%;
+  }
+}
+
+.extrude__shadow-text {
+  transform: scaleY(.7);
+  font-weight: bold;
+  line-height: .8em;
+  font-family: Arvo;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  text-shadow: -3px -3px 0 #222,
+                3px -3px 0 #222,
+                -3px 3px 0 #222,
+                3px 3px 0 #222,
+                4px 4px 0 #fff,
+                5px 5px 0 #fff,
+                6px 6px 0 #fff,
+                7px 7px 0 #fff;
+}
+
+.extrude__shadow-text_1 {
+  font-size: 3.75em;
+}
+.extrude__shadow-text_2 {
+  font-size: 10.56em;
+}
+.extrude__shadow-text_3 {
+  font-size: 6.25em;
+}
