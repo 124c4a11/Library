@@ -1,0 +1,80 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+$bg-color: #684da3;
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font: 16px Avenir Next, Helvetica Neue, Helvetica, Tahoma, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: $bg-color;
+}
+
+/*================================================================
+  text
+================================================================*/
+
+$letter-spacing: (300em / 1000);
+
+$shadow-scale: 1.1;
+
+$initial-skew: -40deg;
+$hover-skew: -10deg;
+$shadow-initial-skew: (($initial-skew / 2) * -1);
+$shadow-hover-skew: (($hover-skew / 2) * -1);
+
+$duration: .3s;
+
+.text {
+  font-weight: 700;
+  font-size: 10vw;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.text__letter {
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 500px;
+  display: inline-block;
+
+  &::before,
+  &::after {
+    content: attr(data-letter);
+    position: absolute;
+    top: 0;
+    left: -1px;
+    transform-origin: left top;
+    transition: transform ease-out $duration;
+  }
+
+  &::before {
+    z-index: 1;
+    transform: scaleX($shadow-scale) skewY($shadow-initial-skew);
+    color: rgba(0, 0, 0, .2);
+  }
+
+  &::after {
+    z-index: 2;
+    transform: rotateY($initial-skew);
+    color: $bg-color;
+    text-shadow: -1px 0 1px $bg-color,
+                  1px 0 1px rgba(0, 0, 0, .8);
+  }
+
+  &:hover {
+    &::before {
+      transform: scaleX($shadow-scale) skewY($shadow-hover-skew);
+    }
+
+    &::after {
+      transform: rotateY($hover-skew);
+    }
+  }
+}

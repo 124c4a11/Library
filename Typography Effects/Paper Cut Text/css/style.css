@@ -1,0 +1,50 @@
+html,
+body {
+  padding: 0;
+  margin: 0; }
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font: 16px Avenir Next, Helvetica Neue, Helvetica, Tahoma, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: #684da3; }
+
+/*================================================================
+  text
+================================================================*/
+.text {
+  font-weight: 700;
+  font-size: 10vw;
+  color: #fff;
+  text-transform: uppercase; }
+
+.text__letter {
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 500px;
+  display: inline-block; }
+  .text__letter::before, .text__letter::after {
+    content: attr(data-letter);
+    position: absolute;
+    top: 0;
+    left: -1px;
+    transform-origin: left top;
+    transition: transform ease-out 0.3s; }
+  .text__letter::before {
+    z-index: 1;
+    transform: scaleX(1.1) skewY(20deg);
+    color: rgba(0, 0, 0, 0.2); }
+  .text__letter::after {
+    z-index: 2;
+    transform: rotateY(-40deg);
+    color: #684da3;
+    text-shadow: -1px 0 1px #684da3, 1px 0 1px rgba(0, 0, 0, 0.8); }
+  .text__letter:hover::before {
+    transform: scaleX(1.1) skewY(5deg); }
+  .text__letter:hover::after {
+    transform: rotateY(-10deg); }
+
+/*# sourceMappingURL=style.css.map */
