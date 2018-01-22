@@ -1,0 +1,64 @@
+@import url(https://fonts.googleapis.com/css?family=Righteous);
+
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+$bg-color: #4d5eb3;
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Righteous', sans-serif;
+  background-color: $bg-color;
+}
+
+/*================================================================
+  text
+================================================================*/
+
+@keyframes moveShadow {
+    0% { background-position: 0 0; }
+  100% { background-position: 100% -100%; }
+}
+
+.text {
+  position: relative;
+  font-size: 12vw;
+  color: #fff;
+  text-shadow: .03em .03em 0 $bg-color;
+
+  &::before {
+    content: attr(data-text);
+    position: absolute;
+    top: .06em;
+    left: .06em;
+    z-index: -1;
+    color: transparent;
+    background-image: linear-gradient(
+      45deg,
+      transparent 45%,
+      #ebe9e0 45%,
+      #ebe9e0 55%,
+      transparent 0
+    );
+    background-size: .05em .05em;
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-shadow: none;
+    animation: moveShadow 15s linear infinite;
+  }
+}
