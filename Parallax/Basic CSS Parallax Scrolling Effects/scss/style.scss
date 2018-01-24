@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font: 16px 'Open Sans', sans-serif;
+}
+
+/*================================================================
+  img-section
+================================================================*/
+
+.img-section {
+  height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/*================================================================
+  text-section
+================================================================*/
+
+.text-section {
+  position: relative;
+  z-index: 1; //from box-shadow
+  padding: 4em 15%;
+  box-shadow: 0 0 30px rgba(0, 0, 0, .3);
+}
+
+.text-section__title {
+  margin-top: 0;
+  margin-bottom: 1em;
+  font-size: 2em;
+  text-align: center;
+}
