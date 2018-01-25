@@ -29,8 +29,8 @@ body {
   figure
 ================================================================*/
 
-$duration: .3s;
-$t-func: ease-in-out;
+$duration: .25s;
+$t-func: linear;
 
 .figure {
   overflow: hidden;
