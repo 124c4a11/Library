@@ -59,7 +59,7 @@ $t-func: ease-out;
       opacity: 1;
     }
 
-    .figure__caption {
+    .figure__description {
       transform: translateY(-50%);
       opacity: 1;
       transition: $duration $t-func .2s;
@@ -73,6 +73,14 @@ $t-func: ease-out;
 }
 
 .figure__caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.figure__description {
   position: absolute;
   top: 50%;
   right: 20px;

@@ -36,6 +36,7 @@ $t-func: ease;
   width: 315px;
   height: 229px;
   background-color: #000;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .5);
 
   &::before,
   &::after {
