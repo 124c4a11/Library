@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,500");
+@import url("https://fonts.googleapis.com/css?family=Inconsolata");
+* {
+  box-sizing: border-box; }
+  *::before, *::after {
+    box-sizing: inherit; }
+
+html,
+body {
+  padding: 0;
+  margin: 0; }
+
+body {
+  font: 16px 'Raleway', sans-serif;
+  background-color: #e8e8e8; }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; }
+
+/*================================================================
+  add-comment
+================================================================*/
+.add-comment {
+  position: relative;
+  width: 300px;
+  height: 50px;
+  margin: 20px; }
+
+.add-comment__checkbox,
+.add-comment__label,
+.add-comment__message {
+  position: absolute; }
+
+.add-comment__checkbox,
+.add-comment__message {
+  outline: none; }
+
+.add-comment__label,
+.add-comment__message {
+  color: #F25C54; }
+
+.add-comment__checkbox {
+  top: -15px;
+  right: -15px;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #F25C54;
+  -webkit-appearance: none; }
+  .add-comment__checkbox::before, .add-comment__checkbox::after {
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 2px;
+    background-color: #e8e8e8;
+    transition-duration: .4s; }
+  .add-comment__checkbox::after {
+    transform: rotate(90deg); }
+  .add-comment__checkbox:checked::before, .add-comment__checkbox:checked::after {
+    transform: rotate(360deg); }
+  .add-comment__checkbox:checked ~ .add-comment__label {
+    transform: translateY(-16px);
+    font-size: 13px;
+    transition: .3s 0s; }
+  .add-comment__checkbox:checked ~ .add-comment__message {
+    width: 100%;
+    height: 100%;
+    padding: 0 25px 0 10px;
+    transition: width .3s, height .3s .2s; }
+
+.add-comment__label {
+  top: -5px;
+  right: 25px;
+  letter-spacing: 1px;
+  transition: .6s .3s; }
+
+.add-comment__message {
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  padding: 0;
+  border: 2px solid #F25C54;
+  font-size: 30px;
+  background-color: transparent;
+  transition: width .4s .2s, height .1s; }
+
+/*# sourceMappingURL=style.css.map */
