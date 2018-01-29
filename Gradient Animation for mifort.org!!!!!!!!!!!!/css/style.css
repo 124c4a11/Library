@@ -70,7 +70,7 @@ body {
   text-transform: uppercase;
   text-decoration: none;
   background-image: linear-gradient(to right, #3e60f9, #00b5f2, #3e60f9);
-  background-position-x: 0px;
+  background-position-x: 0;
   background-size: 200%;
   outline: none;
   transition-duration: 0.25s; }
