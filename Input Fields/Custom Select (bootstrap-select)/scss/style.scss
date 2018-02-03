@@ -1,0 +1,103 @@
+$font-size-base: 16;
+
+@function em($px, $base: $font-size-base) {
+  @return ($px / $base) * 1em;
+}
+
+@function rem($px, $base: $font-size-base) {
+  @return ($px / $base) * 1rem;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/*================================================================
+  customselect
+================================================================*/
+
+$border-width: 1px;
+$border-style: solid;
+$border-color: #e1ddd5;
+
+$arrow-stroke-width: 2px;
+$arrow-color: currentColor;
+
+.bootstrap-select {
+  .dropdown-toggle,
+  .dropdown-menu {
+    border: $border-width $border-style $border-color;
+    border-radius: 0;
+  }
+
+  .dropdown-toggle {
+    position: relative;
+    padding: rem(8) rem(40) rem(8) 0;
+    font-weight: 600;
+    font-size: em(14);
+    color: #000;
+    background-color: transparent;
+
+    &::after {
+      position: absolute;
+      top: rem(18);
+      right: rem(19);
+      transform: rotate(-135deg);
+      width: 10px;
+      height: 10px;
+      border-top: $arrow-stroke-width solid $arrow-color;
+      border-right: 0;
+      border-bottom: 0;
+      border-left: $arrow-stroke-width solid $arrow-color;
+    }
+
+    &:focus {
+      outline: none !important;
+    }
+  }
+
+  .filter-option,
+  .dropdown-item {
+    padding-left: 0;
+  }
+
+  .filter-option {
+    vertical-align: top;
+  }
+
+  .dropdown-menu {
+    position: relative;
+    right: 0;
+    max-width: 100px;
+  }
+}
+
+.selectpicker__label,
+.selectpicker__text {
+  display: inline-block;
+  vertical-align: middle;
+  padding-top: rem(6);
+  padding-bottom: rem(6);
+  padding-left: rem(19);
+}
+
+.selectpicker__label {
+  padding-right: rem(19);
+  border-right: $border-width $border-style $border-color;
+}
+
+/*================================================================
+  bootstrap-select show
+================================================================*/
+
+.bootstrap-select.show {
+  .dropdown-toggle {
+    &::after {
+      top: rem(23);
+      transform: rotate(45deg);
+    }
+  }
+}
