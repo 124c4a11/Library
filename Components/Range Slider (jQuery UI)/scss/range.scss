@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font: 16px sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/*================================================================
+  price-range
+================================================================*/
+
+.range {
+  width: 250px;
+}
+
+.range__slider {
+  height: 2px;
+  margin-bottom: .81em;
+  background-color: #eee;
+
+  .ui-slider-range {
+    background-color: #838d8f;
+  }
+
+  .ui-slider-handle {
+    top: -.4em;
+    width: 1em;
+    height: 1em;
+    border: 2px solid #838d8f;
+    border-radius: 50%;
+    background-color: #fff;
+  }
+}
+
+.range__preview {
+  display: flex;
+  justify-content: space-between;
+}
+
+.range__field {
+  width: 30%;
+  padding: 0 5px;
+  border: 0 none;
+  font-size: .81em;
+  color: #838d8f;
+}
+
+.range__field_max {
+  text-align: right;
+}
