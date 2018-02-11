@@ -1,40 +1,65 @@
 'use strict';
 
 var Range = (function() {
-  var
-    $rangeSlider = $('.range__slider');
+  function _setValues($field, $rangeSlider, unit) {
+    var value = $field.val();
 
-  function _insertValues($this) {
+    if (value.indexOf(unit) === 0) value = parseInt(value.slice(1));
+
+    if ($field.hasClass('range__field_min')) {
+      $rangeSlider.slider('values', 0, value);
+    }
+
+    if ($field.hasClass('range__field_max')) {
+      $rangeSlider.slider('values', 1, value);
+    }
+
+    $field.val(unit + ' ' + value);
+  }
+
+  function _getValues($rangeSlider) {
     var
-      $container = $this.closest('.range'),
+      $container = $rangeSlider.closest('.range'),
       $minField = $container.find('.range__field_min'),
       $maxField = $container.find('.range__field_max'),
-      unit = $this.data('unit');
+      unit = $rangeSlider.data('unit');
 
-    var values = $this.slider('option', 'values');
+    var values = $rangeSlider.slider('option', 'values');
 
-    $minField.text(unit + ' ' + values[0]);
-    $maxField.text(unit + ' ' + values[1]);
+    $minField.val(unit + ' ' + values[0]);
+    $maxField.val(unit + ' ' + values[1]);
   }
 
   function init() {
-    $rangeSlider.each(function() {
+    $('.range__slider').each(function() {
       var
-        $this = $(this),
-        min = parseInt($this.data('min')),
-        max = parseInt($this.data('max'));
+        $rangeSlider = $(this),
+        $container = $rangeSlider.closest('.range'),
+        $minField = $container.find('.range__field_min'),
+        $maxField = $container.find('.range__field_max'),
+        min = parseInt($rangeSlider.data('min')),
+        max = parseInt($rangeSlider.data('max')),
+        unit = $rangeSlider.data('unit');
 
-      $this.slider({
+      $rangeSlider.slider({
         range: true,
         min: min,
         max: max,
-        values: [min, max],
+        values: [120, 780],
         slide: function(e, ui) {
-          _insertValues($this);
+          _getValues($rangeSlider);
         },
         create: function() {
-          _insertValues($this);
+          _getValues($rangeSlider);
         }
+      });
+
+      $minField.change(function() {
+        _setValues($(this), $rangeSlider, unit);
+      });
+
+      $maxField.change(function() {
+        _setValues($(this), $rangeSlider, unit);
       });
     });
   }
