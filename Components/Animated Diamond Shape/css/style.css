@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box; }
+  *::before, *::after {
+    box-sizing: inherit; }
+
+html,
+body {
+  padding: 0;
+  margin: 0; }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #00355f; }
+
+/*================================================================
+  diamond
+================================================================*/
+@keyframes shine {
+  0% {
+    border-color: #2196f3 #1b74bb #1983d8 #38a1f5; }
+  25% {
+    border-color: #38a1f5 #2196f3 #1b74bb #1983d8; }
+  50% {
+    border-color: #1983d8 #38a1f5 #2196f3 #1b74bb; }
+  75% {
+    border-color: #1b74bb #1983d8 #38a1f5 #2196f3; }
+  100% {
+    border-color: #2196f3 #1b74bb #1983d8 #38a1f5; } }
+.diamond {
+  position: relative;
+  transform: rotate(45deg);
+  width: 200px;
+  height: 200px; }
+
+.diamond__item {
+  position: absolute;
+  border-width: 50px;
+  border-style: solid;
+  border-color: #2196f3 #1b74bb #1983d8 #38a1f5; }
+  .diamond__item:nth-child(2), .diamond__item:nth-child(3), .diamond__item:nth-child(4) {
+    animation: shine 2s linear infinite; }
+  .diamond__item:nth-child(1) {
+    top: 0;
+    left: 0;
+    border-top-color: transparent;
+    border-left-color: transparent; }
+  .diamond__item:nth-child(2) {
+    top: 0;
+    left: 100px; }
+  .diamond__item:nth-child(3) {
+    top: 100px;
+    left: 0; }
+  .diamond__item:nth-child(4) {
+    top: 100px;
+    left: 100px; }
+
+/*# sourceMappingURL=style.css.map */
