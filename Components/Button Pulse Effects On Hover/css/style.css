@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box; }
+  *::before, *::after {
+    box-sizing: inherit; }
+
+html,
+body {
+  padding: 0;
+  margin: 0; }
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font: 16px sans-serif; }
+
+/*================================================================
+  btn
+================================================================*/
+.btn {
+  position: relative;
+  padding: 10px 15px;
+  border: 2px solid #262626;
+  font-size: 24px;
+  color: #262626;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-color: transparent;
+  outline: none;
+  transition-duration: 0.5s; }
+  .btn::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    left: -2px;
+    bottom: -2px;
+    border: 2px solid #262626; }
+  .btn:hover, .btn:focus {
+    color: #fff;
+    background-color: #262626; }
+    .btn:hover:before, .btn:focus:before {
+      transform: scale(1.2, 1.4);
+      opacity: 0;
+      transition-duration: 0.5s; }
+
+/*# sourceMappingURL=style.css.map */
