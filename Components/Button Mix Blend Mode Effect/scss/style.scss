@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font: 16px sans-serif;
+}
+
+/*================================================================
+  btn
+================================================================*/
+
+@keyframes moveRight {
+    0% { left: -40px; }
+  100% { left: 100%; }
+}
+
+.btn {
+  overflow: hidden;
+  position: relative;
+  padding: 10px 15px;
+  border: 3px solid #000;
+  font-size: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-color: #fff;
+  outline: none;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: skewX(-15deg);
+    height: 100%;
+    width: 40px;
+    background-color: #000;
+    transition-duration: .25s;
+    animation: moveRight 2s linear infinite;
+  }
+
+  &:hover,
+  &:focus {
+    &::before {
+      transform: skewX(0);
+      width: 100%;
+      animation: none;
+    }
+  }
+}
+
+.btn__text {
+  color: #fff;
+  mix-blend-mode: difference;
+}
