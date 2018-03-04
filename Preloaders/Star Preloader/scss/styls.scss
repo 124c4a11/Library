@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #262626;
+}
+
+/*================================================================
+  star
+================================================================*/
+
+@keyframes shineLeft {
+  0% {
+    transform: translateX(0);
+    box-shadow: 0 0 0 #fff, 0 0 0 #fff, 0 0 0 #fff;
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100px);
+    opacity: 0;
+    box-shadow: 25px 0 0 #fff, 50px 0 0 #fff, 75px 0 0 #fff;
+  }
+}
+
+@keyframes shineRight {
+  0% {
+    transform: translateX(0);
+    box-shadow: 0 0 0 #fff, 0 0 0 #fff, 0 0 0 #fff;
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100px);
+    opacity: 0;
+    box-shadow: -25px 0 0 #fff, -50px 0 0 #fff, -75px 0 0 #fff;
+  }
+}
+
+.star {
+  position: relative;
+}
+
+.star__ray {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 1px;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: calc(50% - 4px);
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+  }
+
+  &::before {
+    animation: shineLeft 1s linear infinite;
+  }
+
+  &::after {
+    animation: shineRight 1s linear infinite;
+  }
+
+  &:nth-child(2) {
+    transform: translateX(-50%) rotate(60deg);
+  }
+
+  &:nth-child(3) {
+    transform: translateX(-50%) rotate(-60deg);
+  }
+}
