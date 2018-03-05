@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box; }
+  *::before, *::after {
+    box-sizing: inherit; }
+
+html,
+body {
+  padding: 0;
+  margin: 0; }
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #161616; }
+
+/*================================================================
+  preloader
+================================================================*/
+@keyframes rotation {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(360deg); } }
+@keyframes reverseRotation {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(-720deg); } }
+.preloader {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-width: 4px;
+  border-style: solid;
+  border-color: #b858ff transparent #fff958 transparent;
+  border-radius: 50%;
+  animation: rotation 2s linear infinite; }
+  .preloader::before, .preloader::after {
+    content: '';
+    position: absolute;
+    border-width: inherit;
+    border-style: inherit;
+    border-radius: 50%; }
+  .preloader::before {
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    border-color: #3ce7d8 transparent #e74c3c transparent;
+    animation: reverseRotation 1.5s linear infinite; }
+  .preloader::after {
+    top: 24px;
+    right: 24px;
+    bottom: 24px;
+    left: 24px;
+    border-color: #ff67ad transparent #39ff8d transparent;
+    animation: rotation 1s linear infinite; }
+
+/*# sourceMappingURL=style.css.map */
