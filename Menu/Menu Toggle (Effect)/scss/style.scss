@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/*================================================================
+  toggle
+================================================================*/
+
+.toggle {
+  position: relative;
+  width: 120px;
+  height: 51px;
+  padding: 0;
+  border: 0 none;
+  background: url(../img/menu.png) 0/cover no-repeat transparent;
+  cursor: pointer;
+  outline: none;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: url(../img/close.png) 0/cover no-repeat;
+    transition: width .5s;
+  }
+
+  &.active {
+    &::before {
+      width: 100%;
+    }
+  }
+}
