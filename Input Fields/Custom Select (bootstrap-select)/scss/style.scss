@@ -64,6 +64,12 @@ $arrow-color: currentColor;
     padding-left: 0;
   }
 
+  .dropdown-item {
+    .selectpicker__label {
+      display: none;
+    }
+  }
+
   .filter-option {
     vertical-align: top;
   }

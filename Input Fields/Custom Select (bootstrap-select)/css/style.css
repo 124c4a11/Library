@@ -34,6 +34,8 @@ body {
 .bootstrap-select .filter-option,
 .bootstrap-select .dropdown-item {
   padding-left: 0; }
+.bootstrap-select .dropdown-item .selectpicker__label {
+  display: none; }
 .bootstrap-select .filter-option {
   vertical-align: top; }
 .bootstrap-select .dropdown-menu {
