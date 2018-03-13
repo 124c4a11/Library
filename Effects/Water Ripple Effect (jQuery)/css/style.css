@@ -1,0 +1,15 @@
+html,
+body {
+  padding: 0;
+  margin: 0; }
+
+/*================================================================
+  hero
+================================================================*/
+.hero {
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+/*# sourceMappingURL=style.css.map */
