@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box; }
+  *::before, *::after {
+    box-sizing: inherit; }
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font: 16px sans-serif; }
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #960030; }
+
+/*================================================================
+  marquee
+================================================================*/
+@keyframes moveText {
+  0% {
+    transform: translateX(100%); }
+  100% {
+    transform: translateX(-100%); } }
+.marquee {
+  position: relative;
+  width: 1000px;
+  height: 150px;
+  color: #fff; }
+
+.marquee__item {
+  overflow: hidden;
+  position: absolute;
+  width: 500px;
+  height: 150px;
+  font-size: 6em;
+  line-height: 150px;
+  text-align: center; }
+  .marquee__item:nth-child(1) {
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transform: perspective(800px) rotateY(-64deg);
+    background-color: #d80045; }
+    .marquee__item:nth-child(1) .marquee__text {
+      transform: translateX(100%);
+      animation: moveText 10s linear 5s infinite; }
+  .marquee__item:nth-child(2) {
+    top: 0;
+    right: 0;
+    transform-origin: right;
+    transform: perspective(800px) rotateY(64deg);
+    background-color: #f1004d; }
+    .marquee__item:nth-child(2) .marquee__text {
+      animation: moveText 10s linear infinite; }
+
+.marquee__text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  transition-duration: .5s; }
+
+/*# sourceMappingURL=style.css.map */
