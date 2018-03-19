@@ -32,6 +32,7 @@ Thumbs.db
 .idea
 .svn
 .sass-cache
+.vscode
 bower_components
 dist
 build
