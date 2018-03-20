@@ -11,8 +11,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100%;
-  background-color: #323436; }
+  min-height: 100%; }
 
 /*================================================================
   loader
@@ -32,9 +31,9 @@ body {
   0% {
     transform: scale(1, 0.25); }
   30% {
-    transform: scale(1.25, 0.25); }
+    transform: scale(0.8, 0.15); }
   60% {
-    transform: scale(1.5, 0.25); }
+    transform: scale(0.5, 0.1); }
   85% {
     transform: scale(1, 0.25); }
   90% {

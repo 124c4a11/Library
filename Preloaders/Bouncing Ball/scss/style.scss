@@ -14,7 +14,6 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100%;
-  background-color: #323436;
 }
 
 /*================================================================
@@ -26,20 +25,20 @@ $t-func: linear;
 $iteration: infinite;
 
 @keyframes bounce {
-  0% { transform: translateY(-50%) scale(1, .8) }
-  30% { transform: translateY(-250%) scale(.8, 1) }
-  60% { transform: translateY(-300%) scale(1, .8) }
-  85% { transform: translateY(-50%) scale(1, .8) }
-  95%, 100% { transform: translateY(-50%) scale(1, .8) }
+  0% { transform: translateY(-50%) scale(1, .8); }
+  30% { transform: translateY(-250%) scale(.8, 1); }
+  60% { transform: translateY(-300%) scale(1, .8); }
+  85% { transform: translateY(-50%) scale(1, .8); }
+  95%, 100% { transform: translateY(-50%) scale(1, .8); }
 }
 
 @keyframes bounceShadow {
-  0% { transform: scale(1, .25) }
-  30% { transform: scale(1.25, .25) }
-  60% { transform: scale(1.5, .25) }
-  85% { transform: scale(1, .25) }
-  90% { transform: scale(1, .25) }
-  100% { transform: scale(1, .25) }
+  0% { transform: scale(1, .25); }
+  30% { transform: scale(.8, .15); }
+  60% { transform: scale(.5, .1); }
+  85% { transform: scale(1, .25); }
+  90% { transform: scale(1, .25); }
+  100% { transform: scale(1, .25); }
 }
 
 .loader {
