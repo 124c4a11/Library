@@ -1,0 +1,62 @@
+$body-bg-color: #262626;
+
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: $body-bg-color;
+}
+
+/*================================================================
+  preloader
+================================================================*/
+
+$pulse-color: #56ff00;
+
+@keyframes reverseScaling {
+    0% { transform: scale(1.4); }
+  100% { transform: scale(0); }
+}
+
+.preloader {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: $pulse-color;
+  box-shadow: 0 0 0 36px $body-bg-color,
+              0 0 0 40px $pulse-color;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    bottom: -20px;
+    left: -20px;
+    border: 2px solid $pulse-color;
+    border-radius: 50%;
+    animation: reverseScaling 2s linear infinite;
+  }
+
+  &::after {
+    animation-delay: 1s;
+  }
+}
