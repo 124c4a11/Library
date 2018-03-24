@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #000;
+}
+
+/*================================================================
+  box
+================================================================*/
+
+@keyframes moveBg {
+    0% { background-position-x: 0; }
+   50% { background-position-x: 100%; }
+  100% { background-position-x: 0 ; }
+}
+
+.box {
+  position: relative;
+  width: 400px;
+  height: 250px;
+  background-image: linear-gradient(#262626, #000);
+  background-repeat: no-repeat;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    bottom: -2px;
+    left: -2px;
+    z-index: -1;
+    background-image: linear-gradient(45deg, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000);
+    background-size: 2000%;
+    background-repeat: no-repeat;
+    animation: moveBg 40s linear infinite;
+  }
+
+  &::after {
+    filter: blur(20px);
+  }
+}
