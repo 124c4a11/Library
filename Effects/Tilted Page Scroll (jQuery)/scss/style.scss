@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #f1f1f1;
+}
+
+/*================================================================
+  main
+================================================================*/
+
+.main {
+  overflow: hidden;
+}
+
+/*================================================================
+  tps
+================================================================*/
+
+.tps-section {
+  max-width: 1200px;
+  height: 600px;
+  margin: 0 auto;
+
+  &:nth-child(1) .tps-wrapper { background-image: url(../img/1.jpg); }
+  &:nth-child(2) .tps-wrapper { background-image: url(../img/2.jpg); }
+  &:nth-child(3) .tps-wrapper { background-image: url(../img/3.jpg); }
+  &:nth-child(4) .tps-wrapper { background-image: url(../img/4.jpg); }
+  &:nth-child(5) .tps-wrapper { background-image: url(../img/5.jpg); }
+}
+
+.tps-wrapper {
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
