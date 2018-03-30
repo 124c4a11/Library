@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box; }
+  *::before, *::after {
+    box-sizing: inherit; }
+
+html,
+body {
+  padding: 0;
+  margin: 0; }
+
+body {
+  position: relative;
+  height: 4600px;
+  background-color: #e6e7e8; }
+
+/*================================================================
+  parallax-layer-1
+================================================================*/
+.parallax-layer-1 {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  width: 1200px;
+  margin-left: -600px; }
+
+.parallax-layer-1__cloud {
+  position: absolute;
+  width: 488px;
+  height: 138px;
+  background-repeat: no-repeat; }
+
+.parallax-layer-1__cloud_1 {
+  top: 200px;
+  right: 450px;
+  background-image: url(../img/cloud-sm1.png); }
+
+.parallax-layer-1__cloud_2 {
+  top: 420px;
+  left: 0;
+  background-image: url(../img/cloud-lg2.png); }
+
+.parallax-layer-1__cloud_3 {
+  top: 850px;
+  right: -290px;
+  background-image: url(../img/cloud-sm1.png); }
+
+.parallax-layer-1__cloud_4 {
+  top: 1200px;
+  left: -200px;
+  background-image: url(../img/cloud-lg2.png); }
+
+.parallax-layer-1__cloud_5 {
+  top: 1350px;
+  left: 200px;
+  background-image: url(../img/cloud-sm1.png); }
+
+/*================================================================
+  parallax-layer-2
+================================================================*/
+.parallax-layer-2 {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  width: 1200px;
+  margin-left: -600px; }
+
+.parallax-layer-2__cloud {
+  position: absolute;
+  width: 488px;
+  height: 138px;
+  background: url(../img/cloud-lg1.png) no-repeat; }
+
+.parallax-layer-2__cloud_1 {
+  top: 100px;
+  left: -310px; }
+
+.parallax-layer-2__cloud_2 {
+  top: 270px;
+  right: -70px; }
+
+.parallax-layer-2__cloud_3 {
+  top: 870px;
+  left: -300px; }
+
+.parallax-layer-2__cloud_4 {
+  top: 1120px;
+  right: -130px; }
+
+.parallax-layer-2__cloud_5 {
+  top: 1620px;
+  left: 140px; }
+
+.parallax-layer-2__cloud_6 {
+  top: 720px;
+  left: 340px; }
+
+/*================================================================
+  parallax-layer-3
+================================================================*/
+.parallax-layer-3 {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  width: 960px;
+  margin-left: -470px; }
+
+.balloon,
+.balloon2,
+.balloon3,
+.ground {
+  position: absolute;
+  background-repeat: no-repeat; }
+
+.balloon {
+  top: -100px;
+  right: 100px;
+  width: 529px;
+  height: 757px;
+  background-image: url(../img/balloon.png); }
+
+.balloon2 {
+  top: 1050px;
+  right: 70px;
+  width: 630px;
+  height: 583px;
+  background-image: url(../img/balloon2.png); }
+
+.balloon3 {
+  top: 1800px;
+  right: 140px;
+  width: 446px;
+  height: 713px;
+  background-image: url(../img/balloon3.png); }
+
+.ground {
+  top: 2800px;
+  right: 0;
+  width: 1104px;
+  height: 648px;
+  background-image: url(../img/ground.png); }
+
+/*# sourceMappingURL=style.css.map */
