@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box; }
+  *::before, *::after {
+    box-sizing: inherit; }
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font: 16px sans-serif; }
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; }
+
+/*================================================================
+  btn
+================================================================*/
+.btn {
+  position: relative;
+  border: 0 none;
+  font-size: 1.5em;
+  outline: none; }
+  .btn, .btn::before, .btn::after {
+    padding: .3em .8em;
+    color: #fff;
+    text-transform: uppercase; }
+  .btn::before, .btn::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition-duration: 0.5s; }
+  .btn::before {
+    transform-origin: bottom;
+    transform: translateY(-100%) rotateX(90deg);
+    background-color: #ff005e; }
+  .btn::after {
+    transform-origin: top;
+    background-color: #ea004f; }
+  .btn:hover::before, .btn:focus::before {
+    transform: translateY(0) rotateX(0); }
+  .btn:hover::after, .btn:focus::after {
+    transform: translateY(100%) rotateX(90deg); }
+
+/*# sourceMappingURL=style.css.map */
