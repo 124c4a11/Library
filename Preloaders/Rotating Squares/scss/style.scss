@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #000;
+}
+
+/*================================================================
+  preloader
+================================================================*/
+
+$border-width: 10px;
+
+@keyframes rotation {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+
+.preloader {
+  position: relative;
+  perspective: 600px;
+  width: 150px;
+  height: 150px;
+}
+
+.preloader__square {
+  position: absolute;
+  border: $border-width solid #262626;
+  animation: rotation linear infinite;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: $border-width;
+    height: 50%;
+    background-color: #ff0;
+  }
+
+  &::before {
+    top: -$border-width;
+    left: -$border-width;
+  }
+
+  &::after {
+    right: -$border-width;
+    bottom: -$border-width;
+  }
+
+  &:nth-child(1) {
+    top: $border-width * 4;
+    right: $border-width * 4;
+    bottom: $border-width * 4;
+    left: $border-width * 4;
+    animation-duration: 2s;
+  }
+
+  &:nth-child(2) {
+    top: $border-width * 2;
+    right: $border-width * 2;
+    bottom: $border-width * 2;
+    left: $border-width * 2;
+    animation-duration: 4s;
+  }
+
+  &:nth-child(3) {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    animation-duration: 8s;
+  }
+}

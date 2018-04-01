@@ -1,0 +1,67 @@
+* {
+  box-sizing: border-box; }
+  *::before, *::after {
+    box-sizing: inherit; }
+
+html,
+body {
+  padding: 0;
+  margin: 0; }
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #000; }
+
+/*================================================================
+  preloader
+================================================================*/
+@keyframes rotation {
+  from {
+    transform: rotateY(0deg); }
+  to {
+    transform: rotateY(360deg); } }
+.preloader {
+  position: relative;
+  perspective: 600px;
+  width: 150px;
+  height: 150px; }
+
+.preloader__square {
+  position: absolute;
+  border: 10px solid #262626;
+  animation: rotation linear infinite; }
+  .preloader__square::before, .preloader__square::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 50%;
+    background-color: #ff0; }
+  .preloader__square::before {
+    top: -10px;
+    left: -10px; }
+  .preloader__square::after {
+    right: -10px;
+    bottom: -10px; }
+  .preloader__square:nth-child(1) {
+    top: 40px;
+    right: 40px;
+    bottom: 40px;
+    left: 40px;
+    animation-duration: 2s; }
+  .preloader__square:nth-child(2) {
+    top: 20px;
+    right: 20px;
+    bottom: 20px;
+    left: 20px;
+    animation-duration: 4s; }
+  .preloader__square:nth-child(3) {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    animation-duration: 8s; }
+
+/*# sourceMappingURL=style.css.map */
