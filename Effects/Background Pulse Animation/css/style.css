@@ -1,0 +1,88 @@
+* {
+  box-sizing: border-box; }
+  *::before, *::after {
+    box-sizing: inherit; }
+
+html,
+body {
+  padding: 0;
+  margin: 0; }
+
+/*================================================================
+  bg-pulse
+================================================================*/
+@keyframes moveAndScaling {
+  from {
+    transform: scale(0) translateY(0) rotate(0);
+    opacity: 1; }
+  to {
+    transform: scale(1) translateY(-100%) rotate(360deg);
+    opacity: 0; } }
+@keyframes changeBgColor {
+  0% {
+    background-color: #f44336; }
+  25% {
+    background-color: #03a9f4; }
+  50% {
+    background-color: #9c27b0; }
+  75% {
+    background-color: #00ff0a; }
+  100% {
+    background-color: #f44336; } }
+.bg-pulse {
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+  animation: changeBgColor 20s linear infinite; }
+
+.bg-pulse__item {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  animation: moveAndScaling linear infinite; }
+  .bg-pulse__item:nth-child(3n + 1) {
+    border: 5px solid #fff;
+    background-color: transparent; }
+  .bg-pulse__item:nth-child(1) {
+    top: 50%;
+    left: 20%;
+    animation-duration: 10s; }
+  .bg-pulse__item:nth-child(2) {
+    top: 80%;
+    left: 40%;
+    animation-duration: 12s; }
+  .bg-pulse__item:nth-child(3) {
+    top: 10%;
+    left: 65%;
+    animation-duration: 15s; }
+  .bg-pulse__item:nth-child(4) {
+    top: 50%;
+    left: 70%;
+    animation-duration: 6s; }
+  .bg-pulse__item:nth-child(5) {
+    top: 10%;
+    left: 30%;
+    animation-duration: 9s; }
+  .bg-pulse__item:nth-child(6) {
+    top: 90%;
+    left: 95%;
+    animation-duration: 8s; }
+  .bg-pulse__item:nth-child(7) {
+    top: 80%;
+    left: 5%;
+    animation-duration: 5s; }
+  .bg-pulse__item:nth-child(8) {
+    top: 35%;
+    left: 50%;
+    animation-duration: 14s; }
+  .bg-pulse__item:nth-child(9) {
+    top: 5%;
+    left: 5%;
+    animation-duration: 11s; }
+  .bg-pulse__item:nth-child(10) {
+    top: 25%;
+    left: 90%;
+    animation-duration: 10s; }
+
+/*# sourceMappingURL=style.css.map */
