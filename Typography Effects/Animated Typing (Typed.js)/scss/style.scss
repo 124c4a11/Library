@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font: 16px sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #e91e63;
+}
+
+/*================================================================
+  type
+================================================================*/
+
+.type {
+  font-size: 3em;
+  color: #fff;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+}
