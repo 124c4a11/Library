@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font: 16px sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #000;
+}
+
+/*================================================================
+  neon
+================================================================*/
+
+$color1: red;
+$color2: blue;
+
+@keyframes moveLight {
+  100% { transform: translate3d(50%, 50%, 0)}
+}
+
+.neon {
+  overflow: hidden;
+  position: relative;
+  // The blend modes mute the colors, so let's bump them up
+  filter: contrast(110%) brightness(190%);
+}
+
+.neon__text {
+  position: relative;
+  margin: 0;
+  font-size: 15vw;
+  color: transparent;
+  text-transform: uppercase;
+  // Only works on a black background
+  background-color: #000;
+
+  &::before,
+  &::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    // White, so we can paint them later
+    color: #fff;
+    pointer-events: none;
+    filter: blur(.02em);
+  }
+
+  &::after {
+    // Set the top copy to difference. This creates the knock-out effect with a bit of glow
+    mix-blend-mode: difference;
+  }
+}
+
+.neon__gradient,
+.neon__spotlight {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.neon__gradient {
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(45deg, $color1, $color2);
+  // Multiply mode will paint only the white text
+  mix-blend-mode: multiply;
+}
+
+.neon__spotlight {
+  top: -100%;
+  left: -100%;
+  background: radial-gradient(circle, white, transparent 25%) 0 0 / 25% 25%, radial-gradient(circle, white, black 25%) 50% 50% / 12.5% 12.5%;
+  mix-blend-mode: color-dodge;
+  animation: moveLight 7s infinite linear;
+}
