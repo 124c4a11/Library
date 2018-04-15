@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gallery Lightbox</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="gallery">
+    <ul class="gallery__list">
+      <li class="gallery__item">
+        <a href="img/gallery/lg/img-1-lg.jpg" class="gallery__item-link">
+          <img src="img/gallery/img-1-sm.jpg" alt="" class="gallery__item-img"></a>
+      </li>
+      <li class="gallery__item">
+        <a href="img/gallery/lg/img-2-lg.jpg" class="gallery__item-link">
+          <img src="img/gallery/img-2-sm.jpg" alt="" class="gallery__item-img"></a>
+      </li>
+      <li class="gallery__item">
+        <a href="img/gallery/lg/img-3-lg.jpg" class="gallery__item-link">
+          <img src="img/gallery/img-3-sm.jpg" alt="" class="gallery__item-img"></a>
+      </li>
+      <li class="gallery__item">
+        <a href="img/gallery/lg/img-4-lg.jpg" class="gallery__item-link">
+          <img src="img/gallery/img-4-sm.jpg" alt="" class="gallery__item-img"></a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="lightbox">
+    <div class="lightbox__preview">
+      <div class="lightbox__controls">
+        <button class="lightbox__btn lightbox__btn_prev">
+          <span class="lightbox__btn-icon">←</span>
+          <span class="lightbox__btn-text">prev</span>
+        </button>
+        <button class="lightbox__btn lightbox__btn_next">
+          <span class="lightbox__btn-text">next</span>
+          <span class="lightbox__btn-icon">→</span>
+        </button>
+      </div>
+      <img class="lightbox__preview-img" src="">
+    </div>
+  </div>
+
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>

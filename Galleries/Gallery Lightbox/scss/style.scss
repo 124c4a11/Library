@@ -1,0 +1,143 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #1c1c1c;
+}
+
+img {
+  max-width: 100%;
+}
+
+/*================================================================
+  gallery
+================================================================*/
+
+.gallery {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.gallery__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.gallery__item {
+  overflow: hidden;
+  flex: 0 0 320px;
+  height: 180px;
+  margin: 1px;
+}
+
+.gallery__item-link,
+.gallery__item-img {
+  display: block;
+}
+
+/*================================================================
+  lightbox
+================================================================*/
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, .8);
+}
+
+.lightbox__preview {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  max-width: 800px;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+.lightbox__btn {
+  position: absolute;
+  top: 50%;
+  height: 50%;
+  width: 10%;
+  border: 0;
+  color: #fff;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.lightbox__btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  height: 4vw;
+  width: 4vw;
+  max-height: 40px;
+  max-width: 40px;
+  margin: auto;
+  border-top: 1px solid #fff;
+  transform-origin: center;
+}
+
+.lightbox__btn_prev {
+  right: 100%;
+}
+
+.lightbox__btn_next {
+  left: 100%;
+}
+
+.lightbox__btn_prev::before {
+  border-left: 1px solid #fff;
+  transform: rotate(-45deg);
+}
+
+.lightbox__btn_next::before {
+  border-right: 1px solid #fff;
+  transform: rotate(45deg);
+}
+
+.lightbox__btn-icon {
+  margin: 0 5px;
+  display: none;
+}
+
+.lightbox__btn-text {
+  display: none;
+}
+
+.lightbox__preview-img {
+  display: block;
+}
