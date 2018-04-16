@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box; }
+  *::before, *::after {
+    box-sizing: inherit; }
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font: 16px sans-serif; }
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #262626; }
+
+/*================================================================
+  list
+================================================================*/
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.list__item + .list__item {
+  margin-top: 2rem; }
+
+/*================================================================
+  customradio
+================================================================*/
+.customradio {
+  min-width: 180px; }
+
+.customradio__radio {
+  position: absolute;
+  top: -99999px;
+  left: -99999px; }
+  .customradio__radio:checked + .customradio__label::before {
+    background-color: #fff; }
+
+.customradio__label {
+  display: flex;
+  align-items: center;
+  font-size: 1.4em;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer; }
+  .customradio__label::before {
+    content: '';
+    display: inline-block;
+    width: 2.125rem;
+    height: 2.125rem;
+    margin-right: 1rem;
+    border: 0.5rem solid #fff;
+    border-radius: 50%;
+    transition: .25s linear; }
+  .customradio__label:hover, .customradio__radio:focus + .customradio__label, .customradio__radio:checked + .customradio__label {
+    color: #009688; }
+    .customradio__label:hover::before, .customradio__radio:focus + .customradio__label::before, .customradio__radio:checked + .customradio__label::before {
+      border-color: #009688;
+      margin-right: 2rem; }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,104 @@
+@mixin visual-hidden() {
+  position: absolute;
+  top: -99999px;
+  left: -99999px;
+}
+
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font: 16px sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #262626;
+}
+
+/*================================================================
+  list
+================================================================*/
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list__item {
+  & + & { margin-top: 2rem; }
+}
+
+/*================================================================
+  customradio
+================================================================*/
+
+$primary-color: #fff;
+$accent-color: #009688;
+
+.customradio {
+  min-width: 180px;
+}
+
+.customradio__radio {
+  @include visual-hidden;
+
+  &:focus {
+    & + .customradio__label {
+      @extend .customradio__label:hover;
+    }
+  }
+
+  &:checked {
+    & + .customradio__label {
+      @extend .customradio__label:hover;
+
+      &::before {
+        @extend .customradio__label:hover::before;
+        background-color: $primary-color;
+      }
+    }
+  }
+}
+
+.customradio__label {
+  display: flex;
+  align-items: center;
+  font-size: 1.4em;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 2.125rem;
+    height: 2.125rem;
+    margin-right: 1rem;
+    border: .5rem solid $primary-color;
+    border-radius: 50%;
+    transition: .25s linear;
+  }
+
+  &:hover {
+    color: $accent-color;
+
+    &::before {
+      border-color: $accent-color;
+      margin-right: 2rem;
+    }
+  }
+}
