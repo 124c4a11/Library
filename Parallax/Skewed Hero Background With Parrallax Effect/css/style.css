@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box; }
+  *::before, *::after {
+    box-sizing: inherit; }
+
+html,
+body {
+  padding: 0;
+  margin: 0; }
+
+/*================================================================
+  hero
+================================================================*/
+.hero {
+  position: relative;
+  height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.hero__divider {
+  overflow: hidden;
+  position: absolute;
+  display: flex;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%; }
+
+.hero__divider-item {
+  overflow: hidden;
+  flex-basis: 50%; }
+  .hero__divider-item:first-child {
+    transform: skewX(81deg);
+    transform-origin: left bottom; }
+    .hero__divider-item:first-child .hero__divider-item-bg {
+      transform: skewX(-81deg);
+      transform-origin: left bottom; }
+  .hero__divider-item:last-child {
+    transform: skewX(-81deg);
+    transform-origin: right bottom; }
+    .hero__divider-item:last-child .hero__divider-item-bg {
+      transform: skew(81deg);
+      transform-origin: right bottom; }
+
+.hero__divider-item-bg {
+  height: 100%;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+/*# sourceMappingURL=style.css.map */
