@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font: 16px 'Poppins', sans-serif;
+}
+
+p {
+  padding: .8em 0;
+  font-weight: 300;
+  font-size: 1.1rem;
+  line-height: 2em;
+  color: rgba(0, 0, 0, .5);
+}
+
+/*================================================================
+  container
+================================================================*/
+
+.container {
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+/*================================================================
+  page-header
+================================================================*/
+
+.page-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: rgba(255, 255, 255, .95);
+  border-bottom: 1px solid #ccc;
+}
+
+/*================================================================
+  logo
+================================================================*/
+
+.logo {
+  font-weight: 300;
+  font-size: 1.6rem;
+  padding: 1em 0;
+}
+
+/*================================================================
+  scrollprogress
+================================================================*/
+
+.scrollprogress {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #000;
+}
+
+/*================================================================
+  main
+================================================================*/
+
+.main {
+  padding: 120px 0 80px;
+}
