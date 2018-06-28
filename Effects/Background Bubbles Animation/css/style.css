@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box; }
+  *::before, *::after {
+    box-sizing: inherit; }
+
+html,
+body {
+  padding: 0;
+  margin: 0; }
+
+body {
+  overflow: hidden; }
+
+/*================================================================
+  bubbles
+================================================================*/
+@keyframes flying {
+  0% {
+    bottom: -100px;
+    transform: translateX(0); }
+  50% {
+    transform: translateX(100px); }
+  100% {
+    bottom: 110%;
+    transform: translateX(-100px); } }
+.bubbles {
+  overflow: hidden;
+  height: 100vh;
+  background-color: #9b59b6; }
+
+.bubble {
+  position: absolute;
+  bottom: -100px;
+  border-radius: 50%;
+  background-color: #f1f1f1;
+  opacity: .5;
+  animation-name: flying;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite; }
+  .bubble:nth-child(1) {
+    left: 10%;
+    width: 40px;
+    height: 40px;
+    animation-duration: 8s; }
+  .bubble:nth-child(2) {
+    left: 20%;
+    width: 20px;
+    height: 20px;
+    animation-duration: 5s;
+    animation-delay: 1s; }
+  .bubble:nth-child(3) {
+    left: 35%;
+    width: 50px;
+    height: 50px;
+    animation-duration: 10s;
+    animation-delay: 2s; }
+  .bubble:nth-child(4) {
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    animation-duration: 7s; }
+  .bubble:nth-child(5) {
+    left: 55%;
+    width: 35px;
+    height: 35px;
+    animation-duration: 6s;
+    animation-delay: 1s; }
+  .bubble:nth-child(6) {
+    left: 65%;
+    width: 45px;
+    height: 45px;
+    animation-duration: 8s;
+    animation-delay: 3s; }
+  .bubble:nth-child(7) {
+    left: 65%;
+    width: 45px;
+    height: 45px;
+    animation-duration: 9s;
+    animation-delay: 3s; }
+  .bubble:nth-child(8) {
+    left: 80%;
+    width: 80px;
+    height: 80px;
+    animation-duration: 6s;
+    animation-delay: 1s; }
+  .bubble:nth-child(9) {
+    left: 70%;
+    width: 15px;
+    height: 15px;
+    animation-duration: 6s;
+    animation-delay: 3s; }
+  .bubble:nth-child(10) {
+    left: 85%;
+    width: 50px;
+    height: 50px;
+    animation-duration: 5s;
+    animation-delay: 3s; }
+
+/*# sourceMappingURL=style.css.map */
