@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #262626;
+}
+
+/*================================================================
+  hamburdte
+================================================================*/
+
+$duration: .3s;
+$item-height: 4px;
+
+.hamburger {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: 0 none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+}
+
+.hamburger__item {
+  top: 50%;
+  transform: translateY(-50%);
+
+  &,
+  &::before,
+  &::after {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: $item-height;
+    transform-origin: .6s;
+    background-color: tomato;
+    transition-duration: $duration;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    top: 0;
+  }
+
+  &::before {
+    transform: translateY(13px);
+  }
+
+  &::after {
+    transform: translateY(-13px);
+  }
+}
+
+.hamburger_arrow {
+  .hamburger__item {
+    transform: translateY(-50%) rotate(180deg);
+
+    &::before,
+    &::after {
+    }
+
+    &::before {
+      transform-origin: 100% 0;
+      transform: rotate(-45deg) scaleX(.7);
+    }
+
+    &::after {
+      transform-origin: 100% 100%;
+      transform: rotate(45deg) scaleX(.7);
+    }
+  }
+}
