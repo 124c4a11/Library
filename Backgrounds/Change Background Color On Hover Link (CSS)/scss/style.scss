@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font: 18px / 1.5 sans-serif;
+}
+
+/*================================================================
+  section
+================================================================*/
+
+.section {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+}
+
+.section__col {
+  flex: 1 1 50%;
+  padding: 40px;
+
+  &:nth-child(2) { background-color: #494d6a; }
+}
+
+.section__descr {
+  position: relative;
+  color: #fff;
+}
+
+.section__title {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/*================================================================
+  colors
+================================================================*/
+
+$duration: .3s;
+$t-func: ease;
+
+.colors {
+  padding: 0;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  font-size: 5vw;
+  list-style: none;
+}
+
+.colors__item { line-height: 1.2; }
+
+.colors__link {
+  display: block;
+  color: rgba(0, 0, 0, .2);
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  transition: color $duration $t-func;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    opacity: 0;
+    transition: $duration $t-func;
+  }
+
+  &:hover,
+  &:focus {
+    &::before { opacity: 1; }
+  }
+}
+
+.colors__link_red {
+  &:hover,
+  &:focus { color: red; }
+
+  &::before { background-color: red; }
+}
+
+.colors__link_green {
+  &:hover,
+  &:focus { color: green; }
+
+  &::before { background-color: green; }
+}
+
+.colors__link_blue {
+  &:hover,
+  &:focus { color: blue; }
+
+  &::before { background-color: blue; }
+}
+
+.colors__link_orange {
+  &:hover,
+  &:focus { color: orange; }
+
+  &::before { background-color: orange; }
+}
+
+.colors__link_purple {
+  &:hover,
+  &:focus { color: purple; }
+
+  &::before { background-color: purple; }
+}
