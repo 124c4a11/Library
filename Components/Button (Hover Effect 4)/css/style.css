@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box; }
+  *::before, *::after {
+    box-sizing: inherit; }
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font: 16px sans-serif; }
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; }
+
+/*================================================================
+  btn
+================================================================*/
+.btn {
+  overflow: hidden;
+  position: relative;
+  padding: .5em 1.5em;
+  border: 2px solid #c0a064;
+  font-size: 1.4em;
+  color: #c0a064;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background-color: transparent;
+  outline: none;
+  transition: 0.25s ease; }
+  .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transform-origin: 0 100%;
+    transform: rotate(-90deg);
+    width: 100%;
+    height: 100%;
+    background-color: #c0a064;
+    transition-duration: inherit inherit; }
+  .btn:hover, .btn:focus {
+    color: #fff; }
+    .btn:hover::before, .btn:focus::before {
+      transform: rotate(0deg); }
+
+/*# sourceMappingURL=style.css.map */
