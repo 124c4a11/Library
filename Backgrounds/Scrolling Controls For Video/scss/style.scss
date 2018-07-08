@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font: 16px sans-serif;
+}
+
+/*================================================================
+  video
+================================================================*/
+
+.video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
