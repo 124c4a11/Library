@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font: 16px sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #262626;
+}
+
+/*================================================================
+  btn
+================================================================*/
+
+.btn {
+  overflow: hidden;
+  position: relative;
+  padding: .6em 1.5em;
+  border: 2px solid goldenrod;
+  border-radius: 2px;
+  font-size: 1.2rem;
+  color: goldenrod;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  background-color: transparent;
+  outline: none;
+  transition-duration: .5s;
+
+  &::before,
+  &::after,
+  .btn__text::before,
+  .btn__text::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    transform: translateY(150%);
+    width: 25%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: goldenrod;
+    transition-duration: .5s;
+  }
+
+  &::before {
+    left: 0;
+  }
+
+  &::after {
+    left: 25%;
+    transition-delay: .1s;
+  }
+
+  .btn__text::before {
+    left: 50%;
+    transition-delay: .2s;
+  }
+
+  .btn__text::after {
+    left: 75%;
+    transition-delay: .3s;
+  }
+
+  &:hover,
+  &:focus {
+    color: #262626;
+
+    &::before,
+    &::after,
+    .btn__text::before,
+    .btn__text::after {
+      transform: translateY(0) scale(2);
+    }
+  }
+}
