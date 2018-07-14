@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font: 16px sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #262626;
+}
+
+/*================================================================
+  gradient-text
+================================================================*/
+@keyframes moveBg {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 300%;
+  }
+}
+.gradient-text {
+  position: relative;
+  font-size: 8vw;
+  color: #fff;
+  text-transform: uppercase;
+}
+.gradient-text::before {
+  content: attr(data-text);
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(90deg, #d630f2, #ff002f, #e4ff00, #d630f2) center/300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: moveBg 5s linear infinite;
+  transition: width 2s;
+}
+
+/*# sourceMappingURL=style.css.map */
