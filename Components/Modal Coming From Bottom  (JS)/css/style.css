@@ -1,0 +1,128 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font: 16px "Montserrat", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/*================================================================
+  btn
+================================================================*/
+.btn {
+  display: inline-block;
+  padding: 0.62em 1.87em;
+  border: 2px solid #e74c3c;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  background-color: #e74c3c;
+  outline: none;
+  transition-duration: 0.25s;
+  cursor: pointer;
+}
+.btn:hover, .btn:focus {
+  color: #e74c3c;
+  background-color: transparent;
+}
+
+.btn_outline {
+  color: #e74c3c;
+  background-color: transparent;
+}
+.btn_outline:hover, .btn_outline:focus {
+  color: #fff;
+  background-color: #e74c3c;
+}
+
+.btn_sm {
+  font-size: 0.87rem;
+}
+
+/*================================================================
+  modal
+================================================================*/
+.modal {
+  visibility: hidden;
+  overflow: hidden;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  transform: translateY(calc(100% + 20px));
+  display: flex;
+  align-items: flex-start;
+  width: 500px;
+  color: #fff;
+  background-color: #34495e;
+  opacity: 0;
+  transition: visibility 0s 0.5s, transform 0.5s, opacity 0.5s;
+}
+
+.modal__img-wrapper {
+  overflow: hidden;
+  flex: 0 0 200px;
+}
+
+.modal__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.modal__description {
+  padding: 1.25rem;
+}
+.modal__description > p {
+  font-size: 0.93em;
+}
+
+.modal__title {
+  margin-top: 0;
+  font-size: 1.25em;
+}
+
+.modal__close {
+  position: absolute;
+  top: 0;
+  right: 0.15rem;
+  border: 0 none;
+  padding: 0.5rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: transparent;
+  outline: none;
+  transition-duration: 0.25s;
+  opacity: 1;
+  cursor: pointer;
+}
+.modal__close:hover, .modal__close:focus {
+  transform: rotate(90deg);
+  color: #e74c3c;
+}
+
+/*================================================================
+  modal_visible
+================================================================*/
+.modal_visible {
+  visibility: visible;
+  transform: translateY(0);
+  opacity: 1;
+  transition: visibility 0s 0s, transform 0.5s, opacity 0.5s;
+}
+
+/*# sourceMappingURL=style.css.map */
