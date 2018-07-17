@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font: 16px 'Open Sans', sans-serif;
+}
+
+@keyframes rainbow {
+    0% { background-color: #0094ff; }
+    3% { background-color: #0094ff; }
+   20% { background-color: #0094ff; }
+   23% { background-color: #b200ff; }
+   40% { background-color: #b200ff; }
+   43% { background-color: #8bc34a; }
+   60% { background-color: #8bc34a; }
+   63% { background-color: #f44336; }
+   80% { background-color: #f44336; }
+   83% { background-color: #f44336; }
+  100% { background-color: #0094ff; }
+}
+
+body {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #0094ff;
+  animation: rainbow 5s linear infinite;
+}
+
+/*================================================================
+  page-title
+================================================================*/
+
+@keyframes roll {
+  0% {
+    transform: rotate(-25deg);
+    margin-left: -.83em;
+    margin-top: -100px;
+    font-size: 0;
+    opacity: 0;
+  }
+  3% {
+    opacity: 1;
+    transform: rotate(0);
+  }
+  5% {
+    opacity: 1;
+    margin-left: 0;
+    margin-top: 0;
+    font-size: inherit;
+  }
+  20% {
+    transform: rotate(0);
+    margin-left: 0;
+    margin-top: 0;
+    font-size: inherit;
+    opacity: 1;
+  }
+  27% {
+    margin-left: .55em;
+    margin-top: 100px;
+    font-size: 0;
+    opacity: .5;
+  }
+  100% {
+    transform: rotate(15deg);
+    margin-left: .83em;
+    margin-top: 0;
+    font-size: 0;
+    opacity: 0;
+  }
+}
+
+.page-title {
+  font-weight: 300;
+  font-size: 3vw;
+  color: #fff;
+}
+
+.page-title__dropping {
+  display: inline-block;
+  height: 1.05em;
+}
+
+.page-title__dropping-item { 
+  position: absolute;
+  margin-left: -.83em;
+  font-weight: 700;
+  font-size: 0;
+  box-shadow: 0 1.6em .69em -.55em rgba(0, 0, 0, .5);
+  animation: roll 5s linear infinite;
+
+  @for $i from 2 through 4 {
+    &:nth-child(#{$i}) { animation-delay: $i - 1s; }
+  }
+}
