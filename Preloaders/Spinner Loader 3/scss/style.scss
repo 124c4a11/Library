@@ -1,0 +1,99 @@
+* { 
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #262626;
+}
+
+/*================================================================
+  preloder
+================================================================*/
+
+$t-func: cubic-bezier(.16, .15, .07, .88);
+$duration: 2s;
+
+@keyframes rotatePreloader {
+  0% { transform: rotate(0); }
+  50% { transform: rotate(-90deg); }
+}
+
+@keyframes rotateItem-1 {
+  0% { transform: rotate(-45deg); }
+  50%,
+  100% { transform: rotate(315deg); }
+}
+
+@keyframes rotateItem-2 {
+  0% { transform: rotate(45deg); }
+  50%,
+  100% { transform: rotate(405deg); }
+}
+
+@keyframes rotateItem-3 {
+  0% { transform: rotate(-135deg); }
+  50%,
+  100% { transform: rotate(225deg); }
+}
+
+@keyframes rotateItem-4 {
+  0% { transform: rotate(135deg); }
+  50%,
+  100% { transform: rotate(495deg); }
+}
+
+.preloader {
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  animation: rotatePreloader $duration $t-func infinite;
+}
+
+.preloader__item {
+  position: absolute;
+  border: 2rem solid #ffcf56;
+  border-radius: 50%;
+  border-bottom-color: transparent;
+
+  &:nth-child(1) {
+    top: -3rem;
+    left: -3rem;
+    transform: rotate(-45deg);
+    animation: rotateItem-1 $duration $t-func infinite;
+  }
+
+  &:nth-child(2) {
+    top: -3rem;
+    right: -3rem;
+    transform: rotate(45deg);
+    animation: rotateItem-2 $duration $t-func infinite;
+  }
+
+  &:nth-child(3) {
+    bottom: -3rem;
+    left: -3rem;
+    transform: rotate(-135deg);
+    animation: rotateItem-3 $duration $t-func infinite;
+  }
+
+  &:nth-child(4) {
+    bottom: -3rem;
+    right: -3rem;
+    transform: rotate(135deg);
+    animation: rotateItem-4 $duration $t-func infinite;
+  }
+}
