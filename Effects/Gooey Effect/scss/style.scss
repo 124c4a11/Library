@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/*================================================================
+  gooey
+================================================================*/
+
+.gooey {
+  padding: 20px;
+    background-color: #fff; // gooey effect
+    filter: blur(10px) contrast(20); // gooey effect
+}
+
+.gooey__item {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border-radius:50%;
+  background:#000;
+}
