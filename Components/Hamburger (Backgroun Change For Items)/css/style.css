@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #303444;
+}
+
+/*==========================================================================
+  hamburger
+==========================================================================*/
+.hamburger {
+  position: relative;
+  width: 34px;
+  height: 26px;
+  padding: 0;
+  border: 0 none;
+  overflow: hidden;
+  background: none;
+  outline: none;
+  cursor: pointer;
+}
+.hamburger .hamburger__item, .hamburger::before, .hamburger::after {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+}
+.hamburger::before, .hamburger::after {
+  content: "";
+}
+.hamburger::before {
+  top: 0;
+  transition: top 0.25s 0.25s linear, transform 0.25s 0s linear, background-color 0.25s;
+}
+.hamburger::after {
+  bottom: 0;
+  transition: bottom 0.25s 0.25s linear, transform 0.25s 0s linear, background-color 0.25s;
+}
+.hamburger:hover .hamburger__item, .hamburger:hover::before, .hamburger:hover::after, .hamburger:focus .hamburger__item, .hamburger:focus::before, .hamburger:focus::after {
+  background-color: #fed25f;
+}
+
+.hamburger__item {
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 0s 0.25s, background-color 0.25s;
+}
+
+/*==========================================================================
+  hamburger_open
+==========================================================================*/
+.hamburger_close {
+  z-index: 99999;
+}
+.hamburger_close::before {
+  top: 12px;
+  transform: rotate(-45deg);
+  transition: top 0.25s linear 0s, transform 0.25s linear 0.25s, background-color 0.25s;
+}
+.hamburger_close::after {
+  bottom: 12px;
+  transform: rotate(45deg);
+  transition: bottom 0.25s linear 0s, transform 0.25s linear 0.25s, background-color 0.25s;
+}
+.hamburger_close .hamburger__item {
+  opacity: 0;
+  transition: opacity 0s 0.25s;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #303444;
+}
+
+/*==========================================================================
+  hamburger
+==========================================================================*/
+
+$hamburger-width: 34px;
+$hamburger-height: 26px;
+$hamburger-padding: 0;
+$hamburger-bg: none;
+
+$item-width: 100%;
+$item-height: 2px;
+$item-space: ($hamburger-height - $item-height) / 2;
+$item-bg-color: #fff;
+$item-bg-color-focus: #fed25f;
+$items-bg-color-open: #fff;
+
+$duration: .25s;
+$t-func: linear;
+
+.hamburger {
+  position: relative;
+  width: $hamburger-width;
+  height: $hamburger-height;
+  padding: $hamburger-padding;
+  border: 0 none;
+  overflow: hidden;
+  background: $hamburger-bg;
+  outline: none;
+  cursor: pointer;
+
+  .hamburger__item,
+  &::before,
+  &::after {
+    position: absolute;
+    left: 0;
+    width: $item-width;
+    height: $item-height;
+    background-color: $item-bg-color;
+  }
+
+  &::before,
+  &::after { content: ''; }
+
+  &::before { 
+    top: 0;
+    transition: top $duration $duration $t-func, transform $duration 0s $t-func, background-color $duration;
+   }
+   
+  &::after {
+    bottom: 0;
+    transition: bottom $duration $duration $t-func, transform $duration 0s $t-func, background-color $duration;
+  }
+
+  &:hover,
+  &:focus {
+    .hamburger__item,
+    &::before,
+    &::after { background-color: $item-bg-color-focus; }
+  }
+}
+
+.hamburger__item {
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 0s $duration, background-color $duration;
+}
+
+/*==========================================================================
+  hamburger_open
+==========================================================================*/
+
+.hamburger_close {
+  z-index: 99999;
+
+  &::before {
+    top: $item-space;
+    transform: rotate(-45deg);
+    transition: top $duration $t-func 0s, transform $duration $t-func $duration, background-color $duration;
+  }
+
+  &::after {
+    bottom: $item-space;
+    transform: rotate(45deg);
+    transition: bottom $duration $t-func 0s, transform $duration $t-func $duration, background-color $duration;
+  }
+
+  .hamburger__item {
+    opacity: 0;
+    transition: opacity 0s $duration;
+  }
+}
