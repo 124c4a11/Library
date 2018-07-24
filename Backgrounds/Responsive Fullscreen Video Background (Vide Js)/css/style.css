@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font: 16px "Open Sans", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+}
+
+/*================================================================
+  hero-section
+================================================================*/
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.hero-section__title {
+  padding: 0 15px;
+  font-size: 1rem;
+  color: #fff;
+  letter-spacing: 2.5vw;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/*# sourceMappingURL=style.css.map */
