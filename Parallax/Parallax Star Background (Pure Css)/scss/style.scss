@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font: 16px 'Lato', sans-serif;
+}
+
+body {
+  overflow: hidden;
+  min-height: 100vh;
+  background: radial-gradient(ellipse at bottom, #1b2735 0, #090a0f 100%);
+}
+
+/*================================================================
+  stars  
+================================================================*/
+
+// n - number stars required
+@function multiple-box-shadow($n) {
+  $value: '#{random(2000)}px #{random(2000)}px #fff';
+
+  @for $i from 2 through $n {
+    $value: '#{$value}, #{random(2000)}px #{random(2000)}px #fff';
+  }
+
+  @return unquote($value);
+}
+
+$shadow-sm: multiple-box-shadow(700);
+$shadow-md: multiple-box-shadow(200);
+$shadow-lg: multiple-box-shadow(100);
+
+@keyframes moveStars {
+  from { transform: translateY(0); }
+  to { transform: translateY( -2000px); }
+}
+
+.stars-1,
+.stars-2,
+.stars-3 {
+  position: relative;
+  background-color: transparent;
+  animation: moveStars linear infinite;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 2000px;
+    width: inherit;
+    height: inherit;
+    background-color: transparent;
+    box-shadow: inherit;
+  }
+}
+
+.stars-1 {
+  width: 1px;
+  height: 1px;
+  box-shadow: $shadow-sm;
+  animation-duration: 50s;
+}
+
+.stars-2 {
+  width: 2px;
+  height: 2px;
+  box-shadow: $shadow-md;
+  animation-duration: 100s;
+}
+
+.stars-3 {
+  width: 3px;
+  height: 3px;
+  box-shadow: $shadow-lg;
+  animation-duration: 150s;
+}
+
+/*================================================================
+  title
+================================================================*/
+
+.title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 300;
+  font-size: 2.5vw;
+  letter-spacing: .5vw;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+
+  span {
+    background-image: linear-gradient(#fff, #38495a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
