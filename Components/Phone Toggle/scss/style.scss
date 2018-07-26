@@ -1,0 +1,102 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #303444;
+}
+
+/*================================================================
+  phone-toggle
+================================================================*/
+
+$color: #fff;
+$color-active: #fed25f;
+$color-open: #fff;
+
+$toggle-width: 34px;
+$toggle-height: 26px;
+$toggle-bg: transparent;
+
+$item-width: 100%;
+$item-height: 2px;
+$item-space: ($toggle-height - $item-height) / 2;
+
+$duration: .25s;
+$t-func: linear;
+
+.phone-toggle {
+  overflow: hidden;
+  position: relative;
+  width: $toggle-width;
+  height: $toggle-height;
+  padding: 0;
+  border: 0 none;
+  color: $color;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus { color: $color-active; }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: $item-space;
+    left: 0;
+    transform: rotate(0) scale(.5);
+    width: $item-width;
+    height: $item-height;
+    background-color: currentColor;
+    opacity: 0;
+    transition: color $duration, opacity $duration $t-func 0s, transform $duration/2 $t-func 0s;
+  }
+}
+
+.phone-toggle__svg {
+  width: $toggle-height;
+  height: $toggle-height;
+  transform: rotateY(180deg) scale(1);
+  fill: currentColor;
+  opacity: 1;
+  transition: color $duration, opacity $duration $t-func $duration, transform $duration $t-func $duration;
+}
+
+/*================================================================
+  phone__toggle_close
+================================================================*/
+
+.phone-toggle_close {
+  z-index: 99999;
+
+  &::before,
+  &::after {
+    opacity: 1;
+    transition: color $duration, opacity $duration/2 $t-func $duration/2, transform $duration $t-func $duration;
+  }
+
+  &::before { transform: rotate(-45deg) scale(1); }
+
+  &::after { transform: rotate(45deg) scale(1); }
+
+  .phone-toggle__svg {
+    transform: rotateY(180deg) scale(.5);
+    opacity: 0;
+    transition: color $duration, opacity $duration $t-func 0s, transform $duration $t-func 0s;
+  }
+}
