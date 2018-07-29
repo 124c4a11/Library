@@ -1,0 +1,104 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font: 16px sans-serif;
+}
+
+body {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #000;
+}
+
+/*================================================================
+  loader
+================================================================*/
+@keyframes changeColor {
+  0% {
+    color: dodgerblue;
+  }
+  20% {
+    color: gold;
+  }
+  40% {
+    color: hotpink;
+  }
+  60% {
+    color: lightgreen;
+  }
+  80% {
+    color: mediumpurple;
+  }
+  100% {
+    color: dodgerblue;
+  }
+}
+@keyframes moveLetter {
+  0% {
+    left: 100%;
+    transform: rotate(-180deg);
+    filter: opacity(0);
+  }
+  33% {
+    left: 60%;
+    transform: rotate(0deg);
+    filter: opacity(1);
+  }
+  66% {
+    left: 40%;
+    transform: rotate(0deg);
+    filter: opacity(1);
+  }
+  100% {
+    left: 0;
+    transform: rotate(180deg);
+    filter: opacity(0);
+  }
+}
+.loader {
+  width: 40em;
+  height: 3em;
+  font-size: 1.5em;
+  color: dodgerblue;
+  text-transform: uppercase;
+  animation: changeColor 10s linear infinite;
+}
+
+.loader__letter {
+  position: absolute;
+  animation: moveLetter 2s linear infinite;
+}
+.loader__letter:nth-child(1) {
+  animation-delay: -1.8s;
+}
+.loader__letter:nth-child(2) {
+  animation-delay: -1.6s;
+}
+.loader__letter:nth-child(3) {
+  animation-delay: -1.4s;
+}
+.loader__letter:nth-child(4) {
+  animation-delay: -1.2s;
+}
+.loader__letter:nth-child(5) {
+  animation-delay: -1s;
+}
+.loader__letter:nth-child(6) {
+  animation-delay: -0.8s;
+}
+.loader__letter:nth-child(7) {
+  animation-delay: -0.6s;
+}
+
+/*# sourceMappingURL=style.css.map */
