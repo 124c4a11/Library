@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  perspective: 340px;
+  min-height: 100vh;
+  background: radial-gradient(ellipse at bottom, #1b2735 0, #090a0f 100%);
+}
+
+/*================================================================
+  stars
+================================================================*/
+
+$stars: 350;         // Number of start per layer
+$depth: 300;         // Depth between star layers
+$duration: 3s;          // Number of seconds to transition between layers
+$width: 3000;        // Width of the starfield
+$height: 960;        // Height of the starfield
+
+// n - number stars required
+@function multiple-box-shadow($n) {
+  $value: (random($width) + px)  (random($height) + px) hsl(90, 0, 75 + random(25));
+  
+  @for $i from 0 through $n {
+    $value: $value, (random($width)-$width/2 + px) (random($height)-$height/2 + px) hsl(90, 0, 75 + random(25));
+  }
+
+  @return $value;
+}
+
+@keyframes fade1 {
+  from { opacity: .5; }
+  to { opacity: 1; }
+}
+
+@keyframes fade2 {
+  from { opacity: 0; }
+  to { opacity: .5; }
+}
+
+@keyframes fly {
+  from { transform: translateZ(0); }
+  to { transform: translateZ($depth + px); }
+}
+
+.stars {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+  width: 2px;
+  height: 2px;
+  box-shadow: multiple-box-shadow($stars);
+  animation: fly $duration linear infinite;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    box-shadow: inherit;
+  }
+
+  &::before {
+    transform: translateZ(-$depth + px);
+    animation: fade1 $duration linear infinite;
+  }
+
+  &::after {
+    transform: translateZ(-$depth * 2 + px);
+    animation: fade2 $duration linear infinite;
+  }
+}
