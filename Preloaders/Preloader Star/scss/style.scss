@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::afte { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font: 16px sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #000;
+}
+
+/*================================================================
+  loader
+================================================================*/
+
+$colors: #725ac1, #00a6fb, #f50057, #ffc107;
+
+@keyframes rotatePreloader {
+  from { transform: roate(0); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes grow {
+  0% {
+    transform: translateX(-50%) scale(0);
+    bottom: -2rem;
+  }
+  25%, 75% { transform: translateX(-50%) scale(1.5); }
+  50% { transform: translateX(-50%) scale(.5); }
+  100% {
+    transform: translateX(-50%) scale(0);
+    bottom: 100%;
+  }
+}
+
+.loader {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  height: 10rem;
+  animation: rotatePreloader 20s linear infinite;
+}
+
+.loader__item {
+  position: absolute;
+  top: 0;
+  transform-origin: bottom;
+  height: 50%;
+  width: 0;
+
+  span {
+    position: absolute;
+    bottom: -1rem;
+    transform: translateX(-50%) scale(0);
+    display: inline-flex;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    animation: grow 1.5s linear infinite;
+  }
+
+  @each $color in $colors {
+    $ndx: index($colors, $color);
+    span:nth-child(#{$ndx}) { background-color: $color; }
+  }
+
+  @for $i from 1 through 9 {
+    &:nth-child(#{$i}) {
+      transform: rotate(#{$i * 40deg}) translateY(-20px);
+      
+      @for $k from 1 through 4 {
+        span:nth-child(#{$k}) { animation-delay: $k * .35s; }
+      }
+    }
+  }
+}
