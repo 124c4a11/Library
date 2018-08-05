@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  min-height: 100vh;
+  background: url(../img/bg.jpg) center/cover no-repeat;
+  user-select: none;
+}
+
+/*================================================================
+  carousel
+================================================================*/
+
+.carousel {
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  width: 620px;
+  height: 620px;
+}
+
+.carousel__radio {
+  position: absolute;
+  left: -99999px;
+  opacity: 0;
+}
+
+.carousel__label {
+  position: absolute;
+  right: 0;
+  left: 0;
+  width: 450px;
+  height: 620px;
+  border-radius: 4px;
+  margin: auto;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: transform .4s ease;
+  cursor: pointer;
+}
+
+#s1:checked ~ #slide4,
+#s2:checked ~ #slide5,
+#s3:checked ~ #slide1,
+#s4:checked ~ #slide2,
+#s5:checked ~ #slide3 {
+  transform: translate3d(-30%, 0, -200px);
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .37);
+}
+
+#s1:checked ~ #slide5,
+#s2:checked ~ #slide1,
+#s3:checked ~ #slide2,
+#s4:checked ~ #slide3,
+#s5:checked ~ #slide4 {
+  transform: translate3d(-15%, 0, -100px);
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .3), 0 2px 2px 0 rgba(0, 0, 0, .2);
+}
+
+#s1:checked ~ #slide1,
+#s2:checked ~ #slide2,
+#s3:checked ~ #slide3,
+#s4:checked ~ #slide4,
+#s5:checked ~ #slide5 {
+  transform: translate3d(0, 0, 0);
+  box-shadow: 0 13px 25px 0 rgba(0, 0, 0, .3), 0 11px 7px 0 rgba(0, 0, 0, .19);
+}
+
+#s1:checked ~ #slide2,
+#s2:checked ~ #slide3,
+#s3:checked ~ #slide4,
+#s4:checked ~ #slide5,
+#s5:checked ~ #slide1 {
+  transform: translate3d(15%, 0, -100px);
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .3), 0 2px 2px 0 rgba(0, 0, 0, .2);
+}
+
+#s1:checked ~ #slide3,
+#s2:checked ~ #slide4,
+#s3:checked ~ #slide5,
+#s4:checked ~ #slide1,
+#s5:checked ~ #slide2 {
+  transform: translate3d(30%, 0, -200px);
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .37);
+}
+
