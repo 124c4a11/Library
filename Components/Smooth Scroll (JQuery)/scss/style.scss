@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font: 16px sans-serif;
+}
+
+/*================================================================
+  nav
+================================================================*/
+
+.nav {
+  position: fixed;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+}
+
+.nav__list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.nav__list-item {
+  & + & { padding-top: 15px; }
+}
+
+.nav__list-link {
+  display: block;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  background-color: #fff;
+  opacity: .5;
+  transition-duration: .25s;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+    outline: none;
+  }
+}
+
+/*================================================================
+  page-section
+================================================================*/
+
+$colors: (#2196f2, #8bc24a, #cddc39, #fe9800, #9c27af);
+
+.page-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  @each $color in $colors {
+    $i: index($colors, $color);
+    &:nth-of-type(#{$i}) { background-color: $color; }
+  }
+}
+
+.page-section__title {
+  font-size: 5vw;
+  color: #fff;
+  text-shadow: 0 0 1px rgba(0, 0, 0, .5);
+}
