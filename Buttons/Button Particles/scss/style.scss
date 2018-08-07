@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font: 16px sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #fff8f0;
+}
+
+/*================================================================
+  btn
+================================================================*/
+
+$btn-color: #392f5a;
+
+.btn {
+  position: relative;
+  top: -2px;
+  padding: .75em 2em;
+  border: 0 none;
+  border-radius: .25rem;
+  font-size: 1.25rem;
+  color: #fff;
+  background-color: $btn-color;
+  box-shadow: 0 .1em .5em lighten($btn-color, 20%);
+  transition: background-color .2s ease;
+  
+  &:hover,
+  &:focus,
+  &.btn_active {
+    background-color: darken($btn-color, 10%);
+    outline: none;
+  }
+
+}
+
+.btn_active {
+  top: 0;
+  box-shadow: 0 0 .2px lighten($btn-color, 20%);
+}
+
+.btn__particle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -2;
+  margin: auto;
+  border-radius: 50%;
+
+  &:nth-child(even) { background-color: lighten($btn-color, 10%) !important; }
+
+  @for $i from 1 through 400 {
+    $value: #{random(30)}px;
+
+    &:nth-child(#{$i}) {
+      width: $value;
+      height: $value;
+      border: #{random(2)}px solid lighten($btn-color, 10%);
+      background-color: transparent;
+    }
+  }
+}
