@@ -1,0 +1,102 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font: 16px sans-serif;
+}
+
+/*================================================================
+  hero
+================================================================*/
+
+$colors: (#000, #f33a3d, #26abae, #f2a334);
+$duration: .5s;
+
+.hero {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  min-height: 480px;
+}
+
+.hero__bg {
+  position: absolute;
+  left: 50%;
+  z-index: -1;
+  transform: translateX(-50%) skew(-40deg);
+  display: flex;
+  width: 150%;
+  height: 100%;
+}
+
+.hero__bg-item {
+  flex: 0 0 25%;
+  transform: rotateY(90deg);
+  opacity: 0;
+  transition: opacity 0s $duration, transform $duration;
+  
+  @each $color in $colors {
+    $i: index($colors, $color);
+    &:nth-child(#{$i}) { background-color: $color; }
+  }
+}
+
+.hero__options {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+.hero__title {
+  font-size: 4vw;
+  color: #808080;
+  text-transform: uppercase;
+  text-align: center;
+  transition: $duration;
+}
+
+/*================================================================
+  hero_bg-visible
+================================================================*/
+
+.hero_bg-visible {
+  .hero__bg-item {
+    transform: rotateY(0deg);
+    opacity: 1;
+    transition: opacity 0s 0s, transform $duration;
+  }
+
+  .hero__title { color: #fff; }
+}
+
+/*================================================================
+  btn
+================================================================*/
+
+.btn {
+  border: 2px solid #808080;
+  border-radius: 1.2em;
+  color: #808080;
+  text-transform: uppercase;
+  padding: .5em .7em;
+  background-color: transparent;
+  transition-duration: .25s;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    background-color: #808080;
+    outline: none;
+  }
+}
