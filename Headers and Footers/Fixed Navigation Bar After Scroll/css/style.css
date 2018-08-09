@@ -1,0 +1,88 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font: 16px "Montserrat", sans-serif;
+}
+
+/*================================================================
+  hero
+================================================================*/
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 100vh;
+  color: #fff;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hero__title {
+  margin: auto;
+  font-size: 1.12em;
+  letter-spacing: 2vw;
+  text-transform: uppercase;
+  text-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
+}
+
+/*================================================================
+  menu
+================================================================*/
+.menu {
+  padding: 15px;
+  background-color: #000;
+}
+
+.menu__list {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu__link {
+  display: block;
+  padding: 0.62em 1em;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  opacity: 0.7;
+  transition-duration: 0.25s;
+}
+.menu__link:hover, .menu__link:focus {
+  opacity: 1;
+  outline: none;
+}
+
+/*================================================================
+  menu_fixed
+================================================================*/
+.menu_fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+}
+
+/*================================================================
+  main
+================================================================*/
+.main {
+  padding: 80px 6vw;
+}
+.main p {
+  text-align: justify;
+}
+
+/*# sourceMappingURL=style.css.map */
