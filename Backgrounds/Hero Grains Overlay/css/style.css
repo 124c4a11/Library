@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font: 16px sans-serif;
+}
+
+/*================================================================
+  hero
+================================================================*/
+@keyframes grain {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-5%, -10%);
+  }
+  20% {
+    transform: translate(-15%, 5%);
+  }
+  30% {
+    transform: translate(7%, -25%);
+  }
+  40% {
+    transform: translate(-5%, 25%);
+  }
+  50% {
+    transform: translate(-15%, 10%);
+  }
+  60% {
+    transform: translate(15%, 0%);
+  }
+  70% {
+    transform: translate(0%, 15%);
+  }
+  80% {
+    transform: translate(3%, 35%);
+  }
+  90% {
+    transform: translate(-10%, 10%);
+  }
+}
+.hero {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  min-height: 480px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -110%;
+  left: -50%;
+  width: 300%;
+  height: 300%;
+  background-image: url(../img/grains.png);
+  opacity: 0.48;
+  animation: grain 1s steps(10) infinite;
+}
+
+.hero__content {
+  position: relative;
+}
+
+.hero__title {
+  margin: 0;
+  font-size: 5vw;
+  padding: 0.2em 0.5em;
+  color: #8300f7;
+  text-transform: uppercase;
+  background-color: #000;
+}
+
+.hero__subtitle {
+  position: absolute;
+  padding: 0.2em 0.5em;
+  top: 100%;
+  right: 15%;
+  margin: -0.4em 0 0;
+  font-weight: bold;
+  font-size: 2vw;
+  text-transform: uppercase;
+  background-color: #fff;
+}
+
+/*# sourceMappingURL=style.css.map */
