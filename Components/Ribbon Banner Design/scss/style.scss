@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font: 16px sans-serif;
+}
+
+/*================================================================
+  hero
+================================================================*/
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  min-height: 480px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/*================================================================
+  banner
+================================================================*/
+
+$back-color:  rgba(180, 180, 180, .8);
+
+.banner { 
+  position: relative;
+  z-index: 1;
+  width: 330px;
+}
+
+.banner__item {
+  position: relative;
+  transform: skewY(-15deg);
+  height: 78px;
+  margin-bottom: 10px;
+  font-size: 3em;
+  line-height: 78px;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #fff;
+  box-shadow: .2em .2em .2em rgba(0, 0, 0, .05);
+
+  &:first-child::before,
+  &::after {
+    content: '';
+    position: absolute;
+    transform: skewY(15deg);
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: $back-color;
+  }
+  
+  &::after {
+    top: 44px;
+    left: 0;
+  }
+
+  &:first-child::before,
+  &:last-child::after {
+    width: 0;
+    height: 0;
+    border-width: 38px;
+    border-style: solid;
+    background-color: transparent;
+  }
+
+  &:first-child::before {
+    top: -10px;
+    right: 0;
+    border-color: $back-color transparent transparent;
+  }
+
+  &:last-child::after {
+    top: 12px;
+    border-color: transparent transparent $back-color $back-color;
+  }
+}
+
+.banner__item-text {
+  display: block;
+  color: #555;
+  text-shadow: 1px 1px 1px #000;
+  background-color: #fff;
+}
