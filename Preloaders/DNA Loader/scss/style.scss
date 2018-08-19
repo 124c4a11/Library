@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font: 16px sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #0c0c0c;
+}
+
+/*================================================================
+  loader
+================================================================*/
+
+$color1: #55c1ff;
+$color2: #dc6bad;
+
+@keyframes rotateLoader {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes beforeAnimate {
+  0% {
+    top: 0;
+    transform: translate(-50%, 0) scale(.5);
+    opacity: .25;
+  }
+  25% {
+    z-index: -1;
+    transform: translate(-50%, -100%) scale(.5);
+    opacity: .5;
+  }
+  50% {
+    top: 100%;
+    transform: translate(-50%, -100%) scale(.5);
+    opacity: .75;
+  }
+  75% {
+    z-index: 1;
+    transform: translate(-50%, -100%) scale(1.5);
+    opacity: 1;   
+  }
+  100% {
+    top: 0;
+    transform: translate(-50%, 0) scale(.5);
+    opacity: .75;
+  }
+}
+
+@keyframes afterAnimate {
+  0% {
+    bottom: 0;
+    transform: translate(-50%, 0) scale(.5);
+    opacity: .25;
+  }
+  25% {
+    z-index: 1;
+    transform: translate(-50%, -100%) scale(1.5);
+    opacity: 1;
+  }
+  50% {
+    bottom: 100%;
+    transform: translate(-50%, 100%) scale(.5);
+    opacity: .75;
+  }
+  75% {
+    z-index: -1;
+    transform: translate(-50%, -100%) scale(.5);
+    opacity: .5;   
+  }
+  100% {
+    bottom: 0;
+    transform: translate(-50%, 0) scale(.5);
+    opacity: .25;
+  } 
+}
+
+.loader {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 30rem;
+  height: 10rem;
+  animation: rotateLoader 25s linear infinite;
+}
+
+.loader__item {
+  position: relative;
+  height: 80%;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    left: 0;
+    transform: translateX(-50%);
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    opacity: 0;
+  }
+
+  &::before {
+    top: 0;
+    background-color: $color1;
+    animation: beforeAnimate 1.5s linear infinite;
+  }
+
+  &::after {
+    bottom: 0;
+    background-color: $color2;
+    animation: afterAnimate 1.5s linear infinite;
+  }
+
+  @for $i from 1 through 15 {
+    &:nth-child(#{$i}) {
+      &::before,
+      &::after { animation-delay: $i * .15s; }
+    }
+  }
+}
