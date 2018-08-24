@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+  height: 100vh;
+}
+
+/*================================================================
+  cover
+================================================================*/
+#cover {
+  position: relative;
+}
+#cover,
+#cover canvas {
+  height: 100vh;
+}
+#cover canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+}
+
+/*# sourceMappingURL=style.css.map */
