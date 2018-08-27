@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #03a9f4;
+}
+
+/*================================================================
+  box
+================================================================*/
+@keyframes rotation {
+  from {
+    transform: perspective(1000px) rotateY(0);
+  }
+  to {
+    transform: perspective(1000px) rotateY(360deg);
+  }
+}
+.box {
+  position: relative;
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateX(-10deg);
+  width: 300px;
+  height: 300px;
+}
+.box::before {
+  content: "";
+  position: absolute;
+  bottom: -150px;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #000;
+  filter: blur(40px);
+  opacity: 0.25;
+}
+
+.box__inner,
+.box__item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.box__inner {
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  animation: rotation 5s linear infinite;
+}
+
+.box__item {
+  background-image: linear-gradient(#fff, #a7a7a7, #fff);
+}
+.box__item:nth-child(1) {
+  transform: rotateX(0);
+}
+.box__item:nth-child(2) {
+  transform: rotateY(90deg);
+}
+.box__item:nth-child(3) {
+  transform: rotateX(270deg);
+}
+.box__item:nth-child(4) {
+  transform: rotateX(90deg);
+}
+
+/*# sourceMappingURL=style.css.map */
