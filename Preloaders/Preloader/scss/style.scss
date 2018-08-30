@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/*================================================================
+loader
+================================================================*/
+
+$item-color: #3f8efc;
+$t-func: cubic-bezier(.96, .71, 1, 1);
+
+@keyframes rotateItem-1 {
+  0% { transform: rotate(0); }
+  50% { transform: translateY(-19px) rotate(-45deg); }
+  100% { transform: rotate(-90deg); }
+}
+
+@keyframes rotateItem-2 {
+  0% { transform: rotate(0); }
+  50% { transform: rotate(45deg); }
+  100% { transform: rotate(90deg); }
+}
+
+@keyframes rotateItem-3 {
+  0% { transform: rotate(0); }
+  50% { transform: translateY(19px) rotate(-45deg); }
+  100% { transform: rotate(-90deg); }
+}
+
+.loader {
+  width: 40px;
+  height: 120px;
+}
+
+.loader__item {
+  height: 40px;
+  background-color: $item-color;
+
+  @for $i from 1 through 3 {
+    &:nth-child(#{$i}) { animation: rotateItem-#{$i} 1s $t-func infinite; }
+  }
+}
