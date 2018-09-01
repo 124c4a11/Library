@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font: 16px sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/*================================================================
+  title
+================================================================*/
+
+@keyframes moveBg {
+  from { background-position: 0 0; }
+  to { background-position: 800px 800px; }
+}
+
+.title {
+  margin: 0;
+  font-size: 9vw;
+  text-transform: uppercase;
+  background-image: url(../img/1.jpg);
+  background-size: 800px;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 2px #000;
+  -webkit-background-clip: text;
+  animation: moveBg 20s linear infinite;
+}
