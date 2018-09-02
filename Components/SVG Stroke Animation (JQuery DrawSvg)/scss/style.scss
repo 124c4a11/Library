@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #202020;
+}
+
+svg { width: 40%; }
