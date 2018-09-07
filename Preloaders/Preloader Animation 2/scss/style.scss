@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #1d0b31;
+}
+
+/*================================================================
+  loader
+================================================================*/
+
+$dotsCount: 30;
+$circleColor: #faa100;
+
+$duration: 2s;
+$t-func: ease;
+
+@keyframes outerAnimation {
+  0% {
+    width: 0;
+    height: 0;
+    border-width: 1px;
+    opacity: 0;
+  }
+  100% {
+    width: 15px;
+    height: 15px;
+    border-width: 4px;
+    opacity: 1;
+  }
+}
+
+@keyframes innerAnimation {
+  0% {
+    width: 10px;
+    height: 10px;
+    border-width: 4px;
+    opacity: 1;
+  }
+  100% {
+    width: 0;
+    height: 0;
+    border-width: 1px;
+    opacity: 0;
+  }
+}
+
+.loader {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.loader__item {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  transform-origin: bottom;
+  width: 0;
+  height: 50%;
+  margin: auto; 
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    margin: auto;
+    border: 4px solid $circleColor;
+    border-radius: 50%;
+    opacity: 0;
+  }
+
+  &::before {
+    top: 0%;
+    animation: outerAnimation $duration $t-func infinite reverse;
+  }
+
+  &::after {
+    top: 35%;
+    animation: innerAnimation $duration $t-func infinite;
+  }
+
+  @for $i from 1 through $dotsCount {
+    &:nth-child(#{$i}) {
+      transform: rotate(#{$i * 12deg});
+
+      &::before { animation-delay: #{$duration / $dotsCount * $i}; }
+    }
+
+    &:nth-child(#{abs($i - $dotsCount + 1)}) {
+      &::after { animation-delay: #{$duration / $dotsCount * $i}; }
+    }
+  }
+}
