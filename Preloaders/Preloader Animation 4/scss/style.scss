@@ -1,0 +1,109 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #ff3c38;
+}
+
+/*================================================================
+  loader
+================================================================*/
+
+$duration: 1s;
+$t-func: ease-in-out;
+
+@keyframes animationItem-1 {
+  0% {
+    top: -50%;
+    transform: scale(0);
+  }
+  40%, 75% {
+    top: 0;
+    transform: scale(1);
+  }
+  100% { top: 50%; }
+}
+
+@keyframes animationItem-2{
+  0%{
+    top: -75%;
+    right: 0;
+    transform: scale(0);
+  }
+  50%,75%{
+    top: 0;
+    right: 0;
+    transform: scale(1);
+  }
+  100%{
+    top: 50%;
+    right: 50%;
+  }
+}
+
+@keyframes animationItem-4{
+  0%{
+    top: -25%;
+    left: 50%;
+    transform: scale(0);
+  }
+  20%,75%{
+    top: 50%;
+    left: 50%;
+    transform: scale(1);
+  }
+  100%{
+    top: 50%;
+    left: 0;
+  }
+}
+
+.loader {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.loader__item {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  background-color: #fff;
+
+  &:nth-child(1) {
+    top: 0;
+    left: 0;
+    animation: animationItem-1 $duration $t-func infinite;
+  }
+
+  &:nth-child(2) {
+    top: 0;
+    right: 0;
+    animation: animationItem-2 $duration $t-func infinite;
+  }
+
+  &:nth-child(3) {
+    top: 50%;
+    left: 0;
+  }
+
+  &:nth-child(4) {
+    top: 50%;
+    right: 0;
+    animation: animationItem-4 $duration $t-func infinite;
+  }
+}
