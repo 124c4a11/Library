@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font: 16px sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #262626;
+}
+
+/*================================================================
+  btn
+================================================================*/
+
+.btn {
+  position: relative;
+  padding: .6em 1.2em;
+  border: 0 none;
+  font-size: 1.5em;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    outline: none;
+
+    .btn__svg {
+      rect {
+        stroke: #00bcd4;
+        stroke-dasharray: 95, 400;
+        stroke-dashoffset: 252;
+      }
+    }
+  }
+}
+
+.btn__svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  &,
+  rect {
+    width: 100%;
+    height: 100%;
+  }
+
+  rect {
+    fill: transparent;
+    stroke: #fff;
+    stroke-width: .16em;
+    stroke-dasharray: 500, 500;
+    stroke-dashoffset: 0;
+    transition-duration: .6s;
+  }
+}
