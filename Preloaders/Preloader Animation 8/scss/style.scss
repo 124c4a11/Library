@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #3d348b;
+}
+
+/*================================================================
+  .loader
+================================================================*/
+
+$duration: 2s;
+
+@keyframes pulseMove {
+  0%, 100% { height: 0; }
+  25% { 
+    top: 0;
+    height: 100%;
+  }
+  50% {
+    top: 100%;
+    height: 0;
+  }
+  75% {
+    top: 0;
+    height: 100%;
+  }
+}
+
+.loader {
+  display: flex;
+  justify-content: space-around;
+  width: 100px;
+  height: 50px;
+}
+
+.loader__item {
+  position: relative;
+  width: 10px;
+  height: 0;
+  background-color: #fff;
+  box-shadow:
+    0 0 10px rgba(0, 0, 0, .5),
+    0 0 20px rgba(0, 0, 0, .5);
+  animation: pulseMove $duration ease infinite;
+  
+  @for $i from 1 through 5 {
+    &:nth-child(#{$i}) { animation-delay: #{($duration / 5) * $i * .15}; }
+  }
+}
