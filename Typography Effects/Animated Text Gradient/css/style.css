@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #ff6f69;
+}
+
+/*================================================================
+  box
+================================================================*/
+@keyframes moveBg {
+  0%, 100% {
+    background-position: 30% 50%;
+  }
+  50% {
+    background-position: 25% 50%;
+  }
+}
+.box {
+  padding: 0.3em;
+  font: bold 5vw "Pacifico", cursive;
+  text-align: center;
+  background-image: linear-gradient(110deg, #ffeead 33%, transparent 33%), linear-gradient(110deg, #c5e7d7 34%, #88d8b0 34%);
+  background-size: 400% 400%;
+  background-position: 25% 50%;
+  animation: moveBg 5s ease infinite;
+}
+
+.box__inner {
+  padding: 0.8em;
+  background-color: #ff6f69;
+}
+
+.box__text {
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(110deg, #ffeead 33%, rgba(0, 0, 0, 0) 33%), linear-gradient(110deg, #C5E7D7 34%, #88d8b0 34%);
+  background-size: 400%;
+  background-position: 25% 50%;
+  -webkit-background-clip: text;
+  animation: moveBg 5s ease infinite;
+}
+
+/*# sourceMappingURL=style.css.map */
