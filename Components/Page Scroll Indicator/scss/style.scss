@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font: 18px sans-serif;
+}
+
+body {
+  color: #516284;
+}
+
+h1 { font-size: 3em; }
+
+/*================================================================
+  main
+================================================================*/
+
+.main {
+  padding: 80px 20%;
+  
+  h1 { margin-top: 0; }
+}
+
+/*================================================================
+  progress-bar
+================================================================*/
+
+#progress-bar { background-color: #ce2da2; }
