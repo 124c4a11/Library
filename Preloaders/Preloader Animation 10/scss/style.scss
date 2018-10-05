@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #000;
+}
+
+/*================================================================
+  loader
+================================================================*/
+
+$itemsCount: 20;
+$num: 3;
+$duration: 1s;
+$t-func: ease-in-out;
+
+@keyframes dotAnimate {
+  0%, 100% {
+    top: 0;
+  }
+  50% {
+    top: 90%;
+  }
+}
+
+.loader {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.loader__item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform-origin: bottom;
+  width: 0;
+  height: 50%;
+  margin: auto;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 15px;
+    margin: auto;
+    border-radius: 50%;
+    animation: dotAnimate $duration $t-func infinite;
+  }
+
+  @for $i from 1 through $itemsCount {
+    $hue: $i * 20deg;
+    $saturation: $i * 5%;
+
+    &:nth-child(#{$i}) {
+      transform: rotate($i * 360 / $itemsCount + deg);
+
+      &::before {
+        background-color: hsl($hue, $saturation, 50%);
+        box-shadow:
+          0 0 40px hsl($hue, $saturation, 50%),
+          0 0 50px hsl($hue, $saturation, 50%);
+        animation-delay: $duration * $i / $itemsCount * $num;
+      }
+    }
+  }
+}
