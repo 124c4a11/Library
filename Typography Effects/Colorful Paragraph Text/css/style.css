@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font: 20px sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+.container {
+  width: 100%;
+  padding: 0 20%;
+}
+
+/*================================================================
+  colorful
+================================================================*/
+.colorful span:nth-child(9n+1) {
+  color: #b87333;
+}
+.colorful span:nth-child(9n+2) {
+  color: #ff1053;
+}
+.colorful span:nth-child(9n+3) {
+  color: #00bee8;
+}
+.colorful span:nth-child(9n+4) {
+  color: #645a79;
+}
+.colorful span:nth-child(9n+5) {
+  color: #7e1fdc;
+}
+.colorful span:nth-child(9n+6) {
+  color: #008080;
+}
+.colorful span:nth-child(9n+7) {
+  color: #d400e2;
+}
+.colorful span:nth-child(9n+8) {
+  color: #00ce67;
+}
+.colorful span:nth-child(9n+9) {
+  color: #444;
+}
+
+/*# sourceMappingURL=style.css.map */
