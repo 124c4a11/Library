@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font: 16px sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+  height: 5000px;
+  background-color: #00947a;
+}
+
+/*================================================================
+  moving-text
+================================================================*/
+
+.moving-text {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  margin: 0;
+  font-size: 4vw;
+  white-space: nowrap;
+  color: #fff;
+}
