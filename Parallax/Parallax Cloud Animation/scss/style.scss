@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+/*================================================================
+  hero
+================================================================*/
+
+.hero {
+  height: 1px;
+  min-height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/*================================================================
+  clouds
+================================================================*/
+
+@keyframes moveBg {
+  from { background-position-x: 0; }
+  to { background-position-x: -5440px; }
+}
+
+.clouds {
+  height: 100%;
+  background: url(../img/cloud.png) center/cover;
+  animation: moveBg 120s linear infinite;
+}
