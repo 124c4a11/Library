@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font: 16px sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #000;
+}
+
+/*================================================================
+  preloader
+================================================================*/
+@keyframes blurring {
+  0%, 80%, 100% {
+    filter: blur(0);
+  }
+  40% {
+    filter: blur(20px);
+  }
+}
+.preloader {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #fff;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.preloader__letter {
+  animation: blurring 3s linear infinite;
+}
+.preloader__letter:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.preloader__letter:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.preloader__letter:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.preloader__letter:nth-child(5) {
+  animation-delay: 0.4s;
+}
+.preloader__letter:nth-child(6) {
+  animation-delay: 0.5s;
+}
+.preloader__letter:nth-child(7) {
+  animation-delay: 0.6s;
+}
+
+/*# sourceMappingURL=style.css.map */

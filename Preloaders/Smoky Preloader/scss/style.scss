@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font: 16px sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #000;
+}
+
+/*================================================================
+  preloader
+================================================================*/
+
+@keyframes blurring {
+  0%, 80%, 100% { filter: blur(0); }
+  40% { filter: blur(20px); }
+}
+
+.preloader {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #fff;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+}
+
+.preloader__letter {
+  animation: blurring 3s linear infinite;
+
+  @for $i from 2 through 7 {
+    &:nth-child(#{$i}) { animation-delay: ($i - 1) * .1s; }
+  }
+}
