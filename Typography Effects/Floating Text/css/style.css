@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: linear-gradient(#fff 0, #fff 50%, #000 50%, #000 100%);
+}
+
+/*================================================================
+  floating-text
+================================================================*/
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0) rotate(-10deg);
+  }
+  25% {
+    transform: translateY(-100px) rotate(10deg);
+  }
+  50% {
+    transform: translateY(0) rotate(-10deg);
+  }
+  75% {
+    transform: translateY(100px) rotate(10deg);
+  }
+}
+.floating-text {
+  margin: 0;
+  font-weight: bold;
+  font-size: 8vw;
+  color: #fff;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  mix-blend-mode: difference;
+  animation: floating 10s linear infinite;
+}
+
+/*# sourceMappingURL=style.css.map */
