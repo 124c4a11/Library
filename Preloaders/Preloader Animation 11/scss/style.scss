@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/*================================================================
+  preloader
+================================================================*/
+
+@keyframes pulse {
+  from {
+    width: 0;
+    height: 0;
+    box-shadow: inset 0 0 2vmin rgba(0, 0, 0, .5);
+    opacity: 1;
+  }
+  to {
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 0 5vmin rgba(0, 0, 0, 1);
+    opacity: 0;
+  }
+}
+
+.preloader {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80vmin;
+  height: 80vmin;
+}
+
+.preloader__item {
+  position: absolute;
+  animation: pulse 10s linear infinite;
+
+  @for $i from 1 through 10 {
+    &:nth-child(#{$i}) { animation-delay: $i * 1s; }
+  }
+}
