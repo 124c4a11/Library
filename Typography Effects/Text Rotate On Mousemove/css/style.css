@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font: 16px sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/*================================================================
+  rotating-text
+================================================================*/
+.rotating-text {
+  font-size: 8vw;
+  text-align: center;
+}
+.rotating-text span {
+  display: block;
+  color: #fff;
+  background-color: #6699cc;
+}
+
+/*# sourceMappingURL=style.css.map */
