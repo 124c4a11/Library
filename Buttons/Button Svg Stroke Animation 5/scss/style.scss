@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font: 16px sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #000;
+}
+
+/*================================================================
+  btn
+================================================================*/
+
+.btn {
+  position: relative;
+  padding: .6em 1.2em;
+  border: 0 none;
+  font-size: 1.5em;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: transparent;
+  cursor: pointer;
+
+
+  &:hover,
+  &:focus {
+    outline: none;
+
+    .btn__svg {
+      rect {
+        stroke: #ff0;
+        stroke-dasharray: 155, 57;
+        stroke-dashoffset: 0;
+      }
+    }
+  }
+}
+
+.btn__svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  &,
+  rect {
+    width: 100%;
+    height: 100%;
+  }
+
+  rect {
+    fill: transparent;
+    stroke: #00e2ff;
+    stroke-width: .16em;
+    stroke-dasharray: 57, 155;
+    stroke-dashoffset: 268;
+    transition-duration: .6s;
+  }
+}
