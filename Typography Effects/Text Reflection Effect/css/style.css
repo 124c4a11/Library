@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: sans-serif;
+  background-image: radial-gradient(#03a9f4, #004b6d);
+}
+
+/*================================================================
+  reflection
+================================================================*/
+.reflection {
+  position: relative;
+  margin: 0;
+  font-size: 8vw;
+  line-height: 1;
+  color: #fff;
+  text-transform: uppercase;
+}
+.reflection::before {
+  content: attr(data-text);
+  position: absolute;
+  top: -0.25em;
+  left: 0;
+  transform-origin: bottom;
+  transform: rotateX(180deg);
+  color: transparent;
+  background-image: linear-gradient(to top, #fff 0, transparent 80%);
+  opacity: 0.5;
+  -webkit-background-clip: text;
+}
+
+/*# sourceMappingURL=style.css.map */
