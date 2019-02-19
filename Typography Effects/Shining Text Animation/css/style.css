@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: sans-serif;
+  background-color: #000;
+}
+
+/*================================================================
+  shining-text
+================================================================*/
+@keyframes moveBg {
+  0%, 100% {
+    background-position-x: -500%;
+  }
+  50% {
+    background-position-x: 500%;
+  }
+}
+.shining-text {
+  overflow: hidden;
+  font-weight: 400;
+  font-size: 5.5vw;
+  color: transparent;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #000, #fff, #000) no-repeat;
+  background-size: 80%;
+  animation: moveBg 6s linear infinite;
+  -webkit-background-clip: text;
+}
+
+/*# sourceMappingURL=style.css.map */
