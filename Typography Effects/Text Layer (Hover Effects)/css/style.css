@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font: 16px sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #a127b0;
+}
+
+/*================================================================
+  layer-text
+================================================================*/
+.layer-text {
+  position: relative;
+  margin: 0;
+  font-size: 8vw;
+  color: #fff;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-shadow: 0 0.05em 0.1em rgba(0, 0, 0, 0.2);
+  transition: text-shadow 0.5s;
+}
+.layer-text::before, .layer-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-shadow: 0 0.05em 0.1em rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s;
+}
+.layer-text:hover {
+  text-shadow: 0 0.05em 0.1em rgba(0, 0, 0, 0.5);
+}
+.layer-text:hover::before {
+  transform: translate(0.05em, -0.05em);
+}
+.layer-text:hover::after {
+  transform: translate(0.1em, -0.1em);
+}
+
+/*# sourceMappingURL=style.css.map */
