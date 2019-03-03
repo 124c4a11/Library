@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #000;
+}
+
+/*================================================================
+  glowing-text
+================================================================*/
+@keyframes pulse {
+  0%, 100% {
+    color: #fff;
+    text-shadow: 0 0 0.1em #00b3ff, 0 0 0.2em #00b3ff, 0 0 0.4em #00b3ff, 0 0 0.8em #00b3ff, 0 0 1.2em #00b3ff, 0 0 2em #00b3ff, 0 0 3em #00b3ff, 0 0 4em #00b3ff;
+    filter: blur(2px);
+  }
+  5%, 95% {
+    color: #111;
+    text-shadow: none;
+    filter: blur(0);
+  }
+}
+.glowing-text {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  font: 15vw "Bad Script", cursive;
+  color: #111;
+}
+
+.glowing-text__letter {
+  animation: pulse 2s linear infinite;
+}
+.glowing-text__letter:nth-child(2) {
+  animation-delay: 0.25s;
+}
+.glowing-text__letter:nth-child(3) {
+  animation-delay: 0.5s;
+}
+.glowing-text__letter:nth-child(4) {
+  animation-delay: 0.75s;
+}
+.glowing-text__letter:nth-child(5) {
+  animation-delay: 1s;
+}
+.glowing-text__letter:nth-child(6) {
+  animation-delay: 1.25s;
+}
+.glowing-text__letter:nth-child(7) {
+  animation-delay: 1.5s;
+}
+.glowing-text__letter:nth-child(8) {
+  animation-delay: 1.75s;
+}
+
+/*# sourceMappingURL=style.css.map */
