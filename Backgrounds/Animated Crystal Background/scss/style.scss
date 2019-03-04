@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+/*================================================================
+  crystal-bg
+================================================================*/
+
+@keyframes hueRotate {
+  0%, 100% { filter: hue-rotate(0); }
+  50% { filter: hue-rotate(360deg); }
+}
+
+.crystal-bg {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(90deg, #3f51b5, #00bcd4) no-repeat;
+  animation: hueRotate 20s linear infinite;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    opacity: .1;
+    border-top: 100vh solid transparent;
+  }
+
+  &::before {
+    left: 0;
+    border-left: 100vh solid #fff;
+  }
+
+  &::after {
+    right: 0;
+    border-right: 100vh solid #fff;
+  }
+}
