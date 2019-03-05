@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #000;
+}
+
+/*================================================================
+  crushed-papper
+================================================================*/
+
+.crushed-papper {
+  flex: 0 1 600px;
+  background: url(../img/papper.jpg) center/cover no-repeat;
+
+  &:hover {
+    .crushed-papper__img {
+      mix-blend-mode: color-burn;
+    }
+  }
+}
+
+.crushed-papper__img {
+  display: block;
+}
