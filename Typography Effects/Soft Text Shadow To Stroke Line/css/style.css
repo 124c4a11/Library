@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+/*================================================================
+  shadow-text
+================================================================*/
+.shadow-text {
+  margin: 0;
+  font: bold 15vw sans-serif;
+  color: #fff;
+  text-align: center;
+  text-shadow: -10px 10px 20px rgba(0, 0, 0, 0.1);
+  transition: text-shadow 0.5s;
+}
+.shadow-text:hover {
+  text-shadow: -1px 1px 0 black, 1px -1px 0 black;
+}
+
+/*# sourceMappingURL=style.css.map */
