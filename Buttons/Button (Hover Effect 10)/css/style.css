@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font: 16px sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/*================================================================
+  btn
+================================================================*/
+.btn {
+  overflow: hidden;
+  position: relative;
+  padding: 0.6em 1.5em;
+  border: 2px solid #000;
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background-color: transparent;
+  transition: color 0.5s;
+}
+.btn::before, .btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  transform: scaleX(0);
+  width: 50%;
+  height: 100%;
+  background-color: #000;
+  transition: transform 0.5s;
+}
+.btn::before {
+  left: 0;
+  transform-origin: left;
+}
+.btn::after {
+  right: 0;
+  transform-origin: right;
+}
+.btn:hover, .btn:focus {
+  color: #fff;
+  outline: none;
+}
+.btn:hover::before, .btn:focus::before {
+  transform-origin: right;
+  transform: scaleX(1);
+}
+.btn:hover::after, .btn:focus::after {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+/*# sourceMappingURL=style.css.map */
