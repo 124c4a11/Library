@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: sans-serif;
+  background-color: #f3f3f3;
+}
+
+/*================================================================
+  clip-text
+================================================================*/
+.clip-text {
+  position: relative;
+  width: 680px;
+  text-align: center;
+}
+
+.clip-text__word {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  margin: 0;
+  font-weight: bold;
+  font-size: 12em;
+  text-transform: uppercase;
+  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: clip-path 0.5s;
+}
+.clip-text__word:nth-of-type(1):hover + .clip-text__word {
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+.clip-text__word:nth-of-type(2) {
+  color: #fff;
+  background-color: #f3f3f3;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 100%);
+}
+.clip-text__word:nth-of-type(2):hover {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/*# sourceMappingURL=style.css.map */
