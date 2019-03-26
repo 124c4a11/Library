@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  font-family: sans-serif;
+  background: fixed url(../img/wood.jpg) center/cover no-repeat;
+}
+
+/*================================================================
+title
+================================================================*/
+
+.title {
+  position: relative;
+  width: 100%;
+  font-size: 9vw;
+  text-align: center;
+  text-transform: uppercase;
+  background: fixed url(../img/wood.jpg) center/cover no-repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  &::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    widtH: 100%;
+    text-shadow:
+      -.02em .02em .1em #000,
+      -.05em .05em .1em #000,
+      -.1em .12em .2em #000,
+      -.12em .1em .3em #000;
+  }
+}
