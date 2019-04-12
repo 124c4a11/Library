@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+/*================================================================
+  glass-layer
+================================================================*/
+
+@keyframes move {
+  0%, 100% { left: 0; }
+  50% { left: 80%; }
+}
+
+.glass-layer {
+  position: relative;
+  min-height: 100vh;
+  background: fixed url(../img/1.jpg) center/cover no-repeat;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 20%;
+    background: fixed url(../img/1.jpg) center/110% no-repeat;
+    box-shadow:
+      20px 0 100px rgba(0, 0, 0, .2),
+      -20px 0 100px rgba(0, 0, 0, .2);
+    animation: move 5s ease-in-out infinite;
+  }
+}
