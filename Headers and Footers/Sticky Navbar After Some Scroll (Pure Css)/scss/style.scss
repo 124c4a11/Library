@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font: 16px/1.42 sans-serif;
+}
+
+/*================================================================
+  container
+================================================================*/
+
+.container {
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+/*================================================================
+  hero
+================================================================*/
+
+.hero {
+  min-height: 405px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/*================================================================
+  navbar
+================================================================*/
+
+.navbar {
+  position: sticky;
+  top: 0;
+  padding: 15px;
+  color: #fff;
+  background-color: #000;
+}
+
+/*================================================================
+  logo
+================================================================*/
+
+.logo {
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+/*================================================================
+  page-section
+================================================================*/
+
+.page-section {
+  padding: 5rem 0;
+  font-size: 1.3rem;
+}
+
+.page-section__title {
+  margin-top: 0;
+  font-size: 3rem;
+}
