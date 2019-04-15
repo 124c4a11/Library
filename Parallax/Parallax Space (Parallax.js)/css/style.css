@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+/*================================================================
+  scene
+================================================================*/
+.scene {
+  overflow: hidden;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: repeat;
+}
+
+/*================================================================
+  layer__img
+================================================================*/
+.layer__img {
+  width: 100vw;
+}
+
+/*# sourceMappingURL=style.css.map */

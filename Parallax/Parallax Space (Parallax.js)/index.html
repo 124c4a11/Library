@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Parallax Space</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="scene" style="background-image: url(img/background.jpg)">
+    <div class="layer" data-depth=".1"><img src="img/text.png" alt="" class="layer__img"></div>
+    <div class="layer" data-depth="1"><img src="img/planet1.png" alt="" class="layer__img"></div>
+    <div class="layer" data-depth="-1"><img src="img/planet2.png" alt="" class="layer__img"></div>
+    <div class="layer" data-depth="2"><img src="img/astronaut.png" alt="" class="layer__img"></div>
+    <div class="layer" data-depth=".5"><img src="img/rocket.png" alt="" class="layer__img"></div>
+  </div>
+
+  <script src="libs/parallax.js"></script>
+  <script>
+    const scene = document.querySelector('.scene');
+
+    new Parallax(scene);
+  </script>
+</body>
+</html>
