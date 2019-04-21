@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body { font-family: sans-serif; }
+
+/*================================================================
+  hero
+================================================================*/
+
+@keyframes fall {
+  0% {
+    top: -10%;
+    transform: translateX(20px) rotate(0);
+    opacity: 0;
+  }
+  10% { opacity: 1; }
+  20% { transform: translateX(-20px) rotate(45deg); }
+  40% { transform: translateX(-20px) rotate(90deg); }
+  60% { transform: translateX(20px) rotate(135deg); }
+  80% { transform: translateX(-20px) rotate(180deg); }
+  100% {
+    top: 110%;
+    transform: translateX(-20px) rotate(225deg);
+  }
+}
+
+.hero {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 480px;
+  height: 100vh;
+  background: radial-gradient(#333, #000) no-repeat;
+}
+
+.hero__title {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-weight: 700;
+  font-size: 8vw;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.hero__set {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero__set_2 {
+  z-index: 2;
+  transform: scale(2) rotateY(180deg);
+  filter: blur(2px);
+}
+
+.hero__set_3 {
+  z-index: 3;
+  transform: scale(.8) rotateX(180deg);
+  filter: blur(4px);
+}
+
+.hero__set-img { position: absolute; }
+
+.hero__set-img_1 {
+  left: 20%;
+  animation: fall 15s -7s linear infinite;
+}
+.hero__set-img_2 {
+  left: 50%;
+  animation: fall 20s -5s linear infinite;
+}
+
+.hero__set-img_3 {
+  left: 70%;
+  animation: fall 25s linear infinite;
+}
+
+.hero__set-img_4 {
+  left: 80%;
+  animation: fall 15s -5s linear infinite;
+}
+
+.hero__set-img_5 {
+  left: 0;
+  animation: fall 18s -10s linear infinite;
+}
+
+.hero__set-img_6 {
+  left: 0;
+  animation: fall 12s linear infinite;
+}
+
+.hero__set-img_7 {
+  left: 90%;
+  animation: fall 14s linear infinite;
+}
+
+.hero__set-img_8 {
+  left: 60%;
+  animation: fall 15s linear infinite;
+}
