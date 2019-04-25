@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #000;
+}
+
+/*================================================================
+  reveal-text
+================================================================*/
+@keyframes anim {
+  0%, 100% {
+    color: #fff;
+    text-shadow: 0 0 0.1em #00b3ff, 0 0 0.2em #00b3ff, 0 0 0.4em #00b3ff, 0 0 0.8em #00b3ff, 0 0 1.2em #00b3ff;
+    filter: blur(0.01em);
+  }
+}
+.reveal-text {
+  padding: 0 15px;
+  margin: 0;
+  font: 700 8vw "Bad Script", cursive;
+  color: #333;
+  text-align: center;
+}
+
+.reveal-text__letter {
+  animation: anim 1s linear infinite;
+}
+.reveal-text__letter:nth-child(11n+1) {
+  animation-delay: 0.5s;
+}
+.reveal-text__letter:nth-child(11n+2) {
+  animation-delay: 1.25s;
+}
+.reveal-text__letter:nth-child(11n+3) {
+  animation-delay: 2.35s;
+}
+.reveal-text__letter:nth-child(11n+4) {
+  animation-delay: 2.75s;
+}
+.reveal-text__letter:nth-child(11n+5) {
+  animation-delay: 1s;
+}
+.reveal-text__letter:nth-child(11n+6) {
+  animation-delay: 1.35s;
+}
+.reveal-text__letter:nth-child(11n+7) {
+  animation-delay: 1.5s;
+}
+.reveal-text__letter:nth-child(11n+8) {
+  animation-delay: 0.65s;
+}
+.reveal-text__letter:nth-child(11n+9) {
+  animation-delay: 3.85s;
+}
+.reveal-text__letter:nth-child(11n+10) {
+  animation-delay: 0.3s;
+}
+.reveal-text__letter:nth-child(11n+11) {
+  animation-delay: 4s;
+}
+
+/*# sourceMappingURL=style.css.map */
