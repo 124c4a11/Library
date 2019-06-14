@@ -1,0 +1,29 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: monospace;
+}
+
+/*================================================================
+  wave
+================================================================*/
+
+@keyframes animate {
+  0%, 100% {
+    transform: translateY(-2em) rotate(-25deg);
+  }
+  50% {
+    transform: translateY(2em) rotate(25deg);
+  }
+}
+
+.wave {
+  font-size: 3vw;
+
+  .char {
+    transform: rotate(-25deg);
+    animation: animate 2s calc(.05s * var(--char-index)) ease-in-out infinite;
+  }
+}
