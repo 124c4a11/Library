@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font: 16px consolas, monospace;
+}
+
+body {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/*================================================================
+  menu
+================================================================*/
+.menu {
+  display: flex;
+  margin: 0;
+  padding: 0 0 0 25%;
+  list-style: none;
+}
+
+.menu__item {
+  position: relative;
+  z-index: 1;
+  margin: 0 10vw;
+  font-size: 3vw;
+}
+.menu__item:nth-child(odd) .menu__link:hover + .menu__img, .menu__item:nth-child(odd) .menu__link:focus + .menu__img {
+  transform: translate(-50%, -0.5em);
+}
+.menu__item:nth-child(odd) .menu__img {
+  bottom: 100%;
+}
+.menu__item:nth-child(even) .menu__link:hover + .menu__img, .menu__item:nth-child(even) .menu__link:focus + .menu__img {
+  transform: translate(-50%, 0.5em);
+}
+.menu__item:nth-child(even) .menu__img {
+  top: 100%;
+}
+
+.menu__link {
+  padding: 0 0.2em;
+  color: #000;
+  text-decoration: none;
+  white-space: nowrap;
+  transition-duration: 0.5s;
+}
+.menu__link:hover, .menu__link:focus {
+  color: #fff;
+  outline: none;
+  background-color: #000;
+}
+.menu__link:hover + .menu__img, .menu__link:focus + .menu__img {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s 0s, transform 0.5s, opacity 0.5s;
+}
+
+.menu__img {
+  visibility: hidden;
+  position: absolute;
+  left: 50%;
+  z-index: -1;
+  transform: translate(-50%, 0);
+  width: 5em;
+  height: 5em;
+  opacity: 0;
+  transition: visibility 0s 0.5s, transform 0.5s, opacity 0.5s;
+}
+
+/*# sourceMappingURL=style.css.map */
