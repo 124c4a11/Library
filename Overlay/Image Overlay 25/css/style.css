@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font: 16px sans-serif;
+}
+
+/*================================================================
+  card
+================================================================*/
+.card {
+  width: 280px;
+  height: 280px;
+}
+
+.card__link {
+  position: relative;
+  display: block;
+  height: 100%;
+  color: #fff;
+  text-decoration: none;
+}
+.card__link:hover, .card__link:focus {
+  outline: none;
+}
+.card__link:hover .card__overlay, .card__link:focus .card__overlay {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.card__img {
+  display: block;
+}
+
+.card__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  text-align: center;
+  background-color: #000;
+  clip-path: polygon(100% 100%, 100% 0, 100% 100%, 0% 100%);
+  transition-duration: 0.5s;
+}
+
+.card__title {
+  margin-top: 0;
+  font-size: 1.17em;
+}
+
+/*# sourceMappingURL=style.css.map */
