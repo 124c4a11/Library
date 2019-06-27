@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html {
+  font: 18px/1.42 consolas, monospace;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+@keyframes typing {
+  0% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+[data-splitting] .char {
+  visibility: hidden;
+  animation: typing 0s calc(.04s * var(--char-index)) steps(2) forwards;
+}
+
+/*# sourceMappingURL=style.css.map */
