@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html {
+  font: 16px Consolas, monospace;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/*================================================================
+  card
+================================================================*/
+.card {
+  overflow: hidden;
+  position: relative;
+  width: 280px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.card__link {
+  display: block;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+.card__link:hover, .card__link:focus {
+  outline: none;
+}
+.card__link:hover .card__img-wrap, .card__link:focus .card__img-wrap {
+  clip-path: circle(80px at center 100px);
+}
+.card__link:hover .card__body p,
+.card__link:hover .card__title,
+.card__link:hover .card__more, .card__link:focus .card__body p,
+.card__link:focus .card__title,
+.card__link:focus .card__more {
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 0.5s, opacity 0.5s;
+}
+.card__link:hover .card__title, .card__link:focus .card__title {
+  transition-delay: 0.5s;
+}
+.card__link:hover .card__body p, .card__link:focus .card__body p {
+  transition-delay: 0.7s;
+}
+.card__link:hover .card__more, .card__link:focus .card__more {
+  transition-delay: 0.9s;
+}
+
+.card__img-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  clip-path: circle(400px at center 100px);
+  transition-duration: 0.5s;
+}
+
+.card__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card__body p,
+.card__title,
+.card__more {
+  transform: translateY(20px);
+  opacity: 0;
+  transition: opacity 0s, transform 0s;
+  transition-delay: 0s;
+}
+
+.card__body {
+  padding: 205px 15px 15px;
+}
+
+.card__title {
+  margin-top: 0;
+  text-align: center;
+}
+
+.card__actions {
+  text-align: center;
+}
+
+.card__more {
+  display: inline-block;
+  padding: 0.5em;
+  color: #fff;
+  background-color: #000;
+}
+
+/*# sourceMappingURL=style.css.map */
