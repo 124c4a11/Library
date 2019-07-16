@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+/*================================================================
+  gallery
+================================================================*/
+.gallery {
+  position: relative;
+  min-height: 100vh;
+  background-color: #262626;
+}
+
+.gallery__item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition-duration: 2s;
+}
+.gallery__item:hover {
+  z-index: 1;
+}
+.gallery__item:active {
+  clip-path: circle(100% at center) !important;
+}
+.gallery__item:nth-child(1) {
+  clip-path: circle(100px at 25% center);
+}
+.gallery__item:nth-child(2) {
+  clip-path: circle(100px at center);
+}
+.gallery__item:nth-child(3) {
+  clip-path: circle(100px at 75% center);
+}
+
+/*# sourceMappingURL=style.css.map */
