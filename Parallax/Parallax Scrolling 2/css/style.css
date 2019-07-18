@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font: 16px sans-serif;
+}
+
+/*================================================================
+  hero
+================================================================*/
+.hero {
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(transparent, #fff) no-repeat;
+}
+
+.hero__img {
+  position: absolute;
+  width: 100%;
+}
+
+.hero__img_left {
+  left: 40%;
+  transform: translateX(-50%);
+}
+
+.hero__img_right {
+  right: 40%;
+  transform: translateX(50%);
+}
+
+.hero__img_text {
+  transform: translateY(50%);
+}
+
+/*================================================================
+  main
+================================================================*/
+.main {
+  padding: 80px 15%;
+}
+
+/*# sourceMappingURL=style.css.map */
