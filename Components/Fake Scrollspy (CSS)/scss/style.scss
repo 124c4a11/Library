@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font: 16px sans-serif;
+}
+
+
+/*================================================================
+  nav
+================================================================*/
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: #000;
+}
+
+.nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.nav__list-link {
+  display: block;
+  padding: 15px;
+  font-size: 1.2rem;
+  color: #fff;
+  text-decoration: none;
+  opacity: .7;
+  transition: opacity .25s;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    opacity: 1;
+  }
+}
+
+/*================================================================
+  page-section
+================================================================*/
+
+.page-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  &#one:hover ~ .nav .nav__list-link[href="#one"],
+  &#two:hover ~ .nav .nav__list-link[href="#two"],
+  &#three:hover ~ .nav .nav__list-link[href="#three"],
+  &#four:hover ~ .nav .nav__list-link[href="#four"] {
+    color: #000;
+    background-color: #fff;
+    opacity: 1;
+  }
+}
+
+.page-section_coral { background-color: coral; }
+
+.page-section_lightgreen { background-color: lightgreen; }
+
+.page-section_gold { background-color: gold; }
+
+.page-section_lightseagreen { background-color: lightseagreen; }
+
+.page-section__title {
+  font-size: 5vw;
+  color: #fff;
+  text-shadow: 0 0 .02em #000;
+}
