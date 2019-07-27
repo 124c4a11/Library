@@ -1,0 +1,74 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: radial-gradient(#9dbfff, #009be4) no-repeat;
+}
+
+/*================================================================
+  road
+================================================================*/
+@keyframes move {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: -120px;
+  }
+}
+.road {
+  position: relative;
+  transform-origin: bottom;
+  transform-style: preserve-3d;
+  transform: perspective(500px) rotateX(30deg);
+  width: 800px;
+  height: 160px;
+  background-color: #525252;
+}
+.road::before, .road::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+.road::before {
+  top: 50%;
+  height: 10px;
+  transform: translateY(-50%);
+  background-image: linear-gradient(90deg, #fff 0%, #fff 70%, #525252 70%, #525252 100%);
+  background-size: 120px;
+  animation: move 0.5s linear infinite;
+}
+.road::after {
+  bottom: -30px;
+  transform-origin: top;
+  transform: perspective(500px) rotateX(-25deg);
+  height: 30px;
+  background-color: #333;
+}
+
+.road__shadow {
+  position: absolute;
+  bottom: -93px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
+  height: 60px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), transparent) no-repeat;
+}
+
+/*# sourceMappingURL=style.css.map */
