@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html {
+  font: 16px Consolas, monospace;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #333;
+}
+
+/*================================================================
+  card
+================================================================*/
+.card {
+  position: relative;
+  width: 300px;
+}
+.card:hover, .card:focus {
+  outline: none;
+}
+.card:hover .card__header,
+.card:hover .card__body, .card:focus .card__header,
+.card:focus .card__body {
+  transform: translateY(0);
+}
+.card:hover .card__header, .card:focus .card__header {
+  background-color: #ff0057;
+}
+.card:hover .card__header-content, .card:focus .card__header-content {
+  opacity: 1;
+}
+
+.card__header,
+.card__body {
+  height: 200px;
+  padding: 20px;
+  transition-duration: 0.5s;
+}
+
+.card__header {
+  position: relative;
+  z-index: 1;
+  transform: translateY(100px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  background-color: #333;
+}
+
+.card__header-content {
+  opacity: 0.2;
+  transition-duration: 0.5s;
+}
+
+.card__title {
+  font-size: 1.5em;
+  margin-bottom: 0;
+}
+
+.card__body {
+  transform: translateY(-100px);
+  background-color: #fff;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+}
+
+/*# sourceMappingURL=style.css.map */
