@@ -1,0 +1,123 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: radial-gradient(#63c5ff, #0380bb);
+}
+
+/*================================================================
+  preloader
+================================================================*/
+@keyframes rotation {
+  0% {
+    transform: perspective(1000px) rotateX(0deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateX(360deg);
+  }
+}
+.preloader {
+  position: relative;
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateY(310deg);
+  width: 200px;
+  height: 350px;
+}
+
+.preloader__inner,
+.preloader__item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.preloader__inner {
+  transform-style: preserve-3d;
+  animation: rotation 10s linear infinite;
+}
+
+.preloader__item {
+  border: 1px solid #000;
+}
+.preloader__item::before, .preloader__item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(#f1f1f1, #e0e0e0) no-repeat;
+}
+.preloader__item:before {
+  top: 0;
+  border-bottom: 1px solid #000;
+}
+.preloader__item::after {
+  bottom: 0;
+  border-top: 1px solid #000;
+}
+.preloader__item:nth-child(1) {
+  transform: rotateX(22.5deg);
+}
+.preloader__item:nth-child(2) {
+  transform: rotateX(45deg);
+}
+.preloader__item:nth-child(3) {
+  transform: rotateX(67.5deg);
+}
+.preloader__item:nth-child(4) {
+  transform: rotateX(90deg);
+}
+.preloader__item:nth-child(5) {
+  transform: rotateX(112.5deg);
+}
+.preloader__item:nth-child(6) {
+  transform: rotateX(135deg);
+}
+.preloader__item:nth-child(7) {
+  transform: rotateX(157.5deg);
+}
+.preloader__item:nth-child(8) {
+  transform: rotateX(180deg);
+}
+.preloader__item:nth-child(9) {
+  transform: rotateX(202.5deg);
+}
+.preloader__item:nth-child(10) {
+  transform: rotateX(225deg);
+}
+.preloader__item:nth-child(11) {
+  transform: rotateX(247.5deg);
+}
+.preloader__item:nth-child(12) {
+  transform: rotateX(270deg);
+}
+.preloader__item:nth-child(13) {
+  transform: rotateX(292.5deg);
+}
+.preloader__item:nth-child(14) {
+  transform: rotateX(315deg);
+}
+.preloader__item:nth-child(15) {
+  transform: rotateX(337.5deg);
+}
+.preloader__item:nth-child(16) {
+  transform: rotateX(360deg);
+}
+
+/*# sourceMappingURL=style.css.map */
