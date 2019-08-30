@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html { font: 16px sans-serif; }
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  filter: url(#wavy);
+}
+
+/*================================================================
+  filter
+================================================================*/
+
+.filter {
+  position: absolute;
+  top: 0;
+  left: -99999px;
+  width: 0;
+  height: 0;
+}
+
+/*================================================================
+  title
+================================================================*/
+
+@keyframes rotation {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.title {
+  margin: 0;
+  font-size: 9vw;
+  animation: rotation 20s linear infinite;
+}
