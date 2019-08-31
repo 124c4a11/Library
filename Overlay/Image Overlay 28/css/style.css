@@ -1,0 +1,109 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font: 16px sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #262626;
+}
+
+/*================================================================
+  card
+================================================================*/
+.card {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 280px;
+  min-height: 400px;
+  color: #fff;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+.card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.card,
+.card .card__overlay {
+  background: linear-gradient(45deg, #ccff00, #09afff);
+}
+
+.card__content {
+  text-align: center;
+}
+
+.card__overlay {
+  overflow: hidden;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+.card__overlay::before {
+  content: "Read";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-weight: 500;
+  font-size: 0.75em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.card__overlay:hover, .card__overlay:focus {
+  outline: none;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  box-shadow: none;
+  opacity: 0.9;
+}
+.card__overlay:hover::before, .card__overlay:focus::before {
+  display: none;
+}
+.card__overlay:hover .card__overlay-content, .card__overlay:focus .card__overlay-content {
+  opacity: 1;
+  transition: opacity 0.2s 0.5s;
+}
+
+.card__overlay-content {
+  padding: 1.25em;
+  opacity: 0;
+  transition: opacity 0s 0s;
+}
+
+/*# sourceMappingURL=style.css.map */
