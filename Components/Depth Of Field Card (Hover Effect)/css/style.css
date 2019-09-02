@@ -1,0 +1,110 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font: 16px sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(0deg, #fff 50%, #2196f3);
+}
+
+/*================================================================
+  btn
+================================================================*/
+.card:hover .btn, .card:focus .btn, .btn:hover, .btn:focus {
+  background-color: #2196f3;
+}
+
+.btn {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  background-color: #000;
+  padding: 0.5em 0.8em;
+  transition: background-color 0.5s;
+}
+.btn:hover, .btn:focus {
+  outline: none;
+}
+
+/*================================================================
+  card-grid
+================================================================*/
+.card-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  transition-duration: 0.5s;
+}
+.card-grid:hover .card-grid__item {
+  transform: scale(0.7);
+  filter: blur(5px);
+}
+
+.card-grid__item {
+  flex: 0 0 270px;
+}
+.card-grid__item:hover {
+  transform: scale(1) !important;
+  filter: blur(0) !important;
+}
+
+/*================================================================
+  card
+================================================================*/
+.card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 300px;
+  padding: 15px;
+  text-align: center;
+  background-color: #fff;
+  transition-duration: 0.5s;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition-duration: 0.5s;
+}
+.card:hover, .card:focus {
+  color: #fff;
+}
+.card:hover::before, .card:focus::before {
+  transform: scaleY(1.15);
+  background-color: #000;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.card__content {
+  position: relative;
+  z-index: 1;
+}
+
+.card__title {
+  font-size: 3em;
+}
+
+/*# sourceMappingURL=style.css.map */
