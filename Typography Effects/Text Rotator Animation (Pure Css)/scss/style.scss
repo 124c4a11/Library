@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html { font: 16px sans-serif; }
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #262626;
+}
+
+/*================================================================
+  text-rotator
+================================================================*/
+
+@keyframes textRotator {
+  0% { content: 'Text'; }
+  33% { content: 'Rotator'; }
+  66% { content: 'Animation'; }
+  100% { content: 'Text'; }
+}
+
+.text-rotator {
+  font-size: 9vw;
+  color: #fff;
+  text-transform: uppercase;
+
+  &::before {
+    content: '';
+    animation: textRotator 2s linear infinite;
+  }
+}
