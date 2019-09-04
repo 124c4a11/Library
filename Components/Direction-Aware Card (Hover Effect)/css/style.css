@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font: 16px sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(#fff 0%, #fff 50%, #0b74cb 50%, #0b74cb 100%);
+}
+
+/*================================================================
+  card-grid
+================================================================*/
+.card-grid {
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex: 0 1 1200px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.card-grid:hover .card-grid__item {
+  transform: perspective(500px) rotateY(30deg);
+}
+
+.card-grid__item {
+  flex: 0 0 180px;
+  margin: 10px;
+  transition: transform 0.5s;
+}
+.card-grid__item:hover {
+  transform: perspective(0) rotateY(0deg) !important;
+}
+.card-grid__item:hover ~ .card-grid__item {
+  transform: perspective(500px) rotateY(-30deg);
+}
+
+/*================================================================
+  card
+================================================================*/
+.card {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 240px;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.card:hover, .card:focus {
+  outline: none;
+}
+.card:hover .card__title, .card:focus .card__title {
+  color: #2196f3;
+  background-color: #fff;
+  box-shadow: 0 0 0 150px #2196f3;
+}
+
+.card__title {
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  line-height: 2em;
+  font-size: 3em;
+  color: #fff;
+  text-align: center;
+  background-color: #2196f3;
+  transition: color 0.5s, background-color 0.5s, box-shadow 0.5s;
+}
+
+/*# sourceMappingURL=style.css.map */
