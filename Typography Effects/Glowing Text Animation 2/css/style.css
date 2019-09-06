@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font: 16px sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #000;
+}
+
+/*================================================================
+  glowing-text
+================================================================*/
+@keyframes glow {
+  0%, 80% {
+    color: #333;
+    text-shadow: none;
+  }
+  100% {
+    color: #fff;
+    text-shadow: 0 0 0.1em #fff, 0 0 0.2em #fff, 0 0 0.4em #fff, 0 0 0.8em #fff, 0 0 1.2em #fff, 0 0 1.6em #fff;
+  }
+}
+.glowing-text {
+  font-size: 9vw;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.glowing-text__letter {
+  animation: glow 1s linear infinite;
+}
+.glowing-text__letter:nth-child(1) {
+  animation-delay: 0s;
+}
+.glowing-text__letter:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.glowing-text__letter:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.glowing-text__letter:nth-child(4) {
+  animation-delay: 0.6s;
+}
+.glowing-text__letter:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+/*# sourceMappingURL=style.css.map */
