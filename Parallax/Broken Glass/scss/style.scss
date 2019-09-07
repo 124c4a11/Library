@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html { font: 16px sans-serif; }
+
+/*================================================================
+  hero
+================================================================*/
+
+.hero {
+  overflow: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+.hero__img,
+.hero__glass {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero__img { background-size: 120%; }
+
+.hero__glass { filter: invert(1); }
