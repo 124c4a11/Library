@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font: 16px consolas, monospace;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/*================================================================
+  odometer
+================================================================*/
+.odometer {
+  font-size: 9vw;
+}
+
+/*# sourceMappingURL=style.css.map */
