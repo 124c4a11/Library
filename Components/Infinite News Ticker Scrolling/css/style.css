@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font: 16px sans-serif;
+}
+
+body {
+  overflow: hidden;
+  min-height: 100vh;
+  background: url(https://picsum.photos/id/223/1920/1024?grayscale) center/cover no-repeat;
+}
+
+/*================================================================
+  ticker
+================================================================*/
+@keyframes move {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes move2 {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-200%);
+  }
+}
+.ticker {
+  display: flex;
+  font-weight: 900;
+  font-size: 4em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.ticker_1 {
+  transform: rotate(30deg) translateY(200px) translateX(-200px);
+}
+
+.ticker_2 {
+  transform: rotate(-25deg) translateY(120px) translateX(-200px);
+}
+
+.ticker_3 {
+  transform: rotate(25deg) translateY(300px) translateX(-200px);
+}
+
+.ticker_4 {
+  transform: rotate(-2deg) translateY(-150px) translateX(-200px);
+}
+
+.ticker_5 {
+  transform: rotate(5deg) translateY(250px) translateX(-200px);
+}
+
+.ticker__text {
+  background-color: #fff;
+  animation: move 40s -40s linear infinite;
+}
+.ticker__text:nth-child(2) {
+  animation-name: move2;
+  animation-delay: -20s;
+}
+.ticker__text span {
+  color: transparent;
+  -webkit-text-stroke: 2px #000;
+}
+
+/*# sourceMappingURL=style.css.map */
