@@ -1,0 +1,15 @@
+html { font-family: sans-serif; }
+
+.section {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.section__title {
+  font-size: 7vw;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: 0 0 .05em rgba(0, 0, 0, .5);
+}
