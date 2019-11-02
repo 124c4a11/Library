@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font: 16px sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/*================================================================
+  card
+================================================================*/
+.card {
+  overflow: hidden;
+  position: relative;
+  flex: 0 0 290px;
+  height: 400px;
+}
+.card::before, .card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  transition: transform 1.5s ease-in-out;
+}
+.card::before {
+  transform: translateY(100%);
+  background-color: #0096ff;
+}
+.card::after {
+  transform: translateY(200%);
+  background-color: #90ff00;
+}
+.card:hover, .card:focus {
+  outline: none;
+}
+.card:hover::before, .card:hover::after,
+.card:hover .card__img, .card:focus::before, .card:focus::after,
+.card:focus .card__img {
+  transform: translateY(-100%);
+}
+.card:hover .card__body,
+.card:hover .card__inner, .card:focus .card__body,
+.card:focus .card__inner {
+  transform: translateY(0);
+}
+
+.card__img,
+.card__body,
+.card__inner {
+  transition: transform 1.5s ease-in-out;
+}
+
+.card__img,
+.card__body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card__body {
+  transform: translateY(300%);
+  padding: 40px;
+  color: #fff;
+  background-color: #111;
+}
+
+.card__inner {
+  transform: translateY(400%);
+}
+
+/*# sourceMappingURL=style.css.map */
