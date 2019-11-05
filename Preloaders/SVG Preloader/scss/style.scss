@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #262626;
+}
+
+/*================================================================
+  preloader
+================================================================*/
+
+@keyframes move {
+  to { stroke-dashoffset: 250%; }
+}
+
+.preloader,
+.preloader__item {
+  width: 100px;
+  height: 100px;
+}
+
+.preloader__item {
+  fill: none;
+  stroke-width: 100px;
+  stroke: #00adff;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 50%;
+  animation: move 1.5s linear infinite;
+}
