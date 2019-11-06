@@ -1,0 +1,69 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html { font: 16px sans-serif; }
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #111;
+}
+
+/*================================================================
+  menu
+================================================================*/
+
+@keyframes moveBg {
+  from { background-position-x: 0px; }
+  to { background-position-x: 200px; }
+}
+
+.menu {
+  padding: 0;
+  margin: 0;
+  font-weight: 800;
+  font-size: 4vw;
+  list-style: none;
+}
+
+.menu__link {
+  position: relative;
+  display: block;
+  color: rgba(255, 255, 255, .1);
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+
+  &::before {
+    content: attr(data-text);
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    background: url(../img/wave.png) repeat-x;
+    background-position-y: 80%;
+    animation: moveBg 2s linear infinite;
+    transition: width .5s;
+    -webkit-background-clip: text;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+
+    &::before { width: 100%; }
+  }
+}
