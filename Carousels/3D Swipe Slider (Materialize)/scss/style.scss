@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #000;
+}
+
+/*================================================================
+  carousel
+================================================================*/
+
+.carousel {
+  height: 600px;
+  perspective: 1500px;
+
+  .carousel-item {
+    width: 250px;
+    height: 445px;
+  }
+}
+
+.carousel-display {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 97%;
+  pointer-events: none;
+}
