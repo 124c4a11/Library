@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html { font: 16px sans-serif; }
+
+body {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #111;
+}
+
+/*================================================================
+  ghost-text
+================================================================*/
+
+.ghost-text {
+  display: flex;
+  font-size: 6vw;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+
+  &:hover {
+    .ghost-text__letter {
+      transform: scale(2);
+      filter: blur(1em);
+      opacity: 0;
+    }
+  }
+}
+
+.ghost-text__letter {
+  transition-duration: 1.5s;
+
+  @for $i from 1 through 9 {
+    &:nth-child(#{$i}) {
+      transition-delay: ($i - 1) * .1s;
+    }
+  }
+}
