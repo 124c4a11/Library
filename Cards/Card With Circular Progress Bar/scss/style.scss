@@ -1,0 +1,128 @@
+$duration: .5s;
+
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html { font: 16px sans-serif; }
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #101010;
+}
+
+/*================================================================
+  circular-progress
+================================================================*/
+
+.circular-progress {
+  overflow: hidden;
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #222;
+  box-shadow: inset 0 0 50px #000;
+}
+
+.circular-progress__bar {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  circle {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: #191919;
+    stroke-width: 10;
+    stroke-linecap: round;
+
+    &:nth-child(2) {
+      stroke: #ff04f7;
+      stroke-dasharray: 220;
+      stroke-dashoffset: 220;
+    }
+  }
+}
+
+.circular-progress__counter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  font-weight: 700;
+  font-size: 40px;
+  white-space: nowrap;
+}
+
+.circular-progress__counter-number {
+  transition: transform $duration;
+
+  span {
+    display: inline-block;
+    font-size: 24px;
+    transition: transform $duration;
+  }
+}
+
+/*================================================================
+  card
+================================================================*/
+
+.card {
+  position: relative;
+  flex: 0 0 250px;
+  min-height: 300px;
+  padding: 56px 15px;
+  border-radius: 4px;
+  color: #777;
+  text-align: center;
+  background: linear-gradient(0deg, #1b1b1b, #222, #1b1b1b);
+  transition: transform $duration, color $duration;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, .03);
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+    transform: translateY(-10px);
+    color: #fff;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .5);
+
+    .circular-progress__counter-number {
+      transform: scale(1.1);
+
+      span { transform: scale(.9); }
+    }
+  }
+}
+
+.card__progress { margin: 0 auto; }
+
+.card__title {
+  margin-bottom: 0;
+  font-size: 1.1em;
+  text-transform: uppercase;
+}
