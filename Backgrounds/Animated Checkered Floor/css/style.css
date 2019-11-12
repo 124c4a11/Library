@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+/*================================================================
+  hero
+================================================================*/
+.hero {
+  overflow: hidden;
+  height: 100vh;
+}
+
+/*================================================================
+  pattern
+================================================================*/
+@keyframes moveBg {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: 100px;
+  }
+}
+@keyframes wiggle {
+  0%, 100% {
+    transform: scale(1.6) rotate(-15deg);
+  }
+  50% {
+    transform: scale(1.6) rotate(15deg);
+  }
+}
+.pattern {
+  overflow: hidden;
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  height: 100vh;
+  animation: wiggle 10s ease-in-out infinite;
+}
+
+.pattern__item {
+  position: relative;
+  background: url(../img/pattern.jpg) 0% 0%/100px 100px;
+  animation: moveBg 1s linear infinite;
+}
+.pattern__item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 125px;
+}
+.pattern__item:first-child {
+  height: 50vh;
+}
+.pattern__item:first-child::before {
+  bottom: 0;
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), transparent);
+}
+.pattern__item:last-child {
+  height: 100vh;
+  transform-origin: top;
+  transform: rotateX(70deg);
+}
+.pattern__item:last-child::before {
+  top: 0;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent);
+}
+
+/*# sourceMappingURL=style.css.map */
