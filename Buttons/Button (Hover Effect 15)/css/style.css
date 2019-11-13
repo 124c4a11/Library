@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font: 16px sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/*================================================================
+  btn
+================================================================*/
+@keyframes moveBg {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: 118px;
+  }
+}
+.btn {
+  overflow: hidden;
+  position: relative;
+  padding: 0.6em 1.5em;
+  border: 2px solid #00aeff;
+  font-size: 1.2rem;
+  color: #00aeff;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background-color: transparent;
+  transition: color 0.5s;
+}
+.btn::before, .btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+.btn::before {
+  transform: translateY(50%);
+  background: url(../img/wave.png) bottom repeat-x;
+  animation: moveBg 0.5s linear infinite;
+  transition: transform 0.8s;
+}
+.btn::after {
+  transform: translateY(150%);
+  background-color: #00aeff;
+  transition: transform 0.8s;
+}
+.btn:hover, .btn:focus {
+  outline: none;
+  color: #fff;
+}
+.btn:hover::before, .btn:focus::before {
+  transform: translateY(-100%);
+}
+.btn:hover::after, .btn:focus::after {
+  transform: translateY(0);
+}
+
+/*# sourceMappingURL=style.css.map */
