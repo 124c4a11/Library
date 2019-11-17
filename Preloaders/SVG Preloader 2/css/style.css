@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #05091f;
+}
+
+/*================================================================
+  preloader
+================================================================*/
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes strokeAnimation {
+  0%, 100% {
+    stroke-dashoffset: 440;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  50.1% {
+    stroke-dashoffset: 880;
+  }
+}
+.preloader {
+  width: 150px;
+  height: 150px;
+  animation: rotation 2s linear infinite;
+}
+
+.preloader__circle {
+  fill: none;
+  stroke: #00a1ff;
+  stroke-width: 10;
+  stroke-linecap: round;
+  stroke-dasharray: 440;
+  stroke-dashoffset: 440;
+  animation: strokeAnimation 4s linear infinite;
+}
+
+/*# sourceMappingURL=style.css.map */
