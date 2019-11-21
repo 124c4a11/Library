@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #000;
+}
+
+/*================================================================
+  hero
+================================================================*/
+.hero {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+}
+.hero:active .hero__bg {
+  clip-path: circle(250px at var(--x) var(--y));
+}
+
+.hero__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  clip-path: circle(75px at var(--x) var(--y));
+}
+
+/*# sourceMappingURL=style.css.map */
