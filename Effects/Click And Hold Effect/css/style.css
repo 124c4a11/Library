@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html {
+  font: 18px/1.42 sans-serif;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+/*================================================================
+  page-section
+================================================================*/
+.page-section {
+  min-height: 100vh;
+  padding: 80px 15vw;
+  background-color: #fff;
+}
+
+/*================================================================
+  cursor
+================================================================*/
+.cursor {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #fff;
+  mix-blend-mode: difference;
+  transition: transform 0.8s;
+}
+.cursor:active {
+  transform: scale(300);
+}
+
+/*# sourceMappingURL=style.css.map */
