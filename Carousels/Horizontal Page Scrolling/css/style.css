@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font: 16px sans-serif;
+}
+
+/*================================================================
+  carousel
+================================================================*/
+.carousel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  height: 100%;
+}
+
+.carousel__item {
+  flex: 0 0 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.carousel__item_lightskyblue {
+  background-color: lightskyblue;
+}
+
+.carousel__item_tomato {
+  background-color: tomato;
+}
+
+.carousel__item_lightgreen {
+  background-color: lightgreen;
+}
+
+.carousel__item_gold {
+  background-color: gold;
+}
+
+.carousel__item-title {
+  font-size: 5vw;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+/*# sourceMappingURL=style.css.map */
