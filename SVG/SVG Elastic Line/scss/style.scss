@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #000;
+}
+
+/*================================================================
+  line
+================================================================*/
+
+@keyframes wave {
+  0% {
+    d: path("M0,25 C150,100 150,-60 300,25");
+    stroke: #ff0092;
+  }
+  50% {
+    d: path("M0,25 C160,-50 140,110 300,25");
+    stroke: #0000ff;
+  }
+}
+
+.line {
+  position: absolute;
+  width: 400px;
+  fill: none;
+
+  path {
+    transform: translate(50px, 50%);
+    d: path("M0,25 C150,100 150,-60 300,25");
+    stroke-width: 50;
+    stroke-linecap: round;
+    stroke: #ff0092;
+    animation: wave 2s ease-in-out infinite;
+  }
+}
+
+.line_blur { filter: blur(40px); }
