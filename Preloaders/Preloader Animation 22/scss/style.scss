@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #03a9f4;
+}
+
+/*================================================================
+  preloader
+================================================================*/
+
+@keyframes animate {
+  0% {
+    transform-origin: left;
+    transform: scaleX(0);
+  }
+  25% {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+  25.00001% {
+    transform-origin: right;
+  }
+  50%, 100% {
+    transform-origin: right;
+    transform: scaleX(0);
+  }
+}
+
+.preloader {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: rgba(0, 0, 0, .2);
+
+}
+
+.preloader__item {
+  transform: scale(0);
+  height: 100%;
+
+  &,
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  &::before {
+    content: '';
+    transform: scaleX(0);
+    height: 30%;
+    background-color: #fff;
+    animation: animate 2s linear infinite;
+  }
+
+  @for $i from 1 through 4 {
+    &:nth-child(#{$i}) {
+      transform: rotate(#{($i - 1) * 90deg});
+
+      &:before { animation-delay: ($i - 1) * .5s; }
+    }
+  }
+}
