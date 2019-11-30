@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+}
+
+body {
+  font: 18px sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #ccc;
+  background-color: #000;
+}
+
+/*================================================================
+  card
+================================================================*/
+@keyframes rotation {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.card {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 290px;
+  height: 290px;
+}
+.card::before, .card::after,
+.card .card__content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border: 2px solid currentColor;
+  border-radius: 38% 62% 63% 37%/41% 44% 56% 59%;
+  transition: 0.5s;
+  animation-name: rotation;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.card::before {
+  animation-duration: 6s;
+}
+.card::after {
+  animation-duration: 4s;
+  animation-direction: reverse;
+}
+.card .card__content::before {
+  animation-duration: 10s;
+}
+.card:hover, .card:focus {
+  outline: none;
+}
+.card:hover::before, .card:hover::after,
+.card:hover .card__content::before, .card:focus::before, .card:focus::after,
+.card:focus .card__content::before {
+  border-color: transparent;
+  background-color: rgba(0, 0, 255, 0.6);
+}
+
+.card__content {
+  padding: 20px;
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */
