@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #262626;
+}
+
+/*================================================================
+  clip
+================================================================*/
+.clip {
+  position: relative;
+  flex: 0 1 500px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.clip__img {
+  display: block;
+  width: 100%;
+  transition: clip-path 0.5s;
+}
+.clip__img:hover {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.clip__img_1 {
+  height: auto;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 100%);
+}
+.clip__img_1:hover ~ .clip__img_2 {
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+}
+
+.clip__img_2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%);
+}
+
+/*# sourceMappingURL=style.css.map */
