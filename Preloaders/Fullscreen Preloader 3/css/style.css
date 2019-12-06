@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+/*================================================================
+  preloader
+================================================================*/
+@keyframes animate {
+  0% {
+    transform-origin: top;
+    transform: scaleY(0);
+  }
+  25% {
+    transform-origin: top;
+    transform: scaleY(1);
+  }
+  75% {
+    transform-origin: bottom;
+    transform: scaleY(1);
+  }
+  100% {
+    transform-origin: bottom;
+    transform: scaleY(0);
+  }
+}
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.preloader__item {
+  transform: scaleY(0);
+  flex: 1 1 25%;
+  height: 100%;
+  background-color: #008eff;
+  animation: animate 2s ease-in-out infinite;
+}
+.preloader__item:nth-child(even) {
+  background-color: #007eff;
+}
+.preloader__item:nth-child(1) {
+  animation-delay: 0s;
+}
+.preloader__item:nth-child(2) {
+  animation-delay: 0.25s;
+}
+.preloader__item:nth-child(3) {
+  animation-delay: 0.5s;
+}
+.preloader__item:nth-child(4) {
+  animation-delay: 0.75s;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+/*================================================================
+  preloader
+================================================================*/
+
+@keyframes animate {
+  0% {
+    transform-origin: top;
+    transform: scaleY(0);
+  }
+  25% {
+    transform-origin: top;
+    transform: scaleY(1);
+  }
+  75% {
+    transform-origin: bottom;
+    transform: scaleY(1);
+  }
+  100% {
+    transform-origin: bottom;
+    transform: scaleY(0);
+  }
+}
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.preloader__item {
+  transform: scaleY(0);
+  flex: 1 1 25%;
+  height: 100%;
+  background-color: #008eff;
+  animation: animate 2s ease-in-out infinite;
+
+  &:nth-child(even) { background-color: #007eff; }
+
+  @for $i from 1 through 4 {
+    &:nth-child(#{$i}) {
+      animation-delay: ($i - 1) * .25s;
+    }
+  }
+}
