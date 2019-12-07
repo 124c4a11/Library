@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html { font: 16px sans-serif; }
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.text {
+  overflow: hidden;
+  display: flex;
+  font-size: 9vw;
+  color: #fff;
+  text-transform: uppercase;
+  -webkit-text-stroke: 2px #000;
+}
+
+@keyframes showLetter {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.text__letter {
+  transform: translateY(100%);
+  animation: showLetter .8s ease-in-out forwards;
+
+  @for $i from 1 through 9 {
+    &:nth-child(#{$i}) {
+      animation-delay: ($i - 1) * .1s;
+    }
+  }
+}
