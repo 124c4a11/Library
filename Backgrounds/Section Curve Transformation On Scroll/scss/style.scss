@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  min-height: 200vh;
+  background-color: #111;
+}
+
+/*================================================================
+  section
+================================================================*/
+
+$curve-height: 200px;
+
+.section {
+  position: relative;
+  min-height: calc(100vh - #{$curve-height});
+  background-color: #2abbff;
+}
+
+.section__curve {
+  position: absolute;
+  bottom: -$curve-height;
+  left: 0;
+  transform-origin: top;
+  width: 100%;
+  height: $curve-height;
+  background: url(../img/curve.png) center/100% 100% no-repeat;
+}
