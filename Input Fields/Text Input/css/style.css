@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font: 16px sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #03080a;
+}
+
+/*================================================================
+  field
+================================================================*/
+.field {
+  position: relative;
+  width: 290px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 1.5em 0;
+}
+
+.field__input {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  padding: 0.5em;
+  border: 0 none;
+  font-weight: 700;
+  font-size: 1em;
+  background-color: transparent;
+}
+.field__input:focus, .field__input:valid {
+  outline: none;
+}
+.field__input:focus ~ .field__label, .field__input:valid ~ .field__label {
+  transform: translateY(-2em);
+}
+.field__input:focus ~ .field__line, .field__input:valid ~ .field__line {
+  transform: scaleY(1);
+}
+
+.field__label {
+  position: absolute;
+  top: 0.5em;
+  left: 0;
+  z-index: 1;
+  color: #45f3ff;
+  transition: transform 0.25s;
+}
+
+.field__line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform-origin: bottom;
+  transform: scaleY(0.05);
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+  background-color: #45f3ff;
+  transition: transform 0.25s;
+}
+
+/*# sourceMappingURL=style.css.map */
