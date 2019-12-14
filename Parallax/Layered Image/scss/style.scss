@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: radial-gradient(#303030, #0f0f0f) no-repeat;
+}
+
+/*================================================================
+  parallax
+================================================================*/
+
+.parallax {
+  position: relative;
+  transform: rotate(-30deg) skew(25deg) scale(.8);
+  width: 360px;
+  height: 600px;
+  background-color: rgba(0, 0, 0, .2);
+}
+
+.parallax__layer {
+  position: absolute;
+  width: 100%;
+
+  &:nth-child(1) {
+    z-index: 4;
+  }
+
+  &:nth-child(2) {
+    z-index: 3;
+    opacity: .8;
+  }
+
+  &:nth-child(3) {
+    z-index: 2;
+    opacity: .6;
+  }
+
+  &:nth-child(4) {
+    opacity: .4;
+  }
+}
