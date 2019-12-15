@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font: 16px sans-serif;
+}
+
+body {
+  background-color: #000;
+}
+
+/*================================================================
+  portrait
+================================================================*/
+.portrait {
+  overflow: hidden;
+  height: 100vh;
+  text-align: justify;
+  background: url(../img/1.jpg) center/cover no-repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 0.9vw;
+}
+
+/*# sourceMappingURL=style.css.map */
