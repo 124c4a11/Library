@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font: 16px sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #c0ff6c;
+}
+
+/*================================================================
+  list
+================================================================*/
+.list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  background-color: #fff;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.list__item {
+  overflow: hidden;
+  position: relative;
+  padding: 10px 15px;
+}
+.list__item::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background-color: #000;
+  opacity: 0.5;
+  transition-duration: 0s;
+}
+.list__item:hover::before {
+  width: 300px;
+  height: 300px;
+  opacity: 0;
+  transition-duration: 0.5s;
+}
+
+/*# sourceMappingURL=style.css.map */
