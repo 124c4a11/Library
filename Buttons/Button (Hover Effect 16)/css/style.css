@@ -1,0 +1,67 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font: 16px sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/*================================================================
+  btn
+================================================================*/
+.btn {
+  position: relative;
+  padding: 0.6em 1.5em;
+  border: 2px solid #000;
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background-color: transparent;
+}
+.btn::before, .btn::after {
+  content: "";
+  position: absolute;
+  background-color: #fff;
+  transition-duration: 0.25s;
+}
+.btn::before {
+  top: 5px;
+  right: -2px;
+  bottom: 5px;
+  left: -2px;
+}
+.btn::after {
+  top: -2px;
+  right: 5px;
+  bottom: -2px;
+  left: 5px;
+}
+.btn:hover, .btn:focus {
+  outline: none;
+}
+.btn:hover::before, .btn:focus::before {
+  transform: scaleY(0);
+}
+.btn:hover::after, .btn:focus::after {
+  transform: scaleX(0);
+}
+
+.btn__text {
+  position: relative;
+  z-index: 1;
+}
+
+/*# sourceMappingURL=style.css.map */
