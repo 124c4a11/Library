@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font: 16px sans-serif;
+}
+
+/*================================================================
+  menu
+================================================================*/
+.menu {
+  overflow-y: auto;
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  padding: 40px 15px;
+  font-weight: 700;
+  font-size: 0;
+  text-align: center;
+}
+.menu::before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.menu__list {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-size: 3rem;
+  vertical-align: middle;
+  text-align: left;
+}
+.menu__list:hover .menu__link {
+  color: rgba(0, 0, 0, 0.5);
+}
+.menu__list .menu__link:hover, .menu__list .menu__link:focus {
+  outline: none;
+  color: #fff;
+  text-shadow: 0 0.05em 0.05em rgba(0, 0, 0, 0.1);
+}
+
+.menu__item:nth-child(6n+1) > .menu__link:focus::before, .menu__item:nth-child(6n+1) > .menu__link:hover::before {
+  background-color: #81ecec;
+}
+.menu__item:nth-child(6n+2) > .menu__link:focus::before, .menu__item:nth-child(6n+2) > .menu__link:hover::before {
+  background-color: #ff7675;
+}
+.menu__item:nth-child(6n+3) > .menu__link:focus::before, .menu__item:nth-child(6n+3) > .menu__link:hover::before {
+  background-color: #55efc4;
+}
+.menu__item:nth-child(6n+4) > .menu__link:focus::before, .menu__item:nth-child(6n+4) > .menu__link:hover::before {
+  background-color: #a29bfe;
+}
+.menu__item:nth-child(6n+5) > .menu__link:focus::before, .menu__item:nth-child(6n+5) > .menu__link:hover::before {
+  background-color: #fd79a8;
+}
+.menu__item:nth-child(6n+6) > .menu__link:focus::before, .menu__item:nth-child(6n+6) > .menu__link:hover::before {
+  background-color: #ffeaa7;
+}
+
+.menu__link {
+  display: block;
+  padding: 0.2em 0;
+  color: #111;
+  text-decoration: none;
+  transition: color 0.5s, text-shadow 0.5s;
+}
+.menu__link::before, .menu__link::after {
+  position: absolute;
+  z-index: -1;
+}
+.menu__link::before {
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: background-color 0.25s;
+}
+.menu__link::after {
+  content: attr(data-text);
+  overflow: hidden;
+  top: 50%;
+  left: 40%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  font-weight: 900;
+  font-size: 15rem;
+  color: rgba(0, 0, 0, 0.1);
+  letter-spacing: 150px;
+  text-transform: uppercase;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.25s, letter-spacing 0.5s, left 0.5s;
+}
+.menu__link:hover, .menu__link:focus {
+  outline: none;
+}
+.menu__link:hover::before, .menu__link:hover::after, .menu__link:focus::before, .menu__link:focus::after {
+  opacity: 1;
+}
+.menu__link:hover::after, .menu__link:focus::after {
+  left: 50%;
+  letter-spacing: 10px;
+}
+
+/*# sourceMappingURL=style.css.map */

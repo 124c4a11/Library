@@ -1,0 +1,149 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html { font: 16px sans-serif; }
+
+/*================================================================
+  menu
+================================================================*/
+
+$duration: .5s;
+
+.menu {
+  overflow-y: auto;
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  padding: 40px 15px;
+  font-weight: 700;
+  font-size: 0;
+  text-align: center;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+}
+
+.menu__list {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-size: 3rem;
+  vertical-align: middle;
+  text-align: left;
+
+  &:hover {
+    .menu__link {
+      color: rgba(0, 0, 0, .5);
+    }
+  }
+
+  .menu__link {
+    &:hover,
+    &:focus {
+      outline: none;
+      color: #fff;
+      text-shadow: 0 .05em .05em rgba(0, 0, 0, .1);
+    }
+  }
+}
+
+.menu__item {
+  &:nth-child(6n + 1) > .menu__link:focus::before,
+  &:nth-child(6n + 1) > .menu__link:hover::before {
+    background-color: #81ecec;
+  }
+
+  &:nth-child(6n + 2) > .menu__link:focus::before,
+  &:nth-child(6n + 2) > .menu__link:hover::before {
+    background-color: #ff7675;
+  }
+
+  &:nth-child(6n + 3) > .menu__link:focus::before,
+  &:nth-child(6n + 3) > .menu__link:hover::before {
+    background-color: #55efc4;
+  }
+
+  &:nth-child(6n + 4) > .menu__link:focus::before,
+  &:nth-child(6n + 4) > .menu__link:hover::before {
+    background-color: #a29bfe;
+  }
+
+  &:nth-child(6n + 5) > .menu__link:focus::before,
+  &:nth-child(6n + 5) > .menu__link:hover::before {
+    background-color: #fd79a8;
+  }
+
+  &:nth-child(6n + 6) > .menu__link:focus::before,
+  &:nth-child(6n + 6) > .menu__link:hover::before {
+    background-color: #ffeaa7;
+  }
+}
+
+.menu__link {
+  display: block;
+  padding: .2em 0;
+  color: #111;
+  text-decoration: none;
+  transition: color $duration, text-shadow $duration;
+
+  &::before,
+  &::after {
+    position: absolute;
+    z-index: -1;
+
+  }
+
+  &::before {
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: background-color $duration / 2;
+  }
+
+  &::after {
+    content: attr(data-text);
+    overflow: hidden;
+    top: 50%;
+    left: 40%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    font-weight: 900;
+    font-size: 15rem;
+    color: rgba(0, 0, 0, .1);
+    letter-spacing: 150px;
+    text-transform: uppercase;
+    text-align: center;
+    opacity: 0;
+    transition: opacity $duration / 2, letter-spacing $duration, left $duration;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+
+    &::before,
+    &::after { opacity: 1; }
+
+    &::after {
+      left: 50%;
+      letter-spacing: 10px;
+    }
+  }
+}
