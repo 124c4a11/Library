@@ -1,0 +1,94 @@
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after { box-sizing: inherit; }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #000;
+}
+
+/*================================================================
+  preloader
+================================================================*/
+
+$item-count: 20;
+$duration: 1s;
+$t-func: ease-in-out;
+
+@keyframes anim1 {
+  from { height: 90%; }
+  to { height: 5%; }
+}
+
+@keyframes anim2 {
+  from { height: 5%; }
+  to { height: 90%; }
+}
+
+.preloader {
+  display: flex;
+  justify-content: space-evenly;
+  width: 350px;
+  height: 200px;
+}
+
+.preloader__item {
+  position: relative;
+  width: 5px;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0;
+    border-radius: 5px;
+    background-color: green;
+  }
+
+  &::before {
+    top: 0;
+    height: 90%;
+    animation: anim1 $duration $t-func infinite alternate;
+  }
+
+  &::after {
+    bottom: 0;
+    height: 5%;
+    animation: anim2 $duration $t-func infinite alternate;
+  }
+
+  @for $i from 1 through $item-count {
+    &:nth-child(#{$i}) {
+      &::before,
+      &::after {
+        animation-delay: $i * ($duration / $item-count);
+      }
+
+      &::before {
+        $b-color: hsl($i * (360 / $item-count), 50%, 50%);
+        background-color: $b-color;
+        box-shadow: 0 0 4px $b-color;
+      }
+
+      &::after {
+        $a-color: hsl(abs($i - $item-count) * (360 / $item-count), 50%, 50%);
+        background-color: $a-color;
+        box-shadow: 0 0 4px $a-color;
+      }
+    }
+  }
+}
